@@ -58,7 +58,7 @@ const Excursions: React.FC = () => {
             title="Glaciar Perito Moreno"
             tag="Clásico"
             icon={<Camera size={20} />}
-            image="https://images.unsplash.com/photo-1516104085718-35634563a696?q=80&w=800"
+            image="https://images.unsplash.com/photo-1551632432-c735e7a03071?q=80&w=800"
             desc="Visitá el gigante de hielo. Incluye traslado privado y espera en pasarelas. Tiempo libre para caminar y almorzar frente al glaciar."
           />
           <ExcursionItem 

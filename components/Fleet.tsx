@@ -38,9 +38,9 @@ const Fleet: React.FC = () => {
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-glacier/30 rounded-full blur-3xl opacity-50"></div>
             <img 
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop" 
-              alt="Fleet Van" 
-              className="relative rounded-3xl shadow-2xl"
+              src="https://images.unsplash.com/photo-1531630403303-34676be461ec?q=80&w=1200&auto=format&fit=crop" 
+              alt="Transporte moderno en paisaje patagónico de El Calafate" 
+              className="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full"
             />
           </div>
         </div>

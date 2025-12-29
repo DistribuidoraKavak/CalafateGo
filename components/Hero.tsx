@@ -7,14 +7,15 @@ const Hero: React.FC = () => {
 
   return (
     <section id="inicio" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image Overlay */}
+      {/* Background Image Overlay - Glaciar Perito Moreno Panorámico */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1516104085718-35634563a696?q=80&w=2070&auto=format&fit=crop")',
+          backgroundImage: 'url("https://images.unsplash.com/photo-1518111663148-372559e74283?q=80&w=2070&auto=format&fit=crop")',
         }}
+        aria-label="Vista panorámica del Glaciar Perito Moreno en El Calafate"
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/35"></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center text-white mt-16">
@@ -34,7 +35,7 @@ const Hero: React.FC = () => {
             Cotizar Traslado
           </a>
           <a 
-            href="#servicios" 
+            href="#excursiones" 
             className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl font-bold text-lg shadow-xl hover:bg-white/20 transition-all text-white text-center"
           >
             Ver Excursiones
@@ -43,7 +44,7 @@ const Hero: React.FC = () => {
       </div>
 
       <a 
-        href="#servicios" 
+        href="#traslados" 
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce"
       >
         <ChevronDown size={32} />

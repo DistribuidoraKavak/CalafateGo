@@ -8,26 +8,32 @@ const TransferCard: React.FC<{
   price: string;
   desc: string;
   icon: React.ReactNode;
-}> = ({ title, route, price, desc, icon }) => (
-  <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
-    <div className="bg-glacier/20 p-4 rounded-2xl w-fit text-ice mb-6">
-      {icon}
-    </div>
-    <h3 className="text-2xl font-bold text-navy mb-2">{title}</h3>
-    <p className="text-ice font-bold text-sm uppercase tracking-widest mb-4">{route}</p>
-    <p className="text-slate-600 mb-6 flex-grow leading-relaxed">{desc}</p>
-    <div className="pt-6 border-t border-slate-50 mt-auto flex items-center justify-between">
-      <div>
-        <p className="text-xs text-slate-400 font-bold uppercase">Desde</p>
-        <p className="text-2xl font-bold text-navy">{price}</p>
+  image: string;
+}> = ({ title, route, price, desc, icon, image }) => (
+  <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
+    <div className="h-40 overflow-hidden relative">
+      <img src={image} alt={title} className="w-full h-full object-cover" />
+      <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-xl text-ice shadow-sm">
+        {icon}
       </div>
-      <button 
-        onClick={() => window.open(`https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
-        className="bg-navy text-white px-6 py-3 rounded-xl font-bold hover:bg-ice transition-colors flex items-center space-x-2"
-      >
-        <span>Reservar</span>
-        <ChevronRight size={16} />
-      </button>
+    </div>
+    <div className="p-8 flex flex-col flex-grow">
+      <h3 className="text-2xl font-bold text-navy mb-2">{title}</h3>
+      <p className="text-ice font-bold text-sm uppercase tracking-widest mb-4">{route}</p>
+      <p className="text-slate-600 mb-6 flex-grow leading-relaxed italic text-sm">{desc}</p>
+      <div className="pt-6 border-t border-slate-50 mt-auto flex items-center justify-between">
+        <div>
+          <p className="text-xs text-slate-400 font-bold uppercase">Desde</p>
+          <p className="text-2xl font-bold text-navy">{price}</p>
+        </div>
+        <button 
+          onClick={() => window.open(`https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
+          className="bg-navy text-white px-6 py-3 rounded-xl font-bold hover:bg-ice transition-colors flex items-center space-x-2 shadow-md"
+        >
+          <span>Reservar</span>
+          <ChevronRight size={16} />
+        </button>
+      </div>
     </div>
   </div>
 );
@@ -37,7 +43,7 @@ const Transfers: React.FC = () => {
     <section id="traslados" className="py-24 bg-snow">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-ice font-bold tracking-widest uppercase text-sm mb-4">Puntualidad y Confort</h2>
+          <h2 className="text-ice font-bold tracking-widest uppercase text-sm mb-4">Viaje seguro en ruta</h2>
           <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6">Traslados Privados</h2>
           <div className="w-20 h-1 gradient-ice mx-auto rounded-full"></div>
         </div>
@@ -47,22 +53,25 @@ const Transfers: React.FC = () => {
             title="Aeropuerto FTE"
             route="Aeropuerto ⇄ Hotel"
             price="ARS $12.500"
-            desc="Recepción personalizada con cartel. Sin esperas. Traslado directo puerta a puerta en unidades con amplio maletero."
-            icon={<Plane size={32} />}
+            desc="Recepción personalizada con cartel. Traslado directo por la mítica Ruta 40 hasta su alojamiento."
+            icon={<Plane size={24} />}
+            image="https://images.unsplash.com/photo-1547155942-0f9c73338573?q=80&w=800&auto=format&fit=crop"
           />
           <TransferCard 
             title="Centro El Calafate"
-            route="Hoteles ⇄ Restaurantes/Centro"
+            route="Hoteles ⇄ Restaurantes"
             price="ARS $4.500"
-            desc="Moverte por la ciudad nunca fue tan cómodo. Servicio de transfer nocturno para cenas o compras en la Av. del Libertador."
-            icon={<Hotel size={32} />}
+            desc="Traslados urbanos en unidades climatizadas. Ideal para disfrutar la gastronomía local sin preocupaciones."
+            icon={<Hotel size={24} />}
+            image="https://images.unsplash.com/photo-1620067644910-3882f01f2e9d?q=80&w=800&auto=format&fit=crop"
           />
           <TransferCard 
             title="Terminal de Bus"
-            route="Terminal ⇄ Hoteles/Aeropuerto"
+            route="Terminal ⇄ Hoteles"
             price="ARS $6.000"
-            desc="Ideal para conexiones con El Chaltén o Puerto Natales. Puntualidad garantizada para que no pierdas tu próximo viaje."
-            icon={<MapPin size={32} />}
+            desc="Conexiones puntuales para sus viajes a El Chaltén o Puerto Natales. Servicio puerta a puerta."
+            icon={<MapPin size={24} />}
+            image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop"
           />
         </div>
       </div>

@@ -54,7 +54,7 @@ const AIAssistant: React.FC = () => {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && askGemini()}
               placeholder="Ej: ¿Cuánto se tarda del aeropuerto al centro?" 
-              className="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-ice outline-none transition-all pr-16"
+              className="w-full px-6 py-4 rounded-2xl border-2 border-slate-200 bg-white text-gray-900 placeholder:text-slate-400 focus:border-ice outline-none transition-all pr-16"
             />
             <button 
               onClick={askGemini}

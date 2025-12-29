@@ -4,7 +4,7 @@ import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton: React.FC = () => {
   const handleClick = () => {
-    window.open('https://wa.me/5492902123456?text=Hola! Me gustaría cotizar un traslado.', '_blank');
+    window.open('https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado', '_blank');
   };
 
   return (

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
+import Transfers from './components/Transfers';
+import Excursions from './components/Excursions';
 import Fleet from './components/Fleet';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -25,7 +26,8 @@ const App: React.FC = () => {
       <Header isScrolled={isScrolled} />
       <main className="flex-grow">
         <Hero />
-        <Services />
+        <Transfers />
+        <Excursions />
         <Fleet />
         <AIAssistant />
         <Contact />

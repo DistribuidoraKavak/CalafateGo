@@ -3,6 +3,8 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const whatsappUrl = "https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
+
   return (
     <section id="inicio" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay */}
@@ -24,14 +26,16 @@ const Hero: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
-            href="#servicios" 
-            className="w-full sm:w-auto px-8 py-4 gradient-ice rounded-xl font-bold text-lg shadow-2xl hover:brightness-110 transition-all hover:-translate-y-1 text-white"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-4 gradient-ice rounded-xl font-bold text-lg shadow-2xl hover:brightness-110 transition-all hover:-translate-y-1 text-white text-center"
           >
             Cotizar Traslado
           </a>
           <a 
-            href="#contacto" 
-            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl font-bold text-lg shadow-xl hover:bg-white/20 transition-all text-white"
+            href="#servicios" 
+            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl font-bold text-lg shadow-xl hover:bg-white/20 transition-all text-white text-center"
           >
             Ver Excursiones
           </a>

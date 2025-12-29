@@ -11,13 +11,13 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
 
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Traslados', href: '#servicios' },
-    { name: 'Excursiones', href: '#servicios' },
+    { name: 'Traslados', href: '#traslados' },
+    { name: 'Excursiones', href: '#excursiones' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5492902123456?text=Hola! Me gustaría cotizar un traslado.', '_blank');
+    window.open('https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado', '_blank');
   };
 
   return (

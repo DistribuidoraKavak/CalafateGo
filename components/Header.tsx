@@ -19,12 +19,13 @@ const Header: React.FC = () => {
   // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
+    window.scrollTo(0, 0); // Scroll to top on page change
   }, [location]);
 
+  // Only 3 main links: Inicio, Servicios, Contacto
   const navLinks = [
     { name: 'Inicio', to: '/' },
-    { name: 'Traslados', to: '/traslados' },
-    { name: 'Excursiones', to: '/excursiones' },
+    { name: 'Servicios', to: '/servicios' },
     { name: 'Contacto', to: '/contacto' },
   ];
 
@@ -33,6 +34,9 @@ const Header: React.FC = () => {
   };
 
   const isActive = (path: string) => {
+    if (path === '/servicios') {
+      return location.pathname.startsWith('/servicios');
+    }
     return location.pathname === path;
   };
 

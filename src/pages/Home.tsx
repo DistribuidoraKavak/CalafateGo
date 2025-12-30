@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mountain, Bus, MapPin } from 'lucide-react';
+import { ArrowRight, Bus, MapPin } from 'lucide-react';
 import heroGlaciar from '../assets/images/hero-glaciar.jpg';
+import TravelAssistant from '../../components/TravelAssistant';
 
 const Home: React.FC = () => {
     return (
@@ -29,10 +30,10 @@ const Home: React.FC = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                to="/traslados"
+                                to="/servicios"
                                 className="group flex items-center justify-center space-x-2 bg-ice text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-all duration-300 shadow-lg hover:shadow-ice/30"
                             >
-                                <span>Ver Traslados</span>
+                                <span>Ver Servicios</span>
                                 <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
                             </Link>
                             <Link
@@ -52,6 +53,9 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
+            {/* ======= TRAVEL ASSISTANT ======= */}
+            <TravelAssistant />
+
             {/* Services Preview Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-6">
@@ -61,43 +65,29 @@ const Home: React.FC = () => {
                         <div className="w-20 h-1 gradient-ice mx-auto rounded-full"></div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Service Card 1 */}
-                        <Link to="/traslados" className="group bg-snow rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        {/* Service Card 1 - Servicios (fusionado) */}
+                        <Link to="/servicios" className="group bg-snow rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
                             <div className="bg-glacier/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <Bus className="text-ice" size={32} />
                             </div>
-                            <h4 className="text-2xl font-bold text-navy mb-4">Traslados Privados</h4>
+                            <h4 className="text-2xl font-bold text-navy mb-4">Traslados y Excursiones</h4>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Aeropuerto, Terminal, Hoteles y más. Servicio puerta a puerta con vehículos modernos y conductores locales.
+                                Aeropuerto, Glaciar Perito Moreno, El Chaltén y más. Servicio puerta a puerta con vehículos modernos y conductores locales expertos.
                             </p>
                             <span className="text-ice font-bold flex items-center group-hover:gap-3 transition-all">
-                                Ver más <ArrowRight size={18} className="ml-2" />
+                                Ver servicios <ArrowRight size={18} className="ml-2" />
                             </span>
                         </Link>
 
-                        {/* Service Card 2 */}
-                        <Link to="/excursiones" className="group bg-snow rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <div className="bg-glacier/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                                <Mountain className="text-ice" size={32} />
-                            </div>
-                            <h4 className="text-2xl font-bold text-navy mb-4">Excursiones</h4>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                Glaciar Perito Moreno, El Chaltén, Navegaciones y más. Traslados exclusivos para las mejores experiencias.
-                            </p>
-                            <span className="text-ice font-bold flex items-center group-hover:gap-3 transition-all">
-                                Ver más <ArrowRight size={18} className="ml-2" />
-                            </span>
-                        </Link>
-
-                        {/* Service Card 3 */}
+                        {/* Service Card 2 - Contacto */}
                         <Link to="/contacto" className="group bg-snow rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl">
                             <div className="bg-glacier/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <MapPin className="text-ice" size={32} />
                             </div>
                             <h4 className="text-2xl font-bold text-navy mb-4">Reservá Ahora</h4>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Contactanos por WhatsApp o completá el formulario. Respuesta inmediata y atención personalizada.
+                                Contactanos por WhatsApp o completá el formulario. Respuesta inmediata y atención personalizada para planificar tu aventura.
                             </p>
                             <span className="text-ice font-bold flex items-center group-hover:gap-3 transition-all">
                                 Contactar <ArrowRight size={18} className="ml-2" />

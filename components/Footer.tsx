@@ -22,13 +22,18 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/traslados" className="hover:text-ice transition-colors">
-                  Traslados
+                <Link to="/servicios" className="hover:text-ice transition-colors">
+                  Servicios
                 </Link>
               </li>
               <li>
-                <Link to="/excursiones" className="hover:text-ice transition-colors">
-                  Excursiones
+                <Link to="/servicios?tab=traslados" className="hover:text-ice transition-colors pl-4 text-sm">
+                  → Traslados
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios?tab=excursiones" className="hover:text-ice transition-colors pl-4 text-sm">
+                  → Excursiones
                 </Link>
               </li>
               <li>

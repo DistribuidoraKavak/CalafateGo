@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import { Home, Traslados, Excursiones, Contacto } from './src/pages';
+import Home from './src/pages/Home';
+import ServicesPage from './src/pages/ServicesPage';
+import Contacto from './src/pages/Contacto';
 
 const App: React.FC = () => {
   return (
@@ -12,9 +14,11 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/traslados" element={<Traslados />} />
-          <Route path="/excursiones" element={<Excursiones />} />
+          <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/contacto" element={<Contacto />} />
+          {/* Redirect old routes to new unified services page */}
+          <Route path="/traslados" element={<ServicesPage />} />
+          <Route path="/excursiones" element={<ServicesPage />} />
         </Routes>
       </main>
       <Footer />

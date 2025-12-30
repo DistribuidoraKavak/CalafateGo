@@ -1,239 +1,170 @@
 import React, { useState } from 'react';
-import { MessageCircle, Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Instagram, Facebook, Twitter } from 'lucide-react';
 
 const Contacto: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',
-        service: '',
-        date: '',
+        phone: '', // Added phone field as requested by "professional" forms
         message: ''
     });
-    const [submitted, setSubmitted] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Build WhatsApp message
-        const msg = `Hola CalafateGo! Mi nombre es ${formData.name}.%0A%0AServicio: ${formData.service}%0AFecha: ${formData.date}%0A%0A${formData.message}%0A%0AContacto: ${formData.email} / ${formData.phone}`;
-        window.open(`https://wa.me/5492902123456?text=${msg}`, '_blank');
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+        // Construct WhatsApp message
+        const text = `Hola, mi nombre es ${formData.name}. Email: ${formData.email}. Tel: ${formData.phone}. Mensaje: ${formData.message}`;
+        window.open(`https://wa.me/5492902123456?text=${encodeURIComponent(text)}`, '_blank');
     };
 
     return (
-        <>
-            {/* Page Header */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-navy to-navy/90">
-                <div className="container mx-auto px-6 text-center">
-                    <p className="text-ice font-bold tracking-widest uppercase text-sm mb-4">Estamos para ayudarte</p>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Contactanos</h1>
-                    <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-                        Respondemos en minutos. Elegí el medio que más te guste y empezá a planificar tu aventura.
+        <div className="bg-slate-50 min-h-screen pt-32 pb-20">
+            <div className="container mx-auto px-6">
+
+                {/* Header Text */}
+                <div className="text-center mb-16">
+                    <h1 className="text-4xl md:text-5xl font-bold font-display text-navy mb-4">Hablemos de tu viaje</h1>
+                    <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+                        Estamos acá para ayudarte a planificar tu experiencia perfecta en la Patagonia. Contactanos por cualquier vía.
                     </p>
                 </div>
-            </section>
 
-            {/* Contact Methods */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-4 gap-6">
-                        <a
-                            href="https://wa.me/5492902123456"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-green-500 text-white rounded-2xl p-6 hover:-translate-y-1 transition-transform text-center shadow-lg hover:shadow-xl"
-                        >
-                            <MessageCircle size={40} className="mx-auto mb-4" />
-                            <h3 className="font-bold text-lg mb-1">WhatsApp</h3>
-                            <p className="text-green-100 text-sm">Respuesta inmediata</p>
-                        </a>
+                <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row max-w-6xl mx-auto">
 
-                        <a
-                            href="mailto:info@calafatego.com"
-                            className="bg-ice text-white rounded-2xl p-6 hover:-translate-y-1 transition-transform text-center shadow-lg hover:shadow-xl"
-                        >
-                            <Mail size={40} className="mx-auto mb-4" />
-                            <h3 className="font-bold text-lg mb-1">Email</h3>
-                            <p className="text-blue-100 text-sm">info@calafatego.com</p>
-                        </a>
+                    {/* LEFT COLUMN: INFO & MAP */}
+                    <div className="lg:w-5/12 bg-navy p-10 md:p-14 text-white relative overflow-hidden flex flex-col justify-between">
+                        {/* Blob Accents */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-ice/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-glacier/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
-                        <a
-                            href="tel:+5492902123456"
-                            className="bg-navy text-white rounded-2xl p-6 hover:-translate-y-1 transition-transform text-center shadow-lg hover:shadow-xl"
-                        >
-                            <Phone size={40} className="mx-auto mb-4" />
-                            <h3 className="font-bold text-lg mb-1">Teléfono</h3>
-                            <p className="text-slate-300 text-sm">+54 9 2902 123456</p>
-                        </a>
+                        <div className="relative z-10">
+                            <h3 className="text-2xl font-bold font-display mb-8">Información de Contacto</h3>
 
-                        <div className="bg-snow text-navy rounded-2xl p-6 text-center border border-slate-200">
-                            <Clock size={40} className="mx-auto mb-4 text-ice" />
-                            <h3 className="font-bold text-lg mb-1">Horario</h3>
-                            <p className="text-slate-500 text-sm">24/7 WhatsApp</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Form + Map */}
-            <section className="py-24 bg-snow">
-                <div className="container mx-auto px-6">
-                    <div className="grid lg:grid-cols-2 gap-12">
-                        {/* Form */}
-                        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-                            <h2 className="text-2xl font-bold text-navy mb-2">Envianos tu consulta</h2>
-                            <p className="text-slate-500 mb-8">Completá el formulario y te contactamos enseguida</p>
-
-                            {submitted ? (
-                                <div className="text-center py-12">
-                                    <CheckCircle size={64} className="mx-auto text-green-500 mb-4" />
-                                    <h3 className="text-xl font-bold text-navy mb-2">¡Mensaje enviado!</h3>
-                                    <p className="text-slate-500">WhatsApp debería abrirse. Te responderemos en minutos.</p>
-                                </div>
-                            ) : (
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-bold text-navy mb-2">Nombre completo *</label>
-                                            <input
-                                                type="text"
-                                                required
-                                                value={formData.name}
-                                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition"
-                                                placeholder="Tu nombre"
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-bold text-navy mb-2">Email *</label>
-                                            <input
-                                                type="email"
-                                                required
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition"
-                                                placeholder="tu@email.com"
-                                            />
-                                        </div>
+                            <ul className="space-y-8">
+                                <li className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 text-ice">
+                                        <Phone size={24} />
                                     </div>
-
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <label className="block text-sm font-bold text-navy mb-2">Teléfono / WhatsApp</label>
-                                            <input
-                                                type="tel"
-                                                value={formData.phone}
-                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition"
-                                                placeholder="+54 9 ..."
-                                            />
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-bold text-navy mb-2">Servicio *</label>
-                                            <select
-                                                required
-                                                value={formData.service}
-                                                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition bg-white"
-                                            >
-                                                <option value="">Seleccionar...</option>
-                                                <option value="Traslado Aeropuerto">Traslado Aeropuerto</option>
-                                                <option value="Traslado Terminal">Traslado Terminal</option>
-                                                <option value="Excursión Glaciar">Excursión Glaciar</option>
-                                                <option value="Excursión El Chaltén">Excursión El Chaltén</option>
-                                                <option value="Navegación">Navegación</option>
-                                                <option value="Otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
                                     <div>
-                                        <label className="block text-sm font-bold text-navy mb-2">Fecha aproximada</label>
-                                        <input
-                                            type="date"
-                                            value={formData.date}
-                                            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition"
-                                        />
+                                        <p className="text-sm text-slate-400 font-bold uppercase mb-1">Teléfono / WhatsApp</p>
+                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">+54 9 2902 12-3456</p>
                                     </div>
-
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 text-ice">
+                                        <Mail size={24} />
+                                    </div>
                                     <div>
-                                        <label className="block text-sm font-bold text-navy mb-2">Mensaje</label>
-                                        <textarea
-                                            rows={4}
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition resize-none"
-                                            placeholder="Contanos qué necesitás..."
-                                        ></textarea>
+                                        <p className="text-sm text-slate-400 font-bold uppercase mb-1">Email Corporativo</p>
+                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">reservas@calafatego.com</p>
                                     </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 text-ice">
+                                        <MapPin size={24} />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm text-slate-400 font-bold uppercase mb-1">Oficina Central</p>
+                                        <p className="text-lg font-semibold leading-snug">Av. del Libertador 1234<br />El Calafate, Santa Cruz</p>
+                                    </div>
+                                </li>
+                            </ul>
 
-                                    <button
-                                        type="submit"
-                                        className="w-full bg-ice text-white py-4 rounded-xl font-bold text-lg hover:bg-navy transition-colors flex items-center justify-center gap-2 shadow-lg"
-                                    >
-                                        <Send size={20} />
-                                        <span>Enviar por WhatsApp</span>
-                                    </button>
-                                </form>
-                            )}
-                        </div>
-
-                        {/* Map + Info */}
-                        <div>
-                            <div className="bg-white rounded-3xl overflow-hidden shadow-xl mb-8">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24176.88869299098!2d-72.28739105!3d-50.3378857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdbb0cc795ca3087%3A0x570c2c0c4a68e3cf!2sEl%20Calafate%2C%20Santa%20Cruz!5e0!3m2!1ses!2sar!4v1703889600000!5m2!1ses!2sar"
-                                    width="100%"
-                                    height="300"
-                                    style={{ border: 0 }}
-                                    allowFullScreen
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    title="Ubicación CalafateGo"
-                                ></iframe>
-                            </div>
-
-                            <div className="bg-white rounded-3xl p-8 shadow-xl">
-                                <h3 className="text-xl font-bold text-navy mb-6">Información de contacto</h3>
-                                <div className="space-y-4">
-                                    <div className="flex items-start gap-4">
-                                        <MapPin className="text-ice flex-shrink-0 mt-1" size={20} />
-                                        <div>
-                                            <p className="font-medium text-navy">Ubicación</p>
-                                            <p className="text-slate-500">El Calafate, Santa Cruz, Patagonia Argentina</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <Phone className="text-ice flex-shrink-0 mt-1" size={20} />
-                                        <div>
-                                            <p className="font-medium text-navy">Teléfono</p>
-                                            <p className="text-slate-500">+54 9 2902 123456</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <Mail className="text-ice flex-shrink-0 mt-1" size={20} />
-                                        <div>
-                                            <p className="font-medium text-navy">Email</p>
-                                            <p className="text-slate-500">info@calafatego.com</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <Clock className="text-ice flex-shrink-0 mt-1" size={20} />
-                                        <div>
-                                            <p className="font-medium text-navy">Horario de atención</p>
-                                            <p className="text-slate-500">WhatsApp: 24/7</p>
-                                            <p className="text-slate-500">Oficina: 8:00 - 20:00</p>
-                                        </div>
-                                    </div>
+                            <div className="mt-12">
+                                <p className="text-sm text-slate-400 font-bold uppercase mb-4">Seguinos</p>
+                                <div className="flex gap-4">
+                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Instagram size={20} /></a>
+                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Facebook size={20} /></a>
+                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Twitter size={20} /></a>
                                 </div>
                             </div>
                         </div>
+
+                        {/* Embedded Map */}
+                        <div className="mt-10 rounded-2xl overflow-hidden h-48 border border-white/10 shadow-lg relative z-10 grayscale hover:grayscale-0 transition-all duration-500">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20055.539763784!2d-72.28588046777342!3d-50.33798935408753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdb81c4e72506e67%3A0xc391136b6cb60029!2sEl%20Calafate%2C%20Santa%20Cruz!5e0!3m2!1ses!2sar!4v1703649033306!5m2!1ses!2sar"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
                     </div>
+
+                    {/* RIGHT COLUMN: FORM */}
+                    <div className="lg:w-7/12 p-10 md:p-14 bg-white">
+                        <h3 className="text-2xl font-bold font-display text-navy mb-6">Envianos un mensaje</h3>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-700">Nombre Completo</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Tu nombre"
+                                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-navy focus:border-ice focus:ring-4 focus:ring-ice/10 outline-none transition-all placeholder:text-slate-400"
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-700">Teléfono</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="+54 9..."
+                                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-navy focus:border-ice focus:ring-4 focus:ring-ice/10 outline-none transition-all placeholder:text-slate-400"
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700">Email</label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-navy focus:border-ice focus:ring-4 focus:ring-ice/10 outline-none transition-all placeholder:text-slate-400"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700">Consulta</label>
+                                <textarea
+                                    name="message"
+                                    rows={5}
+                                    placeholder="¿En qué podemos ayudarte?"
+                                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-navy focus:border-ice focus:ring-4 focus:ring-ice/10 outline-none transition-all placeholder:text-slate-400 resize-none"
+                                    onChange={handleChange}
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full bg-navy text-white px-8 py-4 rounded-xl font-bold hover:bg-ice transition-all shadow-lg hover:shadow-ice/30 flex items-center justify-center gap-2 transform hover:-translate-y-1"
+                            >
+                                <span>Enviar Mensaje</span>
+                                <Send size={20} />
+                            </button>
+                            <p className="text-center text-xs text-slate-400 mt-4">
+                                Te responderemos a la brevedad vía WhatsApp o Email.
+                            </p>
+                        </form>
+                    </div>
+
                 </div>
-            </section>
-        </>
+            </div>
+        </div>
     );
 };
 

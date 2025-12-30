@@ -1,34 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mountain, Plane, Cloud, Sparkles, ArrowRight, Send, Loader2, MessageCircle } from 'lucide-react';
+import { Sparkles, Send, Loader2, MessageCircle } from 'lucide-react';
 import { supabase } from '../src/supabaseClient';
 
 const TravelAssistant: React.FC = () => {
     const [inputMessage, setInputMessage] = useState('');
     const [aiResponse, setAiResponse] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [showChat, setShowChat] = useState(false);
 
-    const quickActions = [
-        {
-            label: 'Ir al Glaciar',
-            icon: <Mountain size={20} />,
-            link: '/servicios?tab=excursiones',
-            color: 'from-ice to-glacier'
-        },
-        {
-            label: 'Transfer Aeropuerto',
-            icon: <Plane size={20} />,
-            link: '/servicios?tab=traslados',
-            color: 'from-navy to-ice'
-        },
-        {
-            label: 'Ver Clima',
-            icon: <Cloud size={20} />,
-            onClick: () => window.open('https://www.weather.com/es-AR/tiempo/hoy/l/-50.34,-72.26', '_blank'),
-            color: 'from-glacier to-navy'
-        },
-    ];
+    // Initial greeting or empty state can be handled here if needed
 
     // Function to call Supabase Edge Function
     const askAI = async () => {
@@ -54,8 +34,7 @@ const TravelAssistant: React.FC = () => {
             }
         } catch (error) {
             console.error('Error calling AI:', error);
-            // Mensaje amigable cuando falla la IA (probablemente por cuota 429)
-            setAiResponse('El asistente está recibiendo muchas consultas en este momento (Límite de cuota alcanzado). Por favor, intentá de nuevo más tarde o contactanos directamente por WhatsApp para una respuesta inmediata.');
+            setAiResponse('El asistente está recibiendo muchas consultas (Límite de cuota). Por favor, contactanos por WhatsApp para respuesta inmediata.');
         } finally {
             setIsLoading(false);
         }
@@ -69,129 +48,77 @@ const TravelAssistant: React.FC = () => {
     };
 
     return (
-        <section className="py-16 bg-gradient-to-b from-navy to-slate-900 relative overflow-hidden">
-            {/* Background decorations */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-ice/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-80 h-80 bg-glacier/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        <div className="w-full max-w-2xl mx-auto">
+            {/* Glassmorphism Card */}
+            <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 border border-white/50">
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl">
-                    {/* Header */}
-                    <div className="flex items-center justify-center gap-3 mb-6">
-                        <div className="p-3 bg-ice/20 rounded-2xl">
-                            <Sparkles className="text-ice" size={28} />
-                        </div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-white">
-                            Asistente de Viaje
-                        </h2>
+                {/* Header of the Card */}
+                <div className="flex items-center gap-3 mb-6">
+                    <div className="p-2 bg-gradient-to-br from-ice to-glacier rounded-lg shadow-sm">
+                        <Sparkles className="text-white" size={24} />
                     </div>
+                    <div>
+                        <h3 className="text-xl font-bold text-navy">Asistente CalafateGo</h3>
+                        <p className="text-sm text-slate-500">Tu guía inteligente en la Patagonia</p>
+                    </div>
+                </div>
 
-                    {/* Question */}
-                    <p className="text-center text-xl md:text-2xl text-slate-200 mb-8">
-                        ¿Qué necesitás en <span className="text-ice font-bold">El Calafate</span>?
-                    </p>
+                {/* Chat Input Area */}
+                <div className="relative mb-6">
+                    <input
+                        type="text"
+                        value={inputMessage}
+                        onChange={(e) => setInputMessage(e.target.value)}
+                        onKeyDown={handleKeyPress}
+                        placeholder="Ej: ¿Cuánto cuesta ir al Glaciar?"
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 text-navy placeholder:text-slate-400 focus:border-ice focus:ring-2 focus:ring-ice/20 outline-none transition-all pr-14 shadow-inner"
+                        disabled={isLoading}
+                    />
+                    <button
+                        onClick={askAI}
+                        disabled={isLoading || !inputMessage.trim()}
+                        className="absolute right-2 top-2 bottom-2 aspect-square bg-navy text-white rounded-lg hover:bg-glacier transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md"
+                    >
+                        {isLoading ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
+                    </button>
+                </div>
 
-                    {/* Quick Action Buttons */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8">
-                        {quickActions.map((action, index) => (
-                            action.onClick ? (
-                                <button
-                                    key={index}
-                                    onClick={action.onClick}
-                                    className={`group bg-gradient-to-r ${action.color} p-5 rounded-2xl text-white font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3`}
-                                >
-                                    {action.icon}
-                                    <span>{action.label}</span>
-                                    <ArrowRight size={18} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </button>
-                            ) : (
-                                <Link
-                                    key={index}
-                                    to={action.link!}
-                                    className={`group bg-gradient-to-r ${action.color} p-5 rounded-2xl text-white font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-3`}
-                                >
-                                    {action.icon}
-                                    <span>{action.label}</span>
-                                    <ArrowRight size={18} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                </Link>
-                            )
+                {/* AI Response Area */}
+                {aiResponse && (
+                    <div className="bg-ice/10 rounded-xl p-5 border border-ice/20 mb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                        <div className="flex items-start gap-3">
+                            <Sparkles size={18} className="text-glacier mt-1 flex-shrink-0" />
+                            <p className="text-navy/80 leading-relaxed text-sm md:text-base">{aiResponse}</p>
+                        </div>
+                    </div>
+                )}
+
+                {/* Suggestion Chips */}
+                {!aiResponse && (
+                    <div className="flex flex-wrap gap-2 justify-center">
+                        {['¿Precios de traslados?', '¿Qué ropa llevar?', 'Clima en el Glaciar'].map((suggestion, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setInputMessage(suggestion)}
+                                className="text-xs md:text-sm text-slate-600 bg-slate-100 hover:bg-ice/20 hover:text-navy px-3 py-1.5 rounded-full border border-slate-200 hover:border-ice/30 transition-all font-medium"
+                            >
+                                {suggestion}
+                            </button>
                         ))}
                     </div>
+                )}
 
-                    {/* Divider */}
-                    <div className="flex items-center gap-4 max-w-3xl mx-auto mb-8">
-                        <div className="flex-1 h-px bg-white/20"></div>
-                        <button
-                            onClick={() => setShowChat(!showChat)}
-                            className="flex items-center gap-2 text-ice hover:text-white transition-colors text-sm font-medium"
-                        >
-                            <MessageCircle size={18} />
-                            {showChat ? 'Ocultar chat' : 'Preguntale a nuestra IA'}
-                        </button>
-                        <div className="flex-1 h-px bg-white/20"></div>
+                {/* WhatsApp Fallback */}
+                {aiResponse && (
+                    <div className="text-center mt-4">
+                        <Link to="/contacto" className="text-sm text-glacier hover:text-navy font-medium inline-flex items-center gap-1 transition-colors">
+                            <MessageCircle size={14} />
+                            ¿Necesitás hablar con un humano?
+                        </Link>
                     </div>
-
-                    {/* AI Chat Section */}
-                    {showChat && (
-                        <div className="max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-300">
-                            {/* Input */}
-                            <div className="relative mb-4">
-                                <input
-                                    type="text"
-                                    value={inputMessage}
-                                    onChange={(e) => setInputMessage(e.target.value)}
-                                    onKeyDown={handleKeyPress}
-                                    placeholder="Ej: ¿Cuánto se tarda del aeropuerto al centro?"
-                                    className="w-full px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 focus:border-ice focus:bg-white/15 outline-none transition-all pr-16"
-                                    disabled={isLoading}
-                                />
-                                <button
-                                    onClick={askAI}
-                                    disabled={isLoading || !inputMessage.trim()}
-                                    className="absolute right-2 top-2 bottom-2 bg-ice text-white px-5 rounded-xl hover:bg-glacier transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                                >
-                                    {isLoading ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
-                                </button>
-                            </div>
-
-                            {/* AI Response */}
-                            {aiResponse && (
-                                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-ice/30 animate-in fade-in slide-in-from-bottom-2 duration-500">
-                                    <div className="flex items-start gap-3">
-                                        <div className="p-2 bg-ice/20 rounded-lg flex-shrink-0">
-                                            <Sparkles size={18} className="text-ice" />
-                                        </div>
-                                        <p className="text-white leading-relaxed">{aiResponse}</p>
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Suggestion chips */}
-                            <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                                {['¿Cuánto cuesta ir al Glaciar?', '¿Qué ropa llevar?', '¿Mejor época para visitar?'].map((suggestion, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => {
-                                            setInputMessage(suggestion);
-                                        }}
-                                        className="text-sm text-slate-300 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 hover:border-ice/30 transition-all"
-                                    >
-                                        {suggestion}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Subtitle */}
-                    <p className="text-center text-slate-400 mt-8 text-sm">
-                        {!showChat && (
-                            <>Elegí una opción o <Link to="/contacto" className="text-ice hover:underline">contactanos por WhatsApp</Link> para atención personalizada</>
-                        )}
-                    </p>
-                </div>
+                )}
             </div>
-        </section>
+        </div>
     );
 };
 

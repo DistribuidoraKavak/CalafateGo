@@ -22,10 +22,10 @@ const Header: React.FC = () => {
     window.scrollTo(0, 0); // Scroll to top on page change
   }, [location]);
 
-  // Only 3 main links: Inicio, Servicios, Contacto
+  // Only 3 main links: Inicio, Traslados y Excursiones, Contacto
   const navLinks = [
     { name: 'Inicio', to: '/' },
-    { name: 'Servicios', to: '/servicios' },
+    { name: 'Traslados y Excursiones', to: '/servicios' },
     { name: 'Contacto', to: '/contacto' },
   ];
 
@@ -63,8 +63,8 @@ const Header: React.FC = () => {
               key={link.name}
               to={link.to}
               className={`font-medium transition-colors hover:text-ice ${isActive(link.to)
-                  ? 'text-ice'
-                  : headerBg ? 'text-navy' : 'text-white'
+                ? 'text-ice'
+                : headerBg ? 'text-navy' : 'text-white'
                 }`}
             >
               {link.name}
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
             <Link
               key={link.name}
               to={link.to}
-              className={`text-2xl font-semibold hover:text-ice ${isActive(link.to) ? 'text-ice' : 'text-navy'
+              className={`text-xl font-semibold hover:text-ice ${isActive(link.to) ? 'text-ice' : 'text-navy'
                 }`}
             >
               {link.name}

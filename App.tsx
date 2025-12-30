@@ -1,36 +1,21 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Transfers from './components/Transfers';
-import Excursions from './components/Excursions';
-import Fleet from './components/Fleet';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import AIAssistant from './components/AIAssistant';
+import { Home, Traslados, Excursiones, Contacto } from './src/pages';
 
 const App: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col text-navy">
-      <Header isScrolled={isScrolled} />
+      <Header />
       <main className="flex-grow">
-        <Hero />
-        <Transfers />
-        <Excursions />
-        <Fleet />
-        <AIAssistant />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/traslados" element={<Traslados />} />
+          <Route path="/excursiones" element={<Excursiones />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Routes>
       </main>
       <Footer />
       <WhatsAppButton />

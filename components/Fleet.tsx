@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ShieldCheck, Snowflake, Users, Wifi } from 'lucide-react';
+import flotaInterior from '../src/assets/images/flota-interior.png';
 
 const Fleet: React.FC = () => {
   const features = [
@@ -19,7 +20,7 @@ const Fleet: React.FC = () => {
             <p className="text-slate-600 mb-10 text-lg leading-relaxed">
               En CalafateGo, entendemos que tu viaje comienza en el traslado. Por eso, disponemos de una flota de vehículos preparados para las exigencias de la Patagonia, garantizando suavidad y seguridad en cada kilómetro.
             </p>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {features.map((f, i) => (
                 <div key={i} className="flex space-x-4">
@@ -34,12 +35,12 @@ const Fleet: React.FC = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="lg:w-1/2 relative">
             <div className="absolute -inset-4 bg-glacier/30 rounded-full blur-3xl opacity-50"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1531630403303-34676be461ec?q=80&w=1200&auto=format&fit=crop" 
-              alt="Transporte moderno en paisaje patagónico de El Calafate" 
+            <img
+              src={flotaInterior}
+              alt="Transporte moderno en paisaje patagónico de El Calafate"
               className="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full"
             />
           </div>

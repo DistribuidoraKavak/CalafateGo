@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -12,27 +12,43 @@ const Footer: React.FC = () => {
               Empresa líder en servicios de transporte privado y turismo receptivo en la provincia de Santa Cruz, Argentina. Calidad, puntualidad y pasión por el servicio.
             </p>
           </div>
-          
+
           <div>
-            <h4 className="text-lg font-bold mb-6">Links Rápidos</h4>
+            <h4 className="text-lg font-bold mb-6">Navegación</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#inicio" className="hover:text-ice transition-colors">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-ice transition-colors">Traslados</a></li>
-              <li><a href="#servicios" className="hover:text-ice transition-colors">Excursiones</a></li>
-              <li><a href="#contacto" className="hover:text-ice transition-colors">Contacto</a></li>
+              <li>
+                <Link to="/" className="hover:text-ice transition-colors">
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/traslados" className="hover:text-ice transition-colors">
+                  Traslados
+                </Link>
+              </li>
+              <li>
+                <Link to="/excursiones" className="hover:text-ice transition-colors">
+                  Excursiones
+                </Link>
+              </li>
+              <li>
+                <Link to="/contacto" className="hover:text-ice transition-colors">
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-bold mb-6">Legal</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#" className="hover:text-ice transition-colors">Términos y Condiciones</a></li>
-              <li><a href="#" className="hover:text-ice transition-colors">Política de Privacidad</a></li>
-              <li><a href="#" className="hover:text-ice transition-colors">Preguntas Frecuentes</a></li>
+              <li><Link to="/terminos" className="hover:text-ice transition-colors">Términos y Condiciones</Link></li>
+              <li><Link to="/privacidad" className="hover:text-ice transition-colors">Política de Privacidad</Link></li>
+              <li><Link to="/faq" className="hover:text-ice transition-colors">Preguntas Frecuentes</Link></li>
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-8 border-t border-white/10 text-center text-slate-500 text-sm">
           <p>© {new Date().getFullYear()} CalafateGo. Todos los derechos reservados. Desarrollado con ❤️ en la Patagonia.</p>
         </div>

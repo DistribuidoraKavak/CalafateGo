@@ -1,17 +1,26 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
+import heroGlaciar from '../src/assets/images/hero-glaciar.jpg';
 
 const Hero: React.FC = () => {
   const whatsappUrl = "https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
 
+  const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="inicio" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Image Overlay - Glaciar Perito Moreno Panorámico */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1518111663148-372559e74283?q=80&w=2070&auto=format&fit=crop")',
+        style={{
+          backgroundImage: `url(${heroGlaciar})`,
         }}
         aria-label="Vista panorámica del Glaciar Perito Moreno en El Calafate"
       >
@@ -26,7 +35,7 @@ const Hero: React.FC = () => {
           Conectamos el Aeropuerto (FTE), Hoteles y el Glaciar con puntualidad, confort y la mejor atención personalizada.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
+          <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -34,21 +43,23 @@ const Hero: React.FC = () => {
           >
             Cotizar Traslado
           </a>
-          <a 
-            href="#excursiones" 
+          <Link
+            to="/#excursiones"
+            onClick={(e) => handleScrollClick(e, 'excursiones')}
             className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 rounded-xl font-bold text-lg shadow-xl hover:bg-white/20 transition-all text-white text-center"
           >
             Ver Excursiones
-          </a>
+          </Link>
         </div>
       </div>
 
-      <a 
-        href="#traslados" 
+      <Link
+        to="/#traslados"
+        onClick={(e) => handleScrollClick(e, 'traslados')}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce"
       >
         <ChevronDown size={32} />
-      </a>
+      </Link>
     </section>
   );
 };

@@ -1,9 +1,12 @@
 
 import React from 'react';
 import { Plane, Hotel, MapPin, ChevronRight } from 'lucide-react';
+import trasladoVan from '../src/assets/images/traslado-van.jpg';
+import transferCentro from '../src/assets/images/transfer-centro.png';
+import transferTerminal from '../src/assets/images/transfer-terminal.png';
 
-const TransferCard: React.FC<{ 
-  title: string; 
+const TransferCard: React.FC<{
+  title: string;
   route: string;
   price: string;
   desc: string;
@@ -26,7 +29,7 @@ const TransferCard: React.FC<{
           <p className="text-xs text-slate-400 font-bold uppercase">Desde</p>
           <p className="text-2xl font-bold text-navy">{price}</p>
         </div>
-        <button 
+        <button
           onClick={() => window.open(`https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
           className="bg-navy text-white px-6 py-3 rounded-xl font-bold hover:bg-ice transition-colors flex items-center space-x-2 shadow-md"
         >
@@ -49,29 +52,29 @@ const Transfers: React.FC = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <TransferCard 
+          <TransferCard
             title="Aeropuerto FTE"
             route="Aeropuerto ⇄ Hotel"
             price="ARS $12.500"
             desc="Recepción personalizada con cartel. Traslado directo por la mítica Ruta 40 hasta su alojamiento."
             icon={<Plane size={24} />}
-            image="https://images.unsplash.com/photo-1547155942-0f9c73338573?q=80&w=800&auto=format&fit=crop"
+            image={trasladoVan}
           />
-          <TransferCard 
+          <TransferCard
             title="Centro El Calafate"
             route="Hoteles ⇄ Restaurantes"
             price="ARS $4.500"
             desc="Traslados urbanos en unidades climatizadas. Ideal para disfrutar la gastronomía local sin preocupaciones."
             icon={<Hotel size={24} />}
-            image="https://images.unsplash.com/photo-1620067644910-3882f01f2e9d?q=80&w=800&auto=format&fit=crop"
+            image={transferCentro}
           />
-          <TransferCard 
+          <TransferCard
             title="Terminal de Bus"
             route="Terminal ⇄ Hoteles"
             price="ARS $6.000"
             desc="Conexiones puntuales para sus viajes a El Chaltén o Puerto Natales. Servicio puerta a puerta."
             icon={<MapPin size={24} />}
-            image="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop"
+            image={transferTerminal}
           />
         </div>
       </div>

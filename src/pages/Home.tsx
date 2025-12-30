@@ -1,100 +1,161 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bus, MapPin, Calendar, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Bus, MapPin, Calendar, ShieldCheck, Star } from 'lucide-react';
 import heroGlaciar from '../assets/images/hero-glaciar.jpg';
 import TravelAssistant from '../../components/TravelAssistant';
 
 const Home: React.FC = () => {
     return (
-        <>
-            {/* ======= HERO SECTION ======= */}
-            <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-                {/* Background Image with Overlay */}
+        <div className="font-sans antialiased text-slate-900 bg-white">
+            {/* ======= HERO SECTION (Full Screen Parallax) ======= */}
+            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+                {/* Parallax Background */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
                     style={{ backgroundImage: `url(${heroGlaciar})` }}
                 >
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 bg-black/40"></div>
                 </div>
 
                 <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-                    <div className="max-w-4xl mx-auto animate-fade-in-up">
-                        <p className="text-white/90 font-bold tracking-[0.2em] uppercase mb-6 text-sm md:text-base drop-shadow-md">
+                    <div className="max-w-5xl mx-auto animate-fade-in-up">
+                        <p className="text-white/90 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md font-display">
                             Patagonia Argentina · El Calafate
                         </p>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-2xl font-sans tracking-tight">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-none drop-shadow-2xl font-display tracking-wide">
                             Tu Experiencia <br />
-                            en la Patagonia
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white">en la Patagonia</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
-                            Traslados privados y excursiones exclusivas diseñadas a tu medida.
+                        <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-sans">
+                            Descubre la tierra de los glaciares con la comodidad y exclusividad que mereces.
                         </p>
 
                         <Link
                             to="/servicios"
-                            className="inline-flex items-center space-x-3 bg-ice text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-ice/50"
+                            className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-white/20 backdrop-blur-sm"
                         >
-                            <span>Ver Servicios y Tarifas</span>
+                            <span>Explorar Experiencias</span>
                             <ArrowRight size={20} />
                         </Link>
                     </div>
                 </div>
-            </section>
 
-            {/* ======= ASSISTANT SECTION (Overlap) ======= */}
-            <section className="relative z-20 px-4 md:px-6">
-                <div className="container mx-auto">
-                    <div className="-mt-24 md:-mt-32 max-w-4xl mx-auto">
-                        <TravelAssistant />
+                {/* Scroll Down Indicator */}
+                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                        <div className="w-1 h-2 bg-white rounded-full mt-2"></div>
                     </div>
                 </div>
             </section>
 
-            {/* ======= SERVICES PREVIEW ======= */}
-            <section className="py-24 bg-slate-50 pt-32"> {/* Added pt-32 to account for overlap space */}
+            {/* ======= CONCIERGE SECTION (Split & Dark) ======= */}
+            <section className="bg-navy py-24 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/3"></div>
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+
+                        {/* Left: Text */}
+                        <div className="lg:w-1/2 text-left">
+                            <div className="flex items-center gap-2 mb-4">
+                                <Star className="text-ice fill-ice" size={20} />
+                                <span className="text-ice font-bold tracking-widest uppercase text-sm">Servicio Premium</span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display tracking-tight leading-tight">
+                                Tu Concierge Digital <br />
+                                <span className="text-slate-400">Personalizado</span>
+                            </h2>
+                            <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl">
+                                No solo te llevamos, te asesoramos. Preguntale a nuestro asistente inteligente sobre:
+                            </p>
+                            <ul className="space-y-4 mb-8">
+                                {[
+                                    'Estado del tiempo en tiempo real',
+                                    'Recomendaciones de vestimenta técnica',
+                                    'Tiempos exactos de traslado',
+                                    'Mejores horarios para visitar el Glaciar'
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-center text-slate-300">
+                                        <div className="w-6 h-6 rounded-full bg-ice/20 flex items-center justify-center mr-3 text-ice">
+                                            <ShieldCheck size={14} />
+                                        </div>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Right: Assistant Component */}
+                        <div className="lg:w-1/2 w-full">
+                            <div className="relative">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-ice to-glacier rounded-3xl blur opacity-30"></div>
+                                <div className="relative">
+                                    <TravelAssistant />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ======= SERVICES PREVIEW (Grid & Hover Effects) ======= */}
+            <section className="py-24 bg-slate-50">
                 <div className="container mx-auto px-6">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 max-w-3xl mx-auto">
                         <h2 className="text-navy font-bold tracking-widest uppercase text-sm mb-3">Nuestra Propuesta</h2>
-                        <h3 className="text-3xl md:text-4xl font-bold text-navy mb-6">Viajá con Excelencia</h3>
-                        <div className="w-16 h-1 bg-ice mx-auto rounded-full"></div>
+                        <h3 className="text-4xl md:text-5xl font-bold text-navy mb-6 font-display">Viajá con Excelencia</h3>
+                        <p className="text-slate-600 text-lg">
+                            Seleccionamos las mejores experiencias y garantizamos traslados impecables para que tu única preocupación sea disfrutar.
+                        </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-                        {/* Card 1: Traslados con estilo */}
-                        <Link to="/servicios?tab=traslados" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block">
-                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <Bus size={180} className="text-navy" />
+                        {/* Card 1: Traslados */}
+                        <Link to="/servicios?tab=traslados" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl">
+                            {/* Background Image Placeholder - In real app use specific images */}
+                            <div className="absolute inset-0 bg-slate-900">
+                                {/* Simulating an image with pattern/icon for now as we might lack specific stock photos for each card background */}
+                                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-700 to-slate-900"></div>
+                                <Bus size={300} className="absolute -bottom-20 -right-20 text-white/5 group-hover:scale-110 transition-transform duration-700" />
                             </div>
-                            <div className="p-10 relative z-10">
-                                <div className="w-14 h-14 bg-ice/10 rounded-2xl flex items-center justify-center mb-6 text-ice">
+
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+                            {/* Content */}
+                            <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
+                                <div className="w-14 h-14 bg-ice rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg shadow-ice/30 group-hover:scale-110 transition-transform duration-500">
                                     <Bus size={28} />
                                 </div>
-                                <h4 className="text-2xl font-bold text-navy mb-3">Traslados Privados</h4>
-                                <p className="text-slate-600 mb-6 leading-relaxed">
-                                    Olvidate de las esperas. Te recibimos en el aeropuerto y te llevamos directo a tu hotel con la máxima comodidad y seguridad.
+                                <h4 className="text-3xl font-bold text-white mb-3 font-display">Traslados Privados</h4>
+                                <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
+                                    Servicio puerta a puerta desde Aeropuerto FTE y hoteles. Vehículos de alta gama, climatizados y con choferes profesionales.
                                 </p>
-                                <span className="inline-flex items-center text-ice font-bold group-hover:gap-2 transition-all">
-                                    Ver flota y tarifas <ArrowRight size={18} className="ml-2" />
+                                <span className="inline-flex items-center text-white font-bold border-b border-ice pb-1">
+                                    Ver Tarifas <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
                                 </span>
                             </div>
                         </Link>
 
                         {/* Card 2: Excursiones */}
-                        <Link to="/servicios?tab=excursiones" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block">
-                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <MapPin size={180} className="text-navy" />
+                        <Link to="/servicios?tab=excursiones" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl">
+                            <div className="absolute inset-0 bg-slate-800">
+                                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 to-slate-900"></div>
+                                <MapPin size={300} className="absolute -bottom-20 -right-20 text-white/5 group-hover:scale-110 transition-transform duration-700" />
                             </div>
-                            <div className="p-10 relative z-10">
-                                <div className="w-14 h-14 bg-ice/10 rounded-2xl flex items-center justify-center mb-6 text-ice">
+
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
+                            <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
+                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-navy shadow-lg group-hover:scale-110 transition-transform duration-500">
                                     <Mountain size={28} />
                                 </div>
-                                <h4 className="text-2xl font-bold text-navy mb-3">Excursiones Premium</h4>
-                                <p className="text-slate-600 mb-6 leading-relaxed">
-                                    Glaciar Perito Moreno, El Chaltén y navegaciones. Viví la naturaleza sin prisas y con guías expertos locales.
+                                <h4 className="text-3xl font-bold text-white mb-3 font-display">Excursiones Premium</h4>
+                                <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
+                                    Navegaciones exclusivas, trekking en El Chaltén y la majestuosidad del Perito Moreno. Viví la Patagonia a tu ritmo.
                                 </p>
-                                <span className="inline-flex items-center text-ice font-bold group-hover:gap-2 transition-all">
-                                    Explorar aventuras <ArrowRight size={18} className="ml-2" />
+                                <span className="inline-flex items-center text-white font-bold border-b border-white pb-1">
+                                    Ver Experiencias <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
                                 </span>
                             </div>
                         </Link>
@@ -102,53 +163,20 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* ======= FEATURES / VALUE PROP ======= */}
-            <section className="py-20 bg-white">
+            {/* ======= CTA FOOTER ======= */}
+            <section className="py-24 bg-white relative overflow-hidden text-center">
                 <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-3 gap-12 text-center">
-                        <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 bg-navy/5 rounded-full flex items-center justify-center mb-6 text-navy">
-                                <ShieldCheck size={32} />
-                            </div>
-                            <h5 className="text-xl font-bold text-navy mb-3">Seguridad Garantizada</h5>
-                            <p className="text-slate-600">Vehículos habilitados y conductores profesionales con amplia experiencia en rutas patagónicas.</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 bg-navy/5 rounded-full flex items-center justify-center mb-6 text-navy">
-                                <Calendar size={32} />
-                            </div>
-                            <h5 className="text-xl font-bold text-navy mb-3">Puntualidad Absoluta</h5>
-                            <p className="text-slate-600">Tu tiempo vale. Organizamos tu logística para que aproveches cada minuto de tu viaje.</p>
-                        </div>
-                        <div className="flex flex-col items-center">
-                            <div className="w-16 h-16 bg-navy/5 rounded-full flex items-center justify-center mb-6 text-navy">
-                                <MapPin size={32} />
-                            </div>
-                            <h5 className="text-xl font-bold text-navy mb-3">Conocimiento Local</h5>
-                            <p className="text-slate-600">Somos de acá. Te brindamos los mejores consejos para que vivas El Calafate como un local.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ======= CTA SECTION ======= */}
-            <section className="py-20 bg-navy relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
-                <div className="container mx-auto px-6 text-center relative z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para tu viaje soñado?</h2>
-                    <p className="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
-                        Contactanos hoy mismo y dejanos organizar tu llegada a la Tierra de Glaciares.
-                    </p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-navy mb-8 font-display">¿Listo para comenzar?</h2>
                     <Link
                         to="/contacto"
-                        className="inline-flex items-center space-x-2 bg-ice text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-all shadow-lg hover:shadow-ice/30 hover:-translate-y-1"
+                        className="inline-flex items-center space-x-3 bg-navy text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
                     >
-                        <span>Reservar Ahora</span>
+                        <span>Contactar Especialista</span>
                         <ArrowRight size={20} />
                     </Link>
                 </div>
             </section>
-        </>
+        </div>
     );
 };
 

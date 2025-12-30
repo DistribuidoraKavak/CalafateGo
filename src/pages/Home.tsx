@@ -8,54 +8,50 @@ const Home: React.FC = () => {
     return (
         <>
             {/* ======= HERO SECTION ======= */}
-            <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-32 md:py-0">
+            <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
                 {/* Background Image with Overlay */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
                     style={{ backgroundImage: `url(${heroGlaciar})` }}
                 >
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
+                    <div className="absolute inset-0 bg-black/30"></div>
                 </div>
 
-                <div className="relative z-10 container mx-auto px-4 md:px-6">
-                    <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
+                <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
+                    <div className="max-w-4xl mx-auto animate-fade-in-up">
+                        <p className="text-white/90 font-bold tracking-[0.2em] uppercase mb-6 text-sm md:text-base drop-shadow-md">
+                            Patagonia Argentina · El Calafate
+                        </p>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight drop-shadow-2xl font-sans tracking-tight">
+                            Tu Experiencia <br />
+                            en la Patagonia
+                        </h1>
+                        <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
+                            Traslados privados y excursiones exclusivas diseñadas a tu medida.
+                        </p>
 
-                        {/* Title & Subtitle */}
-                        <div className="mb-10 animate-fade-in-up">
-                            <p className="text-ice font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-base drop-shadow-md">
-                                Patagonia Argentina · El Calafate
-                            </p>
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-xl font-sans">
-                                Tu Experiencia en la Patagonia <br className="hidden md:block" />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-ice to-white">Comienza Aquí</span>
-                            </h1>
-                            <p className="text-lg md:text-2xl text-slate-100 mb-0 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-                                Traslados privados y excursiones exclusivas diseñadas para vos.
-                            </p>
-                        </div>
+                        <Link
+                            to="/servicios"
+                            className="inline-flex items-center space-x-3 bg-ice text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-ice/50"
+                        >
+                            <span>Ver Servicios y Tarifas</span>
+                            <ArrowRight size={20} />
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
-                        {/* Central Assistant Integration */}
-                        <div className="w-full animate-fade-in-up delay-[200ms]">
-                            <TravelAssistant />
-                        </div>
-
-                        {/* Quick Links below assistant */}
-                        <div className="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in-up delay-[400ms]">
-                            <Link
-                                to="/servicios"
-                                className="group flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-3 rounded-full font-medium hover:bg-white/20 transition-all hover:scale-105"
-                            >
-                                <span>Ver Todos los Servicios</span>
-                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </div>
-
+            {/* ======= ASSISTANT SECTION (Overlap) ======= */}
+            <section className="relative z-20 px-4 md:px-6">
+                <div className="container mx-auto">
+                    <div className="-mt-24 md:-mt-32 max-w-4xl mx-auto">
+                        <TravelAssistant />
                     </div>
                 </div>
             </section>
 
             {/* ======= SERVICES PREVIEW ======= */}
-            <section className="py-24 bg-slate-50">
+            <section className="py-24 bg-slate-50 pt-32"> {/* Added pt-32 to account for overlap space */}
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-navy font-bold tracking-widest uppercase text-sm mb-3">Nuestra Propuesta</h2>
@@ -66,9 +62,9 @@ const Home: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
                         {/* Card 1: Traslados con estilo */}
-                        <Link to="/servicios?tab=traslados" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <Bus size={120} className="text-navy" />
+                        <Link to="/servicios?tab=traslados" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block">
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <Bus size={180} className="text-navy" />
                             </div>
                             <div className="p-10 relative z-10">
                                 <div className="w-14 h-14 bg-ice/10 rounded-2xl flex items-center justify-center mb-6 text-ice">
@@ -85,13 +81,13 @@ const Home: React.FC = () => {
                         </Link>
 
                         {/* Card 2: Excursiones */}
-                        <Link to="/servicios?tab=excursiones" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <MapPin size={120} className="text-navy" />
+                        <Link to="/servicios?tab=excursiones" className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 block">
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <MapPin size={180} className="text-navy" />
                             </div>
                             <div className="p-10 relative z-10">
                                 <div className="w-14 h-14 bg-ice/10 rounded-2xl flex items-center justify-center mb-6 text-ice">
-                                    <Mountain size={28} /> {/* Using Mountain icon manually since import might be missing */}
+                                    <Mountain size={28} />
                                 </div>
                                 <h4 className="text-2xl font-bold text-navy mb-3">Excursiones Premium</h4>
                                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -156,7 +152,7 @@ const Home: React.FC = () => {
     );
 };
 
-// Helper component for Mountain icon since it was missing in lucide import
+// Helper component for Mountain icon
 const Mountain = ({ size = 24, className = "" }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

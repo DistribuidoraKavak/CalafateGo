@@ -1,66 +1,73 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Bus, Mountain, ArrowRight, CheckCircle2, MapPin, ExternalLink } from 'lucide-react';
+import { Bus, Mountain, ExternalLink, Users, Clock, MapPin } from 'lucide-react';
 
-// ============== CARD COMPONENT (HORIZONTAL DESKTOP / VERTICAL MOBILE) ==============
+// ============== CARD COMPONENT ==============
 interface ServiceData {
     title: string;
     desc: string;
-    image: string;
+    imageUrl: string;
     whatsappText: string;
-    tags?: string[];
+    meta: { icon: any, text: string }[];
+    price?: string;
 }
 
-const ServiceCard: React.FC<ServiceData> = ({ title, desc, image, whatsappText, tags }) => (
-    <div className="group bg-white rounded-[2rem] shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col md:flex-row h-full md:h-[280px]">
-        {/* Image Side */}
-        <div className="md:w-5/12 relative overflow-hidden h-64 md:h-full">
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            {/* Overlay Gradient for Text Contrast just in case */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:hidden"></div>
-        </div>
+const ServiceCard: React.FC<ServiceData> = ({ title, desc, imageUrl, whatsappText, meta, price }) => {
+    return (
+        <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group">
+            {/* Image Container - h-64 for prominence */}
+            <div className="relative h-64 w-full overflow-hidden bg-slate-900/10">
+                <img
+                    src={imageUrl}
+                    alt={title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
 
-        {/* Content Side */}
-        <div className="md:w-7/12 p-8 flex flex-col justify-between">
-            <div>
-                <h3 className="text-2xl font-bold font-display text-navy mb-3 group-hover:text-ice transition-colors">
-                    {title}
-                </h3>
-                {tags && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                        {tags.map((tag, i) => (
-                            <span key={i} className="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">{tag}</span>
-                        ))}
+                {price && (
+                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-navy shadow-lg z-10 animate-fade-in">
+                        {price}
                     </div>
                 )}
-                <p className="text-slate-600 leading-relaxed mb-6 font-sans">
-                    {desc}
-                </p>
             </div>
 
-            <div className="mt-auto">
+            {/* Content */}
+            <div className="p-8 flex flex-col flex-grow relative z-10 bg-white">
+                <h3 className="text-xl font-bold text-navy mb-3 font-display leading-tight group-hover:text-ice transition-colors">
+                    {title}
+                </h3>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {meta.map((m, i) => (
+                        <div key={i} className="flex items-center gap-1.5 text-xs font-medium text-slate-500 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-100">
+                            <m.icon size={14} className="text-ice" />
+                            <span>{m.text}</span>
+                        </div>
+                    ))}
+                </div>
+
+                <p className="text-slate-600 text-sm mb-8 flex-grow leading-relaxed">
+                    {desc}
+                </p>
+
                 <button
                     onClick={() => window.open(`https://wa.me/5492902123456?text=${encodeURIComponent(whatsappText)}`, '_blank')}
-                    className="inline-flex items-center space-x-2 text-ice font-bold hover:text-navy transition-colors group/btn"
+                    className="w-full py-4 rounded-xl font-bold text-sm bg-navy text-white hover:bg-ice transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl mt-auto group/btn"
                 >
                     <span>Consultar Disponibilidad</span>
-                    <ExternalLink size={18} className="transform group-hover/btn:translate-x-1 transition-transform" />
+                    <ExternalLink size={16} className="opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all" />
                 </button>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 // ============== MAIN COMPONENT ==============
 const ServicesPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<'traslados' | 'excursiones'>('traslados');
 
-    // Sync tab with URL
     useEffect(() => {
         const tab = searchParams.get('tab');
         if (tab === 'excursiones') setActiveTab('excursiones');
@@ -72,115 +79,137 @@ const ServicesPage: React.FC = () => {
         setSearchParams({ tab });
     };
 
-    // ====== DATA ======
+    // ====== POLLINATIONS AI IMAGES (Generated on demand) ======
     const trasladosData: ServiceData[] = [
         {
             title: "Aeropuerto (FTE) - Hotel Céntrico",
-            desc: "Recepción personalizada con cartel identificatorio. Traslado seguro y confortable hasta la puerta de su hotel. Unidades hasta 4 pax.",
-            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, quisiera consultar por el traslado Aeropuerto - Hotel.",
-            tags: ["Privado", "Hasta 4 Pax", "Recepción"]
+            desc: "Recepción VIP. Vehículos Mercedes Sprinter climatizados. Traslado seguro y directo desde el aeropuerto hasta el lobby de tu hotel.",
+            imageUrl: "https://image.pollinations.ai/prompt/luxury%20mercedes%20sprinter%20van%20black%20transfer%20airport%20snow%20mountains%20patagonia%20cinematic?width=800&height=600&nologo=true",
+            whatsappText: "Hola, consulta por traslado Aeropuerto - Hotel.",
+            meta: [{ icon: Users, text: "Privado / Shared" }, { icon: MapPin, text: "Puerta a Puerta" }],
+            price: "Desde $12.500"
         },
         {
-            title: "Visita al Glaciar Perito Moreno",
-            desc: "Traslado privado exclusivo. Te pasamos a buscar, te llevamos al Parque Nacional y te esperamos 4 horas para que recorras las pasarelas a tu ritmo.",
-            image: "https://images.unsplash.com/photo-1534234828563-025c8c474d06?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, me interesa el traslado privado al Glaciar Perito Moreno.",
-            tags: ["Full Day", "Espera incluida", "Flexible"]
+            title: "Glaciar Perito Moreno (Privado)",
+            desc: "Tu tiempo, tus reglas. Te llevamos al Parque Nacional y te esperamos 4 horas para que disfrutes de las pasarelas sin apuro.",
+            imageUrl: "https://image.pollinations.ai/prompt/perito%20moreno%20glacier%20ice%20walls%20blue%20water%20argentina%20cinematic%20photorealistic?width=800&height=600&nologo=true",
+            whatsappText: "Hola, cotización por traslado privado al Glaciar.",
+            meta: [{ icon: Clock, text: "Full Day" }, { icon: Users, text: "Exclusivo" }]
         },
         {
             title: "Full Day El Chaltén",
-            desc: "Ida y vuelta en el día a la Capital Nacional del Trekking. Salimos temprano para aprovechar el día en los senderos del Fitz Roy.",
-            image: "https://images.unsplash.com/photo-1518182170546-0766bd6f6a56?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, quisiera información sobre el traslado Full Day a El Chaltén.",
-            tags: ["Aventura", "12 Horas", "Ruta 40"]
+            desc: "Ruta 40 hacia el norte. Contemplá el Fitz Roy y hacé los senderos más famosos de la Argentina. Regreso en el día.",
+            imageUrl: "https://image.pollinations.ai/prompt/mount%20fitz%20roy%20patagonia%20road%20trip%20mountains%20landscape%20sunny?width=800&height=600&nologo=true",
+            whatsappText: "Hola, info sobre traslado a El Chaltén.",
+            meta: [{ icon: Clock, text: "12 Horas" }, { icon: Mountain, text: "Trekking" }]
         }
     ];
 
     const excursionesData: ServiceData[] = [
         {
-            title: "Minitrekking",
-            desc: "La experiencia de caminar sobre el hielo del Glaciar Perito Moreno. Incluye navegación corta frente a la pared sur y caminata con crampones.",
-            image: "https://images.unsplash.com/photo-1517478335359-994df784b806?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, quiero consultar disponibilidad para el Minitrekking.",
-            tags: ["Aventura Alta", "Crampones", "Navegación"]
+            title: "Minitrekking Glaciar Moreno",
+            desc: "Ponete los crampones y caminá sobre el hielo vivo. Incluye navegación corta y brindis con whisky y hielo de glaciar.",
+            imageUrl: "https://image.pollinations.ai/prompt/people%20hiking%20on%20blue%20glacier%20ice%20with%20crampons%20adventure%20pov?width=800&height=600&nologo=true",
+            whatsappText: "Hola, quiero reservar Minitrekking.",
+            meta: [{ icon: Mountain, text: "Dificultad Media" }, { icon: Clock, text: "Día Completo" }]
         },
         {
             title: "Navegación Ríos de Hielo",
-            desc: "Navegación en catamarán de lujo recorriendo los glaciares Upsala y Spegazzini entre témpanos gigantes. Una experiencia visual inigualable.",
-            image: "https://images.unsplash.com/photo-1505537672228-569d585469af?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, me interesa la Navegación Ríos de Hielo.",
-            tags: ["Relax", "Todo Público", "Catamarán"]
+            desc: "Navegación premium visitando los glaciares Spegazzini (el más alto) y Upsala. Una experiencia visual incomparable.",
+            imageUrl: "https://image.pollinations.ai/prompt/modern%20catamaran%20boat%20sailing%20near%20iceberg%20glacier%20lake%20argentina?width=800&height=600&nologo=true",
+            whatsappText: "Hola, info Navegación Ríos de Hielo.",
+            meta: [{ icon: Bus, text: "Traslado Incluido" }, { icon: Users, text: "Familiar" }]
         },
         {
-            title: "Nativo Experience",
-            desc: "Ascenso en 4x4 al Cerro Frías, vistas panorámicas del Lago Argentino y cena en cuevas naturales con inmersión en la historia antropológica.",
-            image: "https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, quisiera saber más sobre Nativo Experience.",
-            tags: ["4x4", "Cena Incluida", "Cultura"]
-        },
-        {
-            title: "Estancia Cristina",
-            desc: "Navegación hasta una estancia histórica inaccesible por tierra. Día de campo, historia patagónica, trekking 4x4 y vistas al Glaciar Upsala.",
-            image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800",
-            whatsappText: "Hola, consulta por excursión a Estancia Cristina.",
-            tags: ["Full Day", "Historia", "Navegación"]
+            title: "Nativo Experience 4x4",
+            desc: "Adrenalina 4x4 y cultura. Ascenso al Cerro Frías en Land Rover, vistas panorámicas y almuerzo en cuevas históricas.",
+            imageUrl: "https://image.pollinations.ai/prompt/land%20rover%20defender%20offroad%20patagonia%20steppe%20sunset?width=800&height=600&nologo=true",
+            whatsappText: "Hola, me interesa Nativo Experience.",
+            meta: [{ icon: Mountain, text: "4x4 Offroad" }, { icon: Users, text: "Almuerzo/Cena" }]
         }
     ];
 
     return (
-        <div className="bg-slate-50 min-h-screen pb-20">
-            {/* ======= HEADER WITH TABS ======= */}
-            <section className="bg-navy pt-32 pb-12 rounded-b-[3rem] shadow-2xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
-                <div className="container mx-auto px-6 text-center relative z-10">
-                    <p className="text-ice font-bold tracking-[0.2em] uppercase text-sm mb-4 font-display">Experiencias CalafateGo</p>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 font-display">eligí tu próxima aventura</h1>
+        <div className="bg-slate-50 min-h-screen pb-20 font-sans">
 
-                    {/* TABS CONTAINER */}
-                    <div className="inline-flex flex-col md:flex-row bg-white/10 backdrop-blur-md rounded-2xl p-1.5 shadow-xl border border-white/10">
+            {/* ======= HEADER ======= */}
+            {/* Added relative and increased height */}
+            <header className="relative h-[65vh] flex items-center justify-center overflow-visible z-20">
+
+                {/* Background Image Container */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <img
+                        src="https://image.pollinations.ai/prompt/patagonia%20mountains%20landscape%20lake%20panoramic%20cinematic%20dark?width=1920&height=1080&nologo=true"
+                        alt="Patagonia Banner"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]"></div>
+                </div>
+
+                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto -mt-10 animate-fade-in-up">
+                    <p className="text-ice font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-display">
+                        Patagonia Argentina
+                    </p>
+                    <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl font-display leading-tight">
+                        Elegí tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-ice to-white">Experiencia</span>
+                    </h1>
+                    <p className="text-slate-200 text-lg md:text-xl font-light drop-shadow-md max-w-2xl mx-auto">
+                        Viajes diseñados para transformar tu manera de ver el mundo.
+                    </p>
+                </div>
+
+                {/* TABS FLOTANTES (Fixed positioning) */}
+                {/* z-30 ensures clickable. -bottom-7 puts it halfway out. */}
+                <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4">
+                    <div className="bg-white rounded-full shadow-2xl p-2 flex w-full max-w-lg ring-4 ring-slate-50/50 backdrop-blur-xl">
                         <button
                             onClick={() => handleTabChange('traslados')}
-                            className={`flex items-center justify-center gap-3 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 w-full md:w-auto ${activeTab === 'traslados'
-                                    ? 'bg-white text-navy shadow-lg scale-105'
-                                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-lg ${activeTab === 'traslados'
+                                    ? 'bg-navy text-white shadow-lg transform scale-105'
+                                    : 'text-slate-400 hover:text-navy hover:bg-slate-100'
                                 }`}
                         >
-                            <Bus size={22} className={activeTab === 'traslados' ? 'text-ice' : ''} />
-                            <span>Traslados Privados</span>
+                            <Bus size={20} />
+                            <span>Traslados</span>
                         </button>
                         <button
                             onClick={() => handleTabChange('excursiones')}
-                            className={`flex items-center justify-center gap-3 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 w-full md:w-auto ${activeTab === 'excursiones'
-                                    ? 'bg-white text-navy shadow-lg scale-105'
-                                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-lg ${activeTab === 'excursiones'
+                                    ? 'bg-navy text-white shadow-lg transform scale-105'
+                                    : 'text-slate-400 hover:text-navy hover:bg-slate-100'
                                 }`}
                         >
-                            <Mountain size={22} className={activeTab === 'excursiones' ? 'text-ice' : ''} />
-                            <span>Excursiones y Aventuras</span>
+                            <Mountain size={20} />
+                            <span>Excursiones</span>
                         </button>
                     </div>
                 </div>
-            </section>
+            </header>
 
-            {/* ======= CONTENT GRID ======= */}
-            <section className="container mx-auto px-6 -mt-8 relative z-20">
-                <div className="max-w-5xl mx-auto space-y-8">
+            {/* ======= GRID CONTENT ======= */}
+            {/* Increased padding top (pt-24) to account for the floating tabs overlapping */}
+            <main className="relative z-10 max-w-7xl mx-auto px-4 pt-24 md:pt-32">
+                <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 animate-fade-in-up">
                     {activeTab === 'traslados' ? (
-                        <div className="animate-fade-in-up space-y-6">
-                            {trasladosData.map((item, index) => (
-                                <ServiceCard key={index} {...item} />
-                            ))}
-                        </div>
+                        trasladosData.map((item, index) => <ServiceCard key={index} {...item} />)
                     ) : (
-                        <div className="animate-fade-in-up space-y-6">
-                            {excursionesData.map((item, index) => (
-                                <ServiceCard key={index} {...item} />
-                            ))}
-                        </div>
+                        excursionesData.map((item, index) => <ServiceCard key={index} {...item} />)
                     )}
                 </div>
-            </section>
+
+                <div className="mt-20 text-center border-t border-slate-200 pt-10">
+                    <p className="text-slate-400 mb-4 font-medium text-sm uppercase tracking-widest">Atención Personalizada</p>
+                    <a
+                        href="https://wa.me/5492902123456"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center text-navy font-bold hover:text-ice transition-colors gap-2 text-lg group"
+                    >
+                        <span>Chatear con un experto ahora</span>
+                        <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                </div>
+            </main>
         </div>
     );
 };

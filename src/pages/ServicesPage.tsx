@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Bus, Mountain, ExternalLink, Info, CheckCircle2 } from 'lucide-react';
+import { Bus, Mountain, ExternalLink, Info, CheckCircle2, X } from 'lucide-react';
 
 // ============== TYPES & DATA ==============
 interface ServiceItem {
     id: string;
     title: string;
-    price: number | string; // number or 'Consultar'
+    price: number | string;
     shortDesc: string;
     fullDesc: string;
     image: string;
@@ -126,164 +126,181 @@ const EXCURSIONES_DATA: ServiceItem[] = [
 interface ServiceCardProps {
     data: ServiceItem;
     category: 'traslados' | 'excursiones';
+    onOpenModal: (service: ServiceItem) => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    // Using local image directly
+const ServiceCard: React.FC<ServiceCardProps> = ({ data, category, onOpenModal }) => {
     const imageUrl = data.image;
 
     const formattedPrice = typeof data.price === 'number'
         ? `US$ ${data.price}`
         : data.price;
 
+    const handleCardClick = () => {
+        console.log('Card clicked:', data.title); // Debug log
+        onOpenModal(data);
+    };
+
+    return (
+        <div
+            role="button"
+            tabIndex={0}
+            onClick={handleCardClick}
+            onKeyDown={(e) => e.key === 'Enter' && handleCardClick()}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group cursor-pointer select-none"
+        >
+            {/* Image Container */}
+            <div className="relative h-64 w-full overflow-hidden bg-slate-200">
+                <img
+                    src={imageUrl}
+                    alt={data.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    draggable={false}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none"></div>
+
+                {/* Price Badge */}
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-emerald-600 shadow-lg pointer-events-none">
+                    {formattedPrice}
+                </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-grow bg-white">
+                <h3 className="text-xl font-bold text-navy mb-3 font-display leading-tight group-hover:text-emerald-600 transition-colors">
+                    {data.title}
+                </h3>
+
+                <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed line-clamp-3">
+                    {data.shortDesc}
+                </p>
+
+                <div
+                    className="w-full py-3 rounded-xl font-bold text-sm bg-slate-100 text-navy group-hover:bg-navy group-hover:text-white transition-all flex items-center justify-center gap-2 mt-auto pointer-events-none"
+                >
+                    <span>Ver Detalle</span>
+                    <ExternalLink size={16} className="opacity-70 group-hover:opacity-100 transition-all" />
+                </div>
+            </div>
+        </div>
+    );
+};
+
+// ============== MODAL COMPONENT ==============
+interface ModalProps {
+    service: ServiceItem | null;
+    category: 'traslados' | 'excursiones';
+    onClose: () => void;
+}
+
+const ServiceModal: React.FC<ModalProps> = ({ service, category, onClose }) => {
     const handleWhatsAppClick = () => {
-        const message = `Hola, quiero reservar ${data.title}`;
+        if (!service) return;
+        const message = `Hola, quiero reservar ${service.title}`;
         const url = `https://wa.me/5219988044284?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     };
 
-    // Close modal on escape key
+    // Close on escape key
     useEffect(() => {
         const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') setIsOpen(false);
+            if (e.key === 'Escape') onClose();
         };
-        if (isOpen) window.addEventListener('keydown', handleEsc);
+        window.addEventListener('keydown', handleEsc);
         return () => window.removeEventListener('keydown', handleEsc);
-    }, [isOpen]);
+    }, [onClose]);
 
-    // Prevent body scroll when modal is open
+    // Prevent body scroll
     useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
+        document.body.style.overflow = 'hidden';
         return () => { document.body.style.overflow = 'unset'; };
-    }, [isOpen]);
+    }, []);
+
+    if (!service) return null;
+
+    const formattedPrice = typeof service.price === 'number'
+        ? `US$ ${service.price}`
+        : service.price;
 
     return (
-        <>
-            {/* CARD CERRADA */}
+        <div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={onClose}
+        >
+            {/* Modal Window */}
             <div
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group cursor-pointer relative z-10"
-                onClick={() => setIsOpen(true)}
+                className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[85vh] overflow-hidden animate-in zoom-in-95 duration-300"
+                onClick={(e) => e.stopPropagation()}
             >
-                {/* Image Container */}
-                <div className="relative h-64 w-full overflow-hidden bg-slate-900/10">
-                    <img
-                        src={imageUrl}
-                        alt={data.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                {/* Close Button */}
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white backdrop-blur-md p-2 rounded-full text-black transition-colors shadow-md"
+                >
+                    <X size={24} />
+                </button>
 
-                    {/* Price Badge */}
-                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-emerald-600 shadow-lg z-10 animate-fade-in">
-                        {formattedPrice}
-                    </div>
+                {/* Image */}
+                <div className="h-56 md:h-72 flex-shrink-0 relative">
+                    <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none"></div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow relative z-10 bg-white">
-                    <h3 className="text-xl font-bold text-navy mb-3 font-display leading-tight group-hover:text-emerald-600 transition-colors">
-                        {data.title}
-                    </h3>
+                {/* Scrollable Content */}
+                <div className="p-6 md:p-8 overflow-y-auto bg-white flex-1">
+                    <div className="flex justify-between items-start mb-4">
+                        <h2 className="text-2xl md:text-3xl font-bold font-display text-navy leading-tight">{service.title}</h2>
+                        <div className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-sm shadow-sm whitespace-nowrap ml-4">
+                            {formattedPrice}
+                        </div>
+                    </div>
 
-                    <p className="text-slate-600 text-sm mb-6 flex-grow leading-relaxed line-clamp-3">
-                        {data.shortDesc}
-                    </p>
+                    <div className="space-y-6">
+                        <div>
+                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <Info size={14} className="text-emerald-500" /> Descripción del Servicio
+                            </h4>
+                            <p className="text-slate-600 leading-relaxed text-base md:text-lg">
+                                {service.fullDesc}
+                            </p>
+                        </div>
 
-                    <button
-                        className="w-full py-3 rounded-xl font-bold text-sm bg-slate-100 text-navy hover:bg-navy hover:text-white transition-all flex items-center justify-center gap-2 group/btn mt-auto"
-                    >
-                        <span>Ver Detalle</span>
-                        <ExternalLink size={16} className="opacity-70 group-hover/btn:opacity-100 transition-all" />
-                    </button>
+                        {/* Vehicle Info - Only for Traslados */}
+                        {category === 'traslados' && (
+                            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-4 shadow-sm">
+                                <div className="bg-navy/10 p-2.5 rounded-lg text-navy shrink-0">
+                                    <Bus size={24} />
+                                </div>
+                                <div>
+                                    <h5 className="font-bold text-navy mb-1 text-sm md:text-base">Unidad: JAC JS8 PRO 2025</h5>
+                                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
+                                        Hasta 4 pax con equipaje / 6 pax sin equipaje. Confort premium y seguridad garantizada.
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="pt-2 pb-2">
+                            <button
+                                onClick={handleWhatsAppClick}
+                                className="w-full py-4 rounded-xl font-bold text-lg bg-emerald-600 text-white hover:bg-emerald-500 transition-all flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform active:scale-[0.98]"
+                            >
+                                <span>Reservar por WhatsApp</span>
+                                <CheckCircle2 size={24} />
+                            </button>
+                            <p className="text-center text-xs text-slate-400 mt-3">
+                                Te responderemos a la brevedad para confirmar disponibilidad.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            {/* EXPANDED MODAL OVERLAY */}
-            {isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
-
-                    {/* Modal Window */}
-                    <div
-                        className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-300 overflow-hidden"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {/* Botón Cerrar Flotante */}
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white backdrop-blur-md p-2 rounded-full text-black transition-colors shadow-sm"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
-                        </button>
-
-                        {/* Imagen del Modal */}
-                        <div className="h-56 md:h-72 flex-shrink-0 relative">
-                            <img
-                                src={imageUrl}
-                                alt={data.title}
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"></div>
-                        </div>
-
-                        {/* Contenido Scrolleable */}
-                        <div className="p-6 md:p-8 overflow-y-auto bg-white flex-1">
-                            <div className="flex justify-between items-start mb-4">
-                                <h2 className="text-2xl md:text-3xl font-bold font-display text-navy leading-tight">{data.title}</h2>
-                                <div className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-sm shadow-sm whitespace-nowrap ml-4">
-                                    {formattedPrice}
-                                </div>
-                            </div>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                        <Info size={14} className="text-emerald-500" /> Descripción del Servicio
-                                    </h4>
-                                    <p className="text-slate-600 leading-relaxed text-base md:text-lg">
-                                        {data.fullDesc}
-                                    </p>
-                                </div>
-
-                                {/* Vehicle Info Badge - Only for Traslados */}
-                                {category === 'traslados' && (
-                                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow">
-                                        <div className="bg-navy/10 p-2.5 rounded-lg text-navy shrink-0">
-                                            <Bus size={24} />
-                                        </div>
-                                        <div>
-                                            <h5 className="font-bold text-navy mb-1 text-sm md:text-base">Unidad: JAC JS8 PRO 2025</h5>
-                                            <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
-                                                Hasta 4 pax con equipaje / 6 pax sin equipaje. <br className="hidden md:block" />Confort premium y seguridad garantizada.
-                                            </p>
-                                        </div>
-                                    </div>
-                                )}
-
-                                <div className="pt-2 pb-2">
-                                    <button
-                                        onClick={handleWhatsAppClick}
-                                        className="w-full py-4 rounded-xl font-bold text-lg bg-emerald-600 text-white hover:bg-emerald-500 transition-all flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform active:scale-[0.98]"
-                                    >
-                                        <span>Reservar por WhatsApp</span>
-                                        <CheckCircle2 size={24} />
-                                    </button>
-                                    <p className="text-center text-xs text-slate-400 mt-3">
-                                        Te responderemos a la brevedad para confirmar disponibilidad.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </>
+        </div>
     );
 };
 
@@ -291,6 +308,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
 const ServicesPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<'traslados' | 'excursiones'>('traslados');
+    const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
     useEffect(() => {
         const tab = searchParams.get('tab');
@@ -303,13 +321,23 @@ const ServicesPage: React.FC = () => {
         setSearchParams({ tab });
     };
 
+    const handleOpenModal = (service: ServiceItem) => {
+        console.log('Opening modal for:', service.title); // Debug log
+        setSelectedService(service);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedService(null);
+    };
+
     return (
         <div className="bg-slate-50 min-h-screen pb-20 font-sans">
 
-            {/* ======= HEADER (Services Page Style) ======= */}
-            <header className="relative h-[60vh] flex items-center justify-center z-20 pb-32">
+            {/* ======= HEADER ======= */}
+            {/* Use pointer-events-none on the entire header wrapper, then pointer-events-auto on interactive children */}
+            <header className="relative h-[60vh] flex items-center justify-center pointer-events-none">
 
-                {/* Background Image Container */}
+                {/* Background Image Container - Decorative, no pointer events */}
                 <div className="absolute inset-0 overflow-hidden">
                     <img
                         src="/images/navegacion-lago.jpg"
@@ -319,7 +347,8 @@ const ServicesPage: React.FC = () => {
                     <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]"></div>
                 </div>
 
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto -mt-10 animate-fade-in-up">
+                {/* Text Content - Decorative */}
+                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto -mt-10">
                     <p className="text-ice font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-display">
                         Patagonia Argentina
                     </p>
@@ -331,8 +360,8 @@ const ServicesPage: React.FC = () => {
                     </p>
                 </div>
 
-                {/* TABS FLOTANTES */}
-                <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4">
+                {/* TABS - These need pointer events */}
+                <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
                     <div className="bg-white rounded-full shadow-2xl p-2 flex w-full max-w-lg ring-4 ring-slate-50/50 backdrop-blur-xl">
                         <button
                             onClick={() => handleTabChange('traslados')}
@@ -359,12 +388,26 @@ const ServicesPage: React.FC = () => {
             </header>
 
             {/* ======= GRID CONTENT ======= */}
-            <main className="relative z-10 max-w-7xl mx-auto px-4 pt-24 md:pt-32">
-                <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 animate-fade-in-up">
+            <main className="relative z-20 max-w-7xl mx-auto px-4 pt-24 md:pt-32">
+                <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                     {activeTab === 'traslados' ? (
-                        TRASLADOS_DATA.map((item) => <ServiceCard key={item.id} data={item} category="traslados" />)
+                        TRASLADOS_DATA.map((item) => (
+                            <ServiceCard
+                                key={item.id}
+                                data={item}
+                                category="traslados"
+                                onOpenModal={handleOpenModal}
+                            />
+                        ))
                     ) : (
-                        EXCURSIONES_DATA.map((item) => <ServiceCard key={item.id} data={item} category="excursiones" />)
+                        EXCURSIONES_DATA.map((item) => (
+                            <ServiceCard
+                                key={item.id}
+                                data={item}
+                                category="excursiones"
+                                onOpenModal={handleOpenModal}
+                            />
+                        ))
                     )}
                 </div>
 
@@ -381,6 +424,15 @@ const ServicesPage: React.FC = () => {
                     </a>
                 </div>
             </main>
+
+            {/* ======= MODAL (Rendered at root level, outside of grid) ======= */}
+            {selectedService && (
+                <ServiceModal
+                    service={selectedService}
+                    category={activeTab}
+                    onClose={handleCloseModal}
+                />
+            )}
         </div>
     );
 };

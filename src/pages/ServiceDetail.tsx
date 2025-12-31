@@ -6,26 +6,36 @@ import { getServiceById } from '../data/servicesData';
 const ServiceDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+
+    // Debug Logs
+    console.log("ServiceDetail - URL ID:", id);
+
+    // Ensure we have an ID before searching
     const service = id ? getServiceById(id) : undefined;
+    console.log("ServiceDetail - Found Service:", service);
 
     // If service not found, show error state
     if (!service) {
         return (
-            <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center px-4">
-                <div className="text-center max-w-md">
-                    <div className="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <MapPin size={40} className="text-slate-400" />
-                    </div>
-                    <h1 className="text-3xl font-bold text-navy mb-4 font-display">Servicio no encontrado</h1>
-                    <p className="text-slate-600 mb-8">El servicio que buscas no existe o ha sido eliminado.</p>
-                    <Link
-                        to="/servicios"
-                        className="inline-flex items-center gap-2 bg-navy text-white px-6 py-3 rounded-full font-bold hover:bg-slate-800 transition-colors"
-                    >
-                        <ArrowLeft size={20} />
-                        Volver a Servicios
-                    </Link>
+            <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 text-center py-20 bg-slate-50">
+                <div className="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center mb-6 shadow-inner">
+                    <MapPin size={48} className="text-slate-400" />
                 </div>
+                <h1 className="text-3xl md:text-4xl font-bold text-navy mb-4 font-display">Experiencia no encontrada</h1>
+                <p className="text-slate-500 mb-8 max-w-md mx-auto text-lg leading-relaxed">
+                    El servicio que buscas no existe o ha sido movido.
+                    <br />
+                    <span className="text-sm mt-2 block text-slate-400">
+                        ID buscado: <span className="font-mono bg-slate-200 px-2 py-1 rounded text-slate-600">{id || 'Ninguno'}</span>
+                    </span>
+                </p>
+                <Link
+                    to="/servicios"
+                    className="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
+                    <ArrowLeft size={20} />
+                    Volver a Servicios
+                </Link>
             </div>
         );
     }

@@ -247,10 +247,58 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         duration: '2-3 horas',
         galleryKeywords: 'city birds lake flamingos sunset',
         itinerary: [
-            { title: 'Recorrido Costero', subtitle: 'Bahía Redonda y Reserva Ecológica.' },
-            { title: 'Puntos Panorámicos', subtitle: 'Vistas de la ciudad desde la altura.' },
             { title: 'Centro Comercial', subtitle: 'Opcional: final en el centro o en tu hotel.' }
         ]
+    },
+    {
+        id: 'exc-minitrekking',
+        title: 'Minitrekking (Caminata sobre Hielo)',
+        price: 'Consultar',
+        shortDesc: 'La experiencia más buscada. Camina sobre el Glaciar Perito Moreno.',
+        fullDesc: 'Una aventura inigualable. Inicia con una navegación cruzando el Brazo Rico. Luego, guías de montaña te ayudarán a colocarte los crampones para iniciar una caminata de 1:30 hs sobre la superficie del glaciar, viendo grietas azules, sumideros y lagunas. Incluye visita a pasarelas. Dificultad: Media. Edad: 10 a 65 años.',
+        image: '/images/minitrekking.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'minitrekking glacier hiking crampons ice patagonia'
+    },
+    {
+        id: 'exc-big-ice',
+        title: 'Big Ice (Trekking Profundo)',
+        price: 'Consultar',
+        shortDesc: 'Para los amantes del trekking. 4 horas en el corazón del glaciar.',
+        fullDesc: 'La versión extrema del Minitrekking. Una caminata intensa de 4 horas explorando el centro del glaciar, donde verás formaciones de hielo increíbles y cuevas azules. Exigencia física alta. Edad: 18 a 50 años. Incluye navegación y pasarelas.',
+        image: '/images/big-ice.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'ice cave blue glacier climbing adventure'
+    },
+    {
+        id: 'exc-todo-glaciares',
+        title: 'Navegación Todo Glaciares',
+        price: 160,
+        shortDesc: 'Navegación a los glaciares Upsala y Spegazzini.',
+        fullDesc: 'Recorre el brazo Norte del Lago Argentino. Visita la barrera de témpanos, el Glaciar Upsala (el más grande) y el impactante Glaciar Spegazzini (el más alto, con paredes de 135m). Barcos modernos con excelente vista.',
+        image: '/images/todo-glaciares.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'catamaran boat glaciares icebergs lake argentino'
+    },
+    {
+        id: 'exc-estancia-cristina',
+        title: 'Estancia Cristina Discovery',
+        price: 210,
+        shortDesc: 'Historia, navegación 4x4 y vistas del Upsala.',
+        fullDesc: 'Una excursión completa. Navegación hasta la histórica Estancia Cristina. Ascenso en vehículos 4x4 hasta el mirador del Glaciar Upsala y visita al museo de la estancia. Combinación perfecta de naturaleza e historia patagónica.',
+        image: '/images/estancia-cristina.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'estancia farm 4x4 jeep mountains patagonia'
+    },
+    {
+        id: 'exc-kayak',
+        title: 'Kayak en el Perito Moreno',
+        price: 'Consultar',
+        shortDesc: 'Rema frente a la pared del glaciar.',
+        fullDesc: 'Una perspectiva única al ras del agua. Navega en kayak frente a las paredes de 70 metros del Perito Moreno con guías expertos. No requiere experiencia previa. Incluye ropa técnica seca.',
+        image: '/images/kayak-glaciar.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'kayak water glacier adventure perito moreno'
     }
 ];
 

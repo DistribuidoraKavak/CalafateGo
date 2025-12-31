@@ -10,7 +10,7 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
     const formattedPrice = typeof data.price === 'number'
-        ? `US$ ${data.price}`
+        ? `Desde US$ ${data.price}`
         : data.price;
 
     return (

@@ -34,7 +34,7 @@ const ServiceDetail: React.FC = () => {
     }
 
     // --- Helpers ---
-    const formattedPrice = typeof service.price === 'number' ? `US$ ${service.price}` : service.price;
+    const formattedPrice = typeof service.price === 'number' ? `Desde US$ ${service.price}` : service.price;
 
     const handleWhatsAppClick = () => {
         const message = `Hola, quiero reservar: ${service.title}`;
@@ -182,7 +182,7 @@ const ServiceDetail: React.FC = () => {
                                     <Bus size={64} strokeWidth={1} className="relative z-10" />
                                 </div>
                                 <div className="p-4 md:py-6 md:pr-6 flex-1 flex flex-col justify-center">
-                                    <h4 className="text-lg font-bold text-navy mb-2">Unidad Premium: JAC JS8 PRO</h4>
+                                    <h4 className="text-lg font-bold text-navy mb-2">Unidad Premium: Vehículos Modernos y Confortables</h4>
                                     <p className="text-slate-600 mb-4 text-sm leading-relaxed">
                                         Viaja con el máximo confort. Asientos de cuero, climatización bizona y amplio espacio para equipaje.
                                     </p>
@@ -247,9 +247,7 @@ const ServiceDetail: React.FC = () => {
                                 <div className="flex items-end justify-between mb-2">
                                     <div className="flex items-baseline gap-1">
                                         <span className="text-3xl font-bold text-navy tracking-tight">{formattedPrice}</span>
-                                        {typeof service.price === 'number' && <span className="text-slate-500">USD</span>}
                                     </div>
-                                    <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Precio Final</span>
                                 </div>
 
                                 <div className="border border-slate-100 rounded-xl my-6 divide-y divide-slate-100 text-sm">
@@ -299,7 +297,6 @@ const ServiceDetail: React.FC = () => {
                     <span className="text-xs text-slate-500 uppercase font-bold tracking-wider">Total</span>
                     <div className="flex items-baseline gap-1">
                         <span className="text-xl font-bold text-navy">{formattedPrice}</span>
-                        {typeof service.price === 'number' && <span className="text-xs text-slate-500 font-bold">USD</span>}
                     </div>
                 </div>
                 <button

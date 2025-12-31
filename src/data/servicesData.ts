@@ -299,6 +299,26 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         image: '/images/kayak-glaciar.jpg',
         category: 'excursiones',
         galleryKeywords: 'kayak water glacier adventure perito moreno'
+    },
+    {
+        id: 'exc-safari-azul',
+        title: 'Safari Azul (Tocá el Glaciar)',
+        price: 'Consultar',
+        shortDesc: 'Navegación y caminata hasta tocar la pared de hielo.',
+        fullDesc: 'La alternativa perfecta al Minitrekking para quienes quieren vivir el hielo de cerca sin exigencia física técnica. Navegación de 20 minutos por el Brazo Rico y una caminata guiada de 1:30 hs por un bosque de lengas hasta llegar a la pared lateral del Glaciar Perito Moreno. ¡Podrás tocar el hielo y ver sus intensos colores azules! Incluye brindis y visita a las pasarelas. Apto para todas las edades (6 a 70 años).',
+        image: '/images/safari-azul.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'people touching glacier ice wall forest'
+    },
+    {
+        id: 'exc-glaciares-gourmet',
+        title: 'Glaciares Gourmet (Crucero María Turquesa)',
+        price: 'Consultar',
+        shortDesc: 'La navegación más exclusiva del Lago Argentino.',
+        fullDesc: 'Una experiencia de lujo a bordo del crucero María Turquesa. Navega hacia los glaciares Upsala, Seco, Heim y Spegazzini con el máximo confort. Incluye almuerzo gourmet a bordo, cubiertas panorámicas y descenso en Puesto de Las Vacas para una caminata corta. Ideal para quienes buscan confort y gastronomía de primer nivel.',
+        image: '/images/glaciares-gourmet.jpg',
+        category: 'excursiones',
+        galleryKeywords: 'luxury cruise food wine glacier view'
     }
 ];
 

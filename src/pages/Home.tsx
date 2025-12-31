@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     return (
         <div className="font-sans antialiased text-slate-900 bg-white">
             {/* ======= HERO SECTION (Full Screen Parallax) ======= */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                 {/* Parallax Background */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"

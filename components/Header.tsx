@@ -47,8 +47,8 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg
-          ? 'bg-white shadow-md py-3'
-          : 'bg-gradient-to-b from-black/70 to-transparent py-5'
+        ? 'bg-white shadow-md py-3'
+        : 'bg-gradient-to-b from-black/70 to-transparent py-5'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -90,9 +90,8 @@ const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8">
+        <div className="md:hidden bg-white fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 animate-in slide-in-from-top-5 duration-300">
           {navLinks.map((link) => (
             <Link
               key={link.name}

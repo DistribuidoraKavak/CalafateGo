@@ -207,7 +207,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
 
             {/* EXPANDED MODAL OVERLAY */}
             {isOpen && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity animate-in fade-in duration-300">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity animate-in fade-in duration-300">
                     {/* Backdrop click handler is now on the parent or we can keep a separate div but the requirement asked for the container. 
                         Actually, usually the backdrop is a separate sibling to the modal content to avoid click propagation issues easily, 
                         BUT the requirement said: "Asegúrate de que el contenedor padre del modal tenga: fixed inset-0 z-[9999] flex ...".
@@ -216,7 +216,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
                     */}
                     {/* Backdrop */}
                     <div
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
+                        className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
                         onClick={() => setIsOpen(false)}
                     ></div>
 

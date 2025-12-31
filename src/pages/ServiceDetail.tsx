@@ -6,7 +6,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
     ArrowLeft, Clock, CheckCircle2, Bus, MapPin,
     MessageCircle, Star, ShieldCheck, Users, Calendar,
-    Camera, Info, ChevronDown, Check
+    Camera, Info, ChevronDown, Check, ArrowRight
 } from 'lucide-react';
 import { getServiceById } from '../data/servicesData';
 

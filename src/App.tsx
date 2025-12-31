@@ -2,7 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Home, Traslados, Excursiones, Contacto } from './pages';
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetail from './pages/ServiceDetail';
+import Contacto from './pages/Contacto';
 
 const App: React.FC = () => {
     return (
@@ -11,8 +14,8 @@ const App: React.FC = () => {
             <main>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/traslados" element={<Traslados />} />
-                    <Route path="/excursiones" element={<Excursiones />} />
+                    <Route path="/servicios" element={<ServicesPage />} />
+                    <Route path="/experiencia/:id" element={<ServiceDetail />} />
                     <Route path="/contacto" element={<Contacto />} />
                 </Routes>
             </main>

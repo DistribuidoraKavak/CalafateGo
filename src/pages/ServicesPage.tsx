@@ -1,167 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Bus, Mountain, ExternalLink, Info, CheckCircle2, X } from 'lucide-react';
-
-// ============== TYPES & DATA ==============
-interface ServiceItem {
-    id: string;
-    title: string;
-    price: number | string;
-    shortDesc: string;
-    fullDesc: string;
-    image: string;
-}
-
-const TRASLADOS_DATA: ServiceItem[] = [
-    {
-        id: 'trf-aeropuerto',
-        title: 'Aeropuerto FTE IN/OUT',
-        price: 30,
-        shortDesc: 'Recepción en Aeropuerto y traslado directo a tu hospedaje.',
-        fullDesc: 'El servicio IN comienza con la recepción de los pasajeros en el Aeropuerto Internacional Comandante Armando Tola (FTE). Traslado privado directo hasta su hospedaje. El servicio OUT se realiza coordinando el retiro desde su hospedaje en el horario más conveniente según su vuelo. Capacidad: 4 pax con valijas / 6 sin valijas.',
-        image: '/images/traslado-aeropuerto.jpg'
-    },
-    {
-        id: 'trf-terminal',
-        title: 'Terminal de Ómnibus IN/OUT',
-        price: 20,
-        shortDesc: 'Conexión rápida entre la terminal y tu hotel.',
-        fullDesc: 'Recepción en la Terminal de Ómnibus de El Calafate y traslado privado directo hasta su hospedaje. Ideal para quienes llegan con equipaje o en horarios especiales. Coordinamos el retiro con flexibilidad total.',
-        image: '/images/traslado-aeropuerto.jpg'
-    },
-    {
-        id: 'trf-chalten',
-        title: 'Traslado a El Chaltén',
-        price: 200,
-        shortDesc: 'Viaje a la Capital Nacional del Trekking (Ruta 40).',
-        fullDesc: 'Traslado privado exclusivo hacia El Chaltén (aprox 220km). Disfruta de las vistas del Fitz Roy y el Cerro Torre en el camino sin esperas ni horarios rígidos de buses regulares.',
-        image: '/images/traslado-chalten.jpg'
-    },
-    {
-        id: 'trf-puerto-bandera',
-        title: 'Puerto Bandera (Un tramo)',
-        price: 90,
-        shortDesc: 'Conexión para navegaciones.',
-        fullDesc: 'Traslado privado hacia Puerto Bandera (47km), punto de partida de las navegaciones Todo Glaciares o Spegazzini. Te llevamos con puntualidad para tu embarque.',
-        image: '/images/navegacion-lago.jpg'
-    },
-    {
-        id: 'trf-rio-gallegos',
-        title: 'Traslado a Río Gallegos',
-        price: 330,
-        shortDesc: 'Capital de Santa Cruz (Ida o Vuelta).',
-        fullDesc: 'Traslado privado hacia Río Gallegos. Opción ideal para conexiones aéreas, trámites o visitas a la capital. Coordinamos horarios a medida con flexibilidad total.',
-        image: '/images/patagonia-4x4.jpg'
-    },
-    {
-        id: 'trf-glaciarium',
-        title: 'Visita al Glaciarium',
-        price: 80,
-        shortDesc: 'Museo del Hielo Patagónico.',
-        fullDesc: 'Te llevamos al centro de interpretación Glaciarium. Conoce cómo se forman los glaciares de manera interactiva. Tiempo de espera incluido para tu visita y regreso al hotel.',
-        image: '/images/glaciarium.jpg'
-    },
-    {
-        id: 'trf-lagoroca',
-        title: 'Lago Roca / Nibepo Aike',
-        price: 180,
-        shortDesc: 'Zona sur del Parque Nacional.',
-        fullDesc: 'Traslado hacia el sector del Lago Roca o Estancia Nibepo Aike. Ideal para días de campo o trekkings en la zona sur.',
-        image: '/images/patagonia-4x4.jpg'
-    }
-];
-
-const EXCURSIONES_DATA: ServiceItem[] = [
-    {
-        id: 'exc-perito-moreno',
-        title: 'Glaciar Perito Moreno',
-        price: 140,
-        shortDesc: 'Excursión día completo con espera flexible.',
-        fullDesc: 'Recorrido de 80km hasta el Parque Nacional. Podrán caminar libremente por las pasarelas el tiempo que deseen. Sin límite de horas de espera ni horarios rígidos de regreso. Opcional: Navegación cara norte.',
-        image: '/images/glaciar-perito.jpg'
-    },
-    {
-        id: 'exc-bandera-moreno',
-        title: 'Puerto Bandera + Glaciar Moreno',
-        price: 220,
-        shortDesc: 'Dos imperdibles en un solo día.',
-        fullDesc: 'Combina la navegación por el Lago Argentino (saliendo de Puerto Bandera) con la visita a las pasarelas del Perito Moreno. Optimizamos tu tiempo con un traslado privado que conecta ambos puntos.',
-        image: '/images/navegacion-lago.jpg'
-    },
-    {
-        id: 'exc-chalten-full',
-        title: 'El Chaltén Full Day',
-        price: 280,
-        shortDesc: 'Visita por el día a la montaña.',
-        fullDesc: 'Ida y vuelta en el día. Ideal para realizar caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutar del pueblo. Regreso coordinado según tus tiempos.',
-        image: '/images/traslado-chalten.jpg'
-    },
-    {
-        id: 'exc-torres-paine',
-        title: 'Torres del Paine (Chile)',
-        price: 'Consultar',
-        shortDesc: 'Excursión Full Day internacional.',
-        fullDesc: 'Cruce de frontera por Cancha Carrera. Recorrido por los puntos panorámicos del Parque Nacional Torres del Paine (Lago Toro, Río Serrano, Cuernos del Paine, Laguna Amarga). Jornada completa con regreso aprox 21hs.',
-        image: '/images/torres-paine.jpg'
-    },
-    {
-        id: 'exc-walichu',
-        title: 'Cuevas del Walichu',
-        price: 90,
-        shortDesc: 'Historia y pinturas rupestres.',
-        fullDesc: 'Visita al sitio arqueológico a orillas del Lago Argentino. Recorrido por las cuevas con pinturas rupestres y vistas panorámicas. Experiencia sin apuros.',
-        image: '/images/cuevas-walichu.jpg'
-    },
-    {
-        id: 'exc-city-tour',
-        title: 'City Tour Panorámico',
-        price: 90,
-        shortDesc: 'Lo mejor de El Calafate.',
-        fullDesc: 'Recorrido por Laguna Nimez (aves), Bahía Redonda, Cisnes de cuello negro y miradores de la ciudad. Ideal para el día de llegada o partida.',
-        image: '/images/navegacion-lago.jpg'
-    }
-];
+import { useSearchParams, Link } from 'react-router-dom';
+import { Bus, Mountain, ExternalLink, ArrowRight } from 'lucide-react';
+import { TRASLADOS_DATA, EXCURSIONES_DATA, ServiceItem } from '../data/servicesData';
 
 // ============== CARD COMPONENT ==============
 interface ServiceCardProps {
     data: ServiceItem;
-    category: 'traslados' | 'excursiones';
-    onOpenModal: (service: ServiceItem) => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ data, category, onOpenModal }) => {
-    const imageUrl = data.image;
-
+const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
     const formattedPrice = typeof data.price === 'number'
         ? `US$ ${data.price}`
         : data.price;
 
-    const handleCardClick = () => {
-        console.log('Card clicked:', data.title); // Debug log
-        onOpenModal(data);
-    };
-
     return (
-        <div
-            role="button"
-            tabIndex={0}
-            onClick={handleCardClick}
-            onKeyDown={(e) => e.key === 'Enter' && handleCardClick()}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group cursor-pointer select-none"
+        <Link
+            to={`/experiencia/${data.id}`}
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group"
         >
             {/* Image Container */}
             <div className="relative h-64 w-full overflow-hidden bg-slate-200">
                 <img
-                    src={imageUrl}
+                    src={data.image}
                     alt={data.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
-                    draggable={false}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
 
                 {/* Price Badge */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-emerald-600 shadow-lg pointer-events-none">
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-emerald-600 shadow-lg">
                     {formattedPrice}
                 </div>
             </div>
@@ -176,131 +44,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category, onOpenModal }
                     {data.shortDesc}
                 </p>
 
-                <div
-                    className="w-full py-3 rounded-xl font-bold text-sm bg-slate-100 text-navy group-hover:bg-navy group-hover:text-white transition-all flex items-center justify-center gap-2 mt-auto pointer-events-none"
-                >
+                <div className="w-full py-3 rounded-xl font-bold text-sm bg-slate-100 text-navy group-hover:bg-navy group-hover:text-white transition-all flex items-center justify-center gap-2 mt-auto">
                     <span>Ver Detalle</span>
-                    <ExternalLink size={16} className="opacity-70 group-hover:opacity-100 transition-all" />
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </div>
             </div>
-        </div>
-    );
-};
-
-// ============== MODAL COMPONENT ==============
-interface ModalProps {
-    service: ServiceItem | null;
-    category: 'traslados' | 'excursiones';
-    onClose: () => void;
-}
-
-const ServiceModal: React.FC<ModalProps> = ({ service, category, onClose }) => {
-    const handleWhatsAppClick = () => {
-        if (!service) return;
-        const message = `Hola, quiero reservar ${service.title}`;
-        const url = `https://wa.me/5219988044284?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
-    };
-
-    // Close on escape key
-    useEffect(() => {
-        const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose();
-        };
-        window.addEventListener('keydown', handleEsc);
-        return () => window.removeEventListener('keydown', handleEsc);
-    }, [onClose]);
-
-    // Prevent body scroll
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        return () => { document.body.style.overflow = 'unset'; };
-    }, []);
-
-    if (!service) return null;
-
-    const formattedPrice = typeof service.price === 'number'
-        ? `US$ ${service.price}`
-        : service.price;
-
-    return (
-        <div
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-            onClick={onClose}
-        >
-            {/* Modal Window */}
-            <div
-                className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[85vh] overflow-hidden animate-in zoom-in-95 duration-300"
-                onClick={(e) => e.stopPropagation()}
-            >
-                {/* Close Button */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 z-20 bg-white/90 hover:bg-white backdrop-blur-md p-2 rounded-full text-black transition-colors shadow-md"
-                >
-                    <X size={24} />
-                </button>
-
-                {/* Image */}
-                <div className="h-56 md:h-72 flex-shrink-0 relative">
-                    <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none"></div>
-                </div>
-
-                {/* Scrollable Content */}
-                <div className="p-6 md:p-8 overflow-y-auto bg-white flex-1">
-                    <div className="flex justify-between items-start mb-4">
-                        <h2 className="text-2xl md:text-3xl font-bold font-display text-navy leading-tight">{service.title}</h2>
-                        <div className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-sm shadow-sm whitespace-nowrap ml-4">
-                            {formattedPrice}
-                        </div>
-                    </div>
-
-                    <div className="space-y-6">
-                        <div>
-                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                <Info size={14} className="text-emerald-500" /> Descripción del Servicio
-                            </h4>
-                            <p className="text-slate-600 leading-relaxed text-base md:text-lg">
-                                {service.fullDesc}
-                            </p>
-                        </div>
-
-                        {/* Vehicle Info - Only for Traslados */}
-                        {category === 'traslados' && (
-                            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start gap-4 shadow-sm">
-                                <div className="bg-navy/10 p-2.5 rounded-lg text-navy shrink-0">
-                                    <Bus size={24} />
-                                </div>
-                                <div>
-                                    <h5 className="font-bold text-navy mb-1 text-sm md:text-base">Unidad: JAC JS8 PRO 2025</h5>
-                                    <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
-                                        Hasta 4 pax con equipaje / 6 pax sin equipaje. Confort premium y seguridad garantizada.
-                                    </p>
-                                </div>
-                            </div>
-                        )}
-
-                        <div className="pt-2 pb-2">
-                            <button
-                                onClick={handleWhatsAppClick}
-                                className="w-full py-4 rounded-xl font-bold text-lg bg-emerald-600 text-white hover:bg-emerald-500 transition-all flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform active:scale-[0.98]"
-                            >
-                                <span>Reservar por WhatsApp</span>
-                                <CheckCircle2 size={24} />
-                            </button>
-                            <p className="text-center text-xs text-slate-400 mt-3">
-                                Te responderemos a la brevedad para confirmar disponibilidad.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </Link>
     );
 };
 
@@ -308,7 +57,6 @@ const ServiceModal: React.FC<ModalProps> = ({ service, category, onClose }) => {
 const ServicesPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<'traslados' | 'excursiones'>('traslados');
-    const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
     useEffect(() => {
         const tab = searchParams.get('tab');
@@ -321,23 +69,15 @@ const ServicesPage: React.FC = () => {
         setSearchParams({ tab });
     };
 
-    const handleOpenModal = (service: ServiceItem) => {
-        console.log('Opening modal for:', service.title); // Debug log
-        setSelectedService(service);
-    };
-
-    const handleCloseModal = () => {
-        setSelectedService(null);
-    };
+    const currentData = activeTab === 'traslados' ? TRASLADOS_DATA : EXCURSIONES_DATA;
 
     return (
         <div className="bg-slate-50 min-h-screen pb-20 font-sans">
 
             {/* ======= HEADER ======= */}
-            {/* Use pointer-events-none on the entire header wrapper, then pointer-events-auto on interactive children */}
             <header className="relative h-[60vh] flex items-center justify-center pointer-events-none">
 
-                {/* Background Image Container - Decorative, no pointer events */}
+                {/* Background Image */}
                 <div className="absolute inset-0 overflow-hidden">
                     <img
                         src="/images/navegacion-lago.jpg"
@@ -347,7 +87,7 @@ const ServicesPage: React.FC = () => {
                     <div className="absolute inset-0 bg-navy/60 backdrop-blur-[2px]"></div>
                 </div>
 
-                {/* Text Content - Decorative */}
+                {/* Text Content */}
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto -mt-10">
                     <p className="text-ice font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-display">
                         Patagonia Argentina
@@ -360,7 +100,7 @@ const ServicesPage: React.FC = () => {
                     </p>
                 </div>
 
-                {/* TABS - These need pointer events */}
+                {/* TABS */}
                 <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
                     <div className="bg-white rounded-full shadow-2xl p-2 flex w-full max-w-lg ring-4 ring-slate-50/50 backdrop-blur-xl">
                         <button
@@ -389,26 +129,10 @@ const ServicesPage: React.FC = () => {
 
             {/* ======= GRID CONTENT ======= */}
             <main className="relative z-20 max-w-7xl mx-auto px-4 pt-24 md:pt-32">
-                <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                    {activeTab === 'traslados' ? (
-                        TRASLADOS_DATA.map((item) => (
-                            <ServiceCard
-                                key={item.id}
-                                data={item}
-                                category="traslados"
-                                onOpenModal={handleOpenModal}
-                            />
-                        ))
-                    ) : (
-                        EXCURSIONES_DATA.map((item) => (
-                            <ServiceCard
-                                key={item.id}
-                                data={item}
-                                category="excursiones"
-                                onOpenModal={handleOpenModal}
-                            />
-                        ))
-                    )}
+                <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 animate-fade-in-up">
+                    {currentData.map((item) => (
+                        <ServiceCard key={item.id} data={item} />
+                    ))}
                 </div>
 
                 <div className="mt-20 text-center border-t border-slate-200 pt-10">
@@ -424,15 +148,6 @@ const ServicesPage: React.FC = () => {
                     </a>
                 </div>
             </main>
-
-            {/* ======= MODAL (Rendered at root level, outside of grid) ======= */}
-            {selectedService && (
-                <ServiceModal
-                    service={selectedService}
-                    category={activeTab}
-                    onClose={handleCloseModal}
-                />
-            )}
         </div>
     );
 };

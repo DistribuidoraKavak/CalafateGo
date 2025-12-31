@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './src/pages/Home';
 import ServicesPage from './src/pages/ServicesPage';
+import ServiceDetail from './src/pages/ServiceDetail';
 import Contacto from './src/pages/Contacto';
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/experiencia/:id" element={<ServiceDetail />} />
           <Route path="/contacto" element={<Contacto />} />
           {/* Redirect old routes to new unified services page */}
           <Route path="/traslados" element={<ServicesPage />} />

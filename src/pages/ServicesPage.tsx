@@ -167,7 +167,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
         <>
             {/* CARD CERRADA */}
             <div
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group cursor-pointer"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group cursor-pointer relative z-10"
                 onClick={() => setIsOpen(true)}
             >
                 {/* Image Container */}
@@ -307,10 +307,10 @@ const ServicesPage: React.FC = () => {
         <div className="bg-slate-50 min-h-screen pb-20 font-sans">
 
             {/* ======= HEADER (Services Page Style) ======= */}
-            <header className="relative h-[60vh] flex items-center justify-center overflow-hidden z-20">
+            <header className="relative h-[60vh] flex items-center justify-center z-20 pb-32">
 
                 {/* Background Image Container */}
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 overflow-hidden">
                     <img
                         src="/images/navegacion-lago.jpg"
                         alt="Patagonia Banner"

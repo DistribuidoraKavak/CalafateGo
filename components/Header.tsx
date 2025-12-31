@@ -90,13 +90,22 @@ const Header: React.FC = () => {
         </button>
       </div>
 
+      {/* Mobile Nav Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 animate-in slide-in-from-top-5 duration-300">
+        <div className="md:hidden fixed inset-0 z-50 bg-navy flex flex-col items-center justify-center space-y-8 animate-in slide-in-from-top-10 duration-300">
+          {/* Close Button */}
+          <button
+            className="absolute top-6 right-6 text-white hover:text-ice transition-colors p-2"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <X size={48} strokeWidth={2.5} />
+          </button>
+
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.to}
-              className={`text-xl font-semibold hover:text-ice ${isActive(link.to) ? 'text-ice' : 'text-navy'
+              className={`text-2xl font-bold tracking-wide hover:text-ice transition-colors ${isActive(link.to) ? 'text-ice' : 'text-white'
                 }`}
             >
               {link.name}
@@ -104,16 +113,10 @@ const Header: React.FC = () => {
           ))}
           <button
             onClick={handleWhatsApp}
-            className="flex items-center space-x-2 gradient-ice text-white px-8 py-4 rounded-full font-semibold shadow-xl"
+            className="flex items-center space-x-2 gradient-ice text-white px-8 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-transform"
           >
-            <MessageCircle size={24} />
+            <MessageCircle size={28} />
             <span>Reservar ahora</span>
-          </button>
-          <button
-            className="absolute top-6 right-6 text-navy"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <X size={32} />
           </button>
         </div>
       )}

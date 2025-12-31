@@ -7,6 +7,7 @@ import Home from './src/pages/Home';
 import ServicesPage from './src/pages/ServicesPage';
 import ServiceDetail from './src/pages/ServiceDetail';
 import Contacto from './src/pages/Contacto';
+import AboutUs from './src/pages/AboutUs';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/experiencia/:id" element={<ServiceDetail />} />
           <Route path="/contacto" element={<Contacto />} />

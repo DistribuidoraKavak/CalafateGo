@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Bus, Mountain, ExternalLink, X, Info, CheckCircle2 } from 'lucide-react';
+import { Bus, Mountain, ExternalLink, Info, CheckCircle2 } from 'lucide-react';
 
 // ============== TYPES & DATA ==============
 interface ServiceItem {
@@ -207,57 +207,46 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
 
             {/* EXPANDED MODAL OVERLAY */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity animate-in fade-in duration-300">
-                    {/* Backdrop click handler is now on the parent or we can keep a separate div but the requirement asked for the container. 
-                        Actually, usually the backdrop is a separate sibling to the modal content to avoid click propagation issues easily, 
-                        BUT the requirement said: "Asegúrate de que el contenedor padre del modal tenga: fixed inset-0 z-[9999] flex ...".
-                        The current structure has a wrapper div (line 210) AND a backdrop div (line 212). 
-                        I will apply the classes to the wrapper div as requested for positioning.
-                    */}
-                    {/* Backdrop */}
-                    <div
-                        className="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
-                        onClick={() => setIsOpen(false)}
-                    ></div>
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
 
-                    {/* Modal Content */}
+                    {/* Modal Window */}
                     <div
-                        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300 flex flex-col max-h-[90vh]"
+                        className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl relative flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-300 overflow-hidden"
                         onClick={(e) => e.stopPropagation()}
                     >
+                        {/* Botón Cerrar Flotante */}
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white backdrop-blur-md p-2 rounded-full text-black transition-colors shadow-sm"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+                        </button>
 
-                        {/* Modal Header Image */}
-                        <div className="relative h-56 md:h-72 w-full shrink-0 group">
+                        {/* Imagen del Modal */}
+                        <div className="h-56 md:h-72 flex-shrink-0 relative">
                             <img
                                 src={imageUrl}
                                 alt={data.title}
-                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/70"></div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent"></div>
+                        </div>
 
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="absolute top-4 right-4 bg-black/30 hover:bg-black/50 backdrop-blur-md p-2 rounded-full text-white transition-all hover:rotate-90 z-20"
-                            >
-                                <X size={24} />
-                            </button>
-
-                            <div className="absolute bottom-0 left-0 w-full p-6 text-white text-shadow-lg z-10">
-                                <h2 className="text-2xl md:text-3xl font-bold font-display mb-2 leading-tight">{data.title}</h2>
-                                <div className="inline-block bg-emerald-500 text-white px-4 py-1 rounded-full text-lg font-bold shadow-lg">
+                        {/* Contenido Scrolleable */}
+                        <div className="p-6 md:p-8 overflow-y-auto bg-white flex-1">
+                            <div className="flex justify-between items-start mb-4">
+                                <h2 className="text-2xl md:text-3xl font-bold font-display text-navy leading-tight">{data.title}</h2>
+                                <div className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-bold text-sm shadow-sm whitespace-nowrap ml-4">
                                     {formattedPrice}
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Modal Body */}
-                        <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar bg-white">
                             <div className="space-y-6">
                                 <div>
                                     <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
                                         <Info size={14} className="text-emerald-500" /> Descripción del Servicio
                                     </h4>
-                                    <p className="text-slate-600 leading-loose text-base md:text-lg">
+                                    <p className="text-slate-600 leading-relaxed text-base md:text-lg">
                                         {data.fullDesc}
                                     </p>
                                 </div>
@@ -277,7 +266,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data, category }) => {
                                     </div>
                                 )}
 
-                                <div className="pt-2">
+                                <div className="pt-2 pb-2">
                                     <button
                                         onClick={handleWhatsAppClick}
                                         className="w-full py-4 rounded-xl font-bold text-lg bg-emerald-600 text-white hover:bg-emerald-500 transition-all flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transform active:scale-[0.98]"
@@ -317,11 +306,11 @@ const ServicesPage: React.FC = () => {
     return (
         <div className="bg-slate-50 min-h-screen pb-20 font-sans">
 
-            {/* ======= HEADER ======= */}
-            <header className="relative h-[60vh] flex items-center justify-center overflow-visible z-20">
+            {/* ======= HEADER (Services Page Style) ======= */}
+            <header className="relative h-[60vh] flex items-center justify-center overflow-hidden z-20">
 
                 {/* Background Image Container */}
-                <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute inset-0">
                     <img
                         src="/images/navegacion-lago.jpg"
                         alt="Patagonia Banner"

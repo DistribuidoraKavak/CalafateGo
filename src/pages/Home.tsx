@@ -7,41 +7,42 @@ import TravelAssistant from '../../components/TravelAssistant';
 const Home: React.FC = () => {
     return (
         <div className="font-sans antialiased text-slate-900 bg-white">
-            {/* ======= HERO SECTION (Full Screen Parallax) ======= */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                {/* Parallax Background */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
-                    style={{ backgroundImage: `url(${heroGlaciar})` }}
-                >
-                    <div className="absolute inset-0 bg-black/40"></div>
-                </div>
+            {/* ======= HERO SECTION (Mobile-First Rewrite) ======= */}
+            <section className="relative w-full h-[100dvh]">
+                {/* 1. Imagen física (Soluciona el pixelado en iOS) */}
+                <img
+                    src="/images/glaciar-perito.jpg"
+                    alt="Hero Background"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                />
 
-                <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
-                    <div className="max-w-5xl mx-auto animate-fade-in-up">
-                        <p className="text-white/90 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md font-display">
-                            Patagonia Argentina · El Calafate
-                        </p>
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-none drop-shadow-2xl font-display tracking-wide">
-                            Tu Experiencia <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white">en la Patagonia</span>
-                        </h1>
-                        <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-sans">
-                            Descubre la tierra de los glaciares con la comodidad y exclusividad que mereces.
-                        </p>
+                {/* 2. Overlay Oscuro */}
+                <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
 
-                        <Link
-                            to="/servicios"
-                            className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-white/20 backdrop-blur-sm"
-                        >
-                            <span>Explorar Experiencias</span>
-                            <ArrowRight size={20} />
-                        </Link>
-                    </div>
+                {/* 3. Contenido */}
+                <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center">
+                    <p className="text-white/90 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md font-display animate-fade-in-up">
+                        Patagonia Argentina · El Calafate
+                    </p>
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-none drop-shadow-lg font-display tracking-wide animate-fade-in-up delay-100">
+                        Tu Experiencia <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white">en la Patagonia</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-sans animate-fade-in-up delay-200">
+                        Descubre la tierra de los glaciares con la comodidad y exclusividad que mereces.
+                    </p>
+
+                    <Link
+                        to="/servicios"
+                        className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-white/20 backdrop-blur-sm animate-fade-in-up delay-300"
+                    >
+                        <span>Explorar Experiencias</span>
+                        <ArrowRight size={20} />
+                    </Link>
                 </div>
 
                 {/* Scroll Down Indicator */}
-                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
                     <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
                         <div className="w-1 h-2 bg-white rounded-full mt-2"></div>
                     </div>

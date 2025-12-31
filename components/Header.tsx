@@ -48,7 +48,7 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg
         ? 'bg-white shadow-md py-3'
-        : 'bg-gradient-to-b from-black/70 to-transparent py-5'
+        : 'backdrop-blur-md bg-black/70 py-4'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">

@@ -11,7 +11,7 @@ const Home: React.FC = () => {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 {/* Parallax Background */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
                     style={{ backgroundImage: `url(${heroGlaciar})` }}
                 >
                     <div className="absolute inset-0 bg-black/40"></div>

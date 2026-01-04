@@ -39,6 +39,88 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         ]
     },
     {
+        id: 'exc-perito-moreno',
+        title: 'Glaciar Perito Moreno',
+        price: 140,
+        shortDesc: 'Excursión día completo con espera flexible.',
+        fullDesc: 'La excursión obligada. Te llevamos al Parque Nacional Los Glaciares (80km) para que vivas una de las maravillas naturales del mundo. A diferencia de los tours grupales, aquí TÚ decides cuánto tiempo quedarte en las pasarelas, cuándo comer y cuándo regresar. Sin apuros, a tu propio ritmo.',
+        image: '/images/glaciar-perito.jpg',
+        category: 'traslados',
+        duration: 'Día completo (6-8 horas)',
+        galleryKeywords: 'glacier ice blue nature patagonia perito moreno',
+        itinerary: [
+            { title: 'Salida del Hotel', subtitle: 'Horario sugerido: 9:00 AM para evitar multitudes.' },
+            { title: 'Ingreso al Parque Nacional', subtitle: 'Compra de entradas y acceso.' },
+            { title: 'Curva de los Suspiros', subtitle: 'Primera vista panorámica del Glaciar.' },
+            { title: 'Pasarelas Libres', subtitle: 'Tiempo ilimitado para recorrer los balcones.' },
+            { title: 'Navegación Opcional', subtitle: 'Si deseas, coordinamos el safari náutico.' },
+            { title: 'Regreso', subtitle: 'Vuelta a la ciudad cuando tú lo decidas.' }
+        ],
+        tips: [
+            'Llevar vianda o snacks, los precios en el parque son elevados.',
+            'Ropa en capas: el clima cambia rápido frente al hielo.',
+            'No olvidar lentes de sol y protector solar.',
+            'La entrada al Parque Nacional se paga en el ingreso (Efectivo/Tarjeta).'
+        ]
+    },
+    {
+        id: 'exc-chalten-full',
+        title: 'El Chaltén Full Day',
+        price: 280,
+        shortDesc: 'Visita por el día a la montaña.',
+        fullDesc: 'Ida y vuelta en el día a la Capital del Trekking. Ideal para quienes no pernoctan en Chaltén pero quieren conocer sus senderos. Te llevamos, te esperamos mientras haces caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutas de la gastronomía del pueblo, y te traemos de regreso.',
+        image: '/images/traslado-chalten.jpg',
+        category: 'traslados',
+        duration: 'Día completo (12-14 horas)',
+        galleryKeywords: 'mountain hiking trekking nature fitz roy',
+        itinerary: [
+            { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
+            { title: 'Llegada a El Chaltén', subtitle: 'Tiempo libre para recorrer.' },
+            { title: 'Senderismo / Almuerzo', subtitle: 'Disfruta de la montaña a tu aire.' },
+            { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
+        ]
+    },
+    {
+        id: 'exc-bandera-moreno',
+        title: 'Puerto Bandera + Glaciar Moreno',
+        price: 220,
+        shortDesc: 'Dos imperdibles en un solo día.',
+        fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',
+        image: '/images/navegacion-lago.jpg',
+        category: 'traslados',
+        duration: 'Día completo (10-12 horas)',
+        galleryKeywords: 'boat glacier lake navigation icebergs',
+        itinerary: [
+            { title: 'Pick-up Temprano', subtitle: 'Aprox 7:30 AM para llegar al puerto.' },
+            { title: 'Navegación', subtitle: 'Experiencia lacustre (ticket no incluido en traslado).' },
+            { title: 'Desembarque y Conexión', subtitle: 'Te esperamos en puerto y vamos directo al Glaciar.' },
+            { title: 'Pasarelas Perito Moreno', subtitle: 'Visita por la tarde, con menos gente.' },
+            { title: 'Regreso Final', subtitle: 'Vuelta al hotel al atardecer.' }
+        ]
+    },
+    {
+        id: 'exc-torres-paine',
+        title: 'Torres del Paine (Chile)',
+        price: 'Consultar',
+        shortDesc: 'Excursión Full Day internacional.',
+        fullDesc: 'Una aventura internacional. Cruzamos la frontera para visitar el majestuoso Parque Nacional Torres del Paine en Chile. Recorremos los puntos panorámicos principales: Lago Nordenskjöld, Cuernos del Paine, Salto Grande y Laguna Amarga. Una jornada intensa pero inolvidable.',
+        image: '/images/torres-paine.jpg',
+        category: 'traslados',
+        duration: 'Día completo (14-16 horas)',
+        galleryKeywords: 'torres del paine mountains chile guanacos lake',
+        itinerary: [
+            { title: 'Salida de Madrugada', subtitle: '5:30 - 6:00 AM requerida por la distancia.' },
+            { title: 'Cruce de Frontera', subtitle: 'Trámites migratorios en Cancha Carrera / Cerro Castillo.' },
+            { title: 'Parque Nacional', subtitle: 'Recorrido en vehículo por los miradores.' },
+            { title: 'Regreso', subtitle: 'Llegada a El Calafate tarde por la noche.' }
+        ],
+        tips: [
+            'Documentación obligatoria (DNI/Pasaporte) para salir del país.',
+            'Verificar requisitos de ingreso a Chile vigentes.',
+            'No se permite ingresar alimentos frescos (frutas/carnes) a Chile.'
+        ]
+    },
+    {
         id: 'trf-terminal',
         title: 'Terminal de Ómnibus IN/OUT',
         price: 20,
@@ -138,88 +220,6 @@ export const TRASLADOS_DATA: ServiceItem[] = [
 
 // ============== EXCURSIONES DATA ==============
 export const EXCURSIONES_DATA: ServiceItem[] = [
-    {
-        id: 'exc-perito-moreno',
-        title: 'Glaciar Perito Moreno',
-        price: 140,
-        shortDesc: 'Excursión día completo con espera flexible.',
-        fullDesc: 'La excursión obligada. Te llevamos al Parque Nacional Los Glaciares (80km) para que vivas una de las maravillas naturales del mundo. A diferencia de los tours grupales, aquí TÚ decides cuánto tiempo quedarte en las pasarelas, cuándo comer y cuándo regresar. Sin apuros, a tu propio ritmo.',
-        image: '/images/glaciar-perito.jpg',
-        category: 'excursiones',
-        duration: 'Día completo (6-8 horas)',
-        galleryKeywords: 'glacier ice blue nature patagonia perito moreno',
-        itinerary: [
-            { title: 'Salida del Hotel', subtitle: 'Horario sugerido: 9:00 AM para evitar multitudes.' },
-            { title: 'Ingreso al Parque Nacional', subtitle: 'Compra de entradas y acceso.' },
-            { title: 'Curva de los Suspiros', subtitle: 'Primera vista panorámica del Glaciar.' },
-            { title: 'Pasarelas Libres', subtitle: 'Tiempo ilimitado para recorrer los balcones.' },
-            { title: 'Navegación Opcional', subtitle: 'Si deseas, coordinamos el safari náutico.' },
-            { title: 'Regreso', subtitle: 'Vuelta a la ciudad cuando tú lo decidas.' }
-        ],
-        tips: [
-            'Llevar vianda o snacks, los precios en el parque son elevados.',
-            'Ropa en capas: el clima cambia rápido frente al hielo.',
-            'No olvidar lentes de sol y protector solar.',
-            'La entrada al Parque Nacional se paga en el ingreso (Efectivo/Tarjeta).'
-        ]
-    },
-    {
-        id: 'exc-bandera-moreno',
-        title: 'Puerto Bandera + Glaciar Moreno',
-        price: 220,
-        shortDesc: 'Dos imperdibles en un solo día.',
-        fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',
-        image: '/images/navegacion-lago.jpg',
-        category: 'excursiones',
-        duration: 'Día completo (10-12 horas)',
-        galleryKeywords: 'boat glacier lake navigation icebergs',
-        itinerary: [
-            { title: 'Pick-up Temprano', subtitle: 'Aprox 7:30 AM para llegar al puerto.' },
-            { title: 'Navegación', subtitle: 'Experiencia lacustre (ticket no incluido en traslado).' },
-            { title: 'Desembarque y Conexión', subtitle: 'Te esperamos en puerto y vamos directo al Glaciar.' },
-            { title: 'Pasarelas Perito Moreno', subtitle: 'Visita por la tarde, con menos gente.' },
-            { title: 'Regreso Final', subtitle: 'Vuelta al hotel al atardecer.' }
-        ]
-    },
-    {
-        id: 'exc-chalten-full',
-        title: 'El Chaltén Full Day',
-        price: 280,
-        shortDesc: 'Visita por el día a la montaña.',
-        fullDesc: 'Ida y vuelta en el día a la Capital del Trekking. Ideal para quienes no pernoctan en Chaltén pero quieren conocer sus senderos. Te llevamos, te esperamos mientras haces caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutas de la gastronomía del pueblo, y te traemos de regreso.',
-        image: '/images/traslado-chalten.jpg',
-        category: 'excursiones',
-        duration: 'Día completo (12-14 horas)',
-        galleryKeywords: 'mountain hiking trekking nature fitz roy',
-        itinerary: [
-            { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
-            { title: 'Llegada a El Chaltén', subtitle: 'Tiempo libre para recorrer.' },
-            { title: 'Senderismo / Almuerzo', subtitle: 'Disfruta de la montaña a tu aire.' },
-            { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
-        ]
-    },
-    {
-        id: 'exc-torres-paine',
-        title: 'Torres del Paine (Chile)',
-        price: 'Consultar',
-        shortDesc: 'Excursión Full Day internacional.',
-        fullDesc: 'Una aventura internacional. Cruzamos la frontera para visitar el majestuoso Parque Nacional Torres del Paine en Chile. Recorremos los puntos panorámicos principales: Lago Nordenskjöld, Cuernos del Paine, Salto Grande y Laguna Amarga. Una jornada intensa pero inolvidable.',
-        image: '/images/torres-paine.jpg',
-        category: 'excursiones',
-        duration: 'Día completo (14-16 horas)',
-        galleryKeywords: 'torres del paine mountains chile guanacos lake',
-        itinerary: [
-            { title: 'Salida de Madrugada', subtitle: '5:30 - 6:00 AM requerida por la distancia.' },
-            { title: 'Cruce de Frontera', subtitle: 'Trámites migratorios en Cancha Carrera / Cerro Castillo.' },
-            { title: 'Parque Nacional', subtitle: 'Recorrido en vehículo por los miradores.' },
-            { title: 'Regreso', subtitle: 'Llegada a El Calafate tarde por la noche.' }
-        ],
-        tips: [
-            'Documentación obligatoria (DNI/Pasaporte) para salir del país.',
-            'Verificar requisitos de ingreso a Chile vigentes.',
-            'No se permite ingresar alimentos frescos (frutas/carnes) a Chile.'
-        ]
-    },
     {
         id: 'exc-walichu',
         title: 'Cuevas del Walichu',

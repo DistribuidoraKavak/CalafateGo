@@ -66,7 +66,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'trf-chalten',
-        title: 'Traslado a El Chaltén',
+        title: 'Traslado a El Chaltén (Ida o Vuelta)',
         price: 200,
         shortDesc: 'Viaje a la Capital Nacional del Trekking (Ruta 40).',
         fullDesc: 'Un viaje escénico por la mítica Ruta 40. Traslado privado exclusivo hacia El Chaltén (aprox 220km). Disfruta de las vistas del Lago Argentino, el Río La Leona y la primera vista imponente del Fitz Roy y el Cerro Torre, con la libertad de detenerte para tomar fotos cuando quieras.',

@@ -63,9 +63,13 @@ const Home: React.FC = () => {
                         {/* Card 1: Traslados */}
                         <Link to="/servicios?tab=traslados" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-100">
                             {/* Background Image Placeholder */}
-                            <div className="absolute inset-0 bg-slate-900">
-                                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-700 to-slate-900"></div>
-                                <Bus size={300} className="absolute -bottom-20 -right-20 text-white/5 group-hover:scale-110 transition-transform duration-700" />
+                            {/* Background Image */}
+                            <div className="absolute inset-0">
+                                <img
+                                    src="/images/transfers-collage.jpg"
+                                    alt="Traslados Privados"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                             </div>
 
                             {/* Overlay */}

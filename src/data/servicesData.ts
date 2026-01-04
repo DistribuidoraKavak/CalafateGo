@@ -159,21 +159,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             'No se permite ingresar alimentos frescos (frutas/carnes) a Chile.'
         ]
     },
-    {
-        id: 'trf-terminal',
-        title: 'Terminal de Ómnibus IN/OUT',
-        price: 20,
-        shortDesc: 'Conexión rápida entre la terminal y tu hotel.',
-        fullDesc: 'Recepción en la Terminal de Ómnibus de El Calafate y traslado privado directo hasta su hospedaje. Ideal para quienes llegan con equipaje o en horarios especiales. Coordinamos el retiro con flexibilidad total.',
-        image: '/images/traslado-aeropuerto.jpg',
-        category: 'traslados',
-        duration: '10-15 min',
-        galleryKeywords: 'bus terminal transfer car travel',
-        itinerary: [
-            { title: 'Encuentro en Terminal', subtitle: 'Te buscamos en la plataforma o hall central.' },
-            { title: 'Traslado Rápido', subtitle: 'Conexión directa a tu hotel en minutos.' }
-        ]
-    },
+
     {
         id: 'trf-rio-gallegos',
         title: 'Traslado a Río Gallegos',

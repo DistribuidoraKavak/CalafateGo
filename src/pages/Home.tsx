@@ -105,7 +105,7 @@ const Home: React.FC = () => {
                                 </div>
                                 <h4 className="text-3xl font-bold text-white mb-3 font-display">Excursiones Premium</h4>
                                 <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
-                                    Navegaciones exclusivas, trekking en El Chaltén y la majestuosidad del Perito Moreno. Viví la Patagonia a tu ritmo.
+                                    Navegaciones, trekking sobre el Glaciar, experiencias 4 x 4 y actividades tradicionales de la región. Trabajamos con prestadores habilitados para que puedas conocer lo mejor de la Patagonia.
                                 </p>
                                 <span className="inline-flex items-center text-white font-bold border-b border-white pb-1">
                                     Ver Experiencias <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />

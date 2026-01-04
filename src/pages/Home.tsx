@@ -92,9 +92,13 @@ const Home: React.FC = () => {
 
                         {/* Card 2: Excursiones */}
                         <Link to="/servicios?tab=excursiones" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-200">
-                            <div className="absolute inset-0 bg-slate-800">
-                                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 to-slate-900"></div>
-                                <MapPin size={300} className="absolute -bottom-20 -right-20 text-white/5 group-hover:scale-110 transition-transform duration-700" />
+                            {/* Background Image */}
+                            <div className="absolute inset-0">
+                                <img
+                                    src="/images/excursions-collage.png"
+                                    alt="Excursiones Premium"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                             </div>
 
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>

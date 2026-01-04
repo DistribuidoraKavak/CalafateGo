@@ -66,7 +66,7 @@ const Home: React.FC = () => {
                             {/* Background Image */}
                             <div className="absolute inset-0">
                                 <img
-                                    src="/images/transfers-collage.png"
+                                    src="/images/transfers-collage.jpg"
                                     alt="Traslados Privados"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
@@ -95,7 +95,7 @@ const Home: React.FC = () => {
                             {/* Background Image */}
                             <div className="absolute inset-0">
                                 <img
-                                    src="/images/excursions-collage.png"
+                                    src="/images/excursions-collage.jpg"
                                     alt="Excursiones Premium"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />

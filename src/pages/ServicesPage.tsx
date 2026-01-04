@@ -129,6 +129,42 @@ const ServicesPage: React.FC = () => {
 
             {/* ======= GRID CONTENT ======= */}
             <main className="relative z-20 max-w-7xl mx-auto px-4 pt-24 md:pt-32">
+
+                {/* Info Block for Transfers */}
+                {activeTab === 'traslados' && (
+                    <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
+                        <div className="bg-white border-l-4 border-ice p-6 md:p-8 rounded-r-2xl shadow-lg flex flex-col md:flex-row gap-6 items-start">
+                            <div className="bg-blue-50 p-4 rounded-full text-ice hidden md:flex items-center justify-center shrink-0">
+                                <Bus size={28} />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-bold text-navy mb-4 font-display flex items-center gap-2">
+                                    Condiciones de Tarifas <span className="text-slate-300 font-light">|</span> Traslados Privados
+                                </h3>
+                                <div className="text-slate-600 space-y-3 leading-relaxed">
+                                    <p className="flex items-start gap-2">
+                                        <span className="bg-ice/20 text-navy font-bold rounded px-2 py-0.5 text-xs mt-1">INFO</span>
+                                        <span>
+                                            Las tarifas indicadas corresponden al <strong>valor total del servicio</strong> por vehículo,
+                                            no a un valor individual por pasajero.
+                                        </span>
+                                    </p>
+                                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                        <p className="font-bold text-navy mb-1">Capacidad Estándar:</p>
+                                        <ul className="list-disc list-inside space-y-1 text-sm">
+                                            <li>Hasta <strong>6 personas</strong> por vehículo en excursiones/traslados generales.</li>
+                                            <li>Hasta <strong>4 personas</strong> en traslados al/del Aeropuerto (por capacidad de equipaje).</li>
+                                        </ul>
+                                    </div>
+                                    <p className="text-sm font-medium text-navy/70 italic pt-1">
+                                        Para grupos más numerosos, se deberá solicitar cotización especial.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 <div key={activeTab} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 animate-fade-in-up">
                     {currentData.map((item) => (
                         <ServiceCard key={item.id} data={item} />

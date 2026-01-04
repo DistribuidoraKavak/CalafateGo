@@ -1,4 +1,4 @@
-```javascript
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, Send, Loader2, MessageCircle } from 'lucide-react';
@@ -133,4 +133,3 @@ const TravelAssistant: React.FC = () => {
 };
 
 export default TravelAssistant;
-```

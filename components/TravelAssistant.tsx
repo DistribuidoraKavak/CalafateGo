@@ -96,7 +96,7 @@ const TravelAssistant: React.FC = () => {
                 {/* Suggestion Chips */}
                 {!aiResponse && (
                     <div className="flex flex-wrap gap-2 justify-center">
-                        {['¿Precios de traslados?', '¿Qué ropa llevar?', 'Clima en el Glaciar'].map((suggestion, i) => (
+                        {['¿Qué servicios ofrecen?', '¿Qué ropa llevar?', 'Clima en el Glaciar'].map((suggestion, i) => (
                             <button
                                 key={i}
                                 onClick={() => setInputMessage(suggestion)}

@@ -41,13 +41,13 @@ const AboutUs: React.FC = () => {
                             Más que una agencia, <br /> somos locales.
                         </h2>
                         <p className="text-lg text-slate-600 leading-relaxed text-justify">
-                            Nacimos y crecimos con el viento patagónico en la cara. Conocemos cada curva del camino hacia el Glaciar Perito Moreno y los secretos mejor guardados de El Calafate.
+                            Elegimos la Patagonia como nuestro hogar y llevamos años recorriendo cada camino, cada curva hacia el Glaciar Perito Moreno y los secretos mejor guardados de El Calafate. Esta tierra nos adoptó y nosotros la abrazamos con pasión.
                         </p>
                         <p className="text-lg text-slate-600 leading-relaxed text-justify">
                             En <strong>CalafateGo</strong>, no solo te llevamos de un punto a otro. Te recibimos en nuestra casa. Nuestro compromiso es transformar tu traslado o excursión en una experiencia sin preocupaciones, donde la puntualidad y la calidez humana son nuestra bandera.
                         </p>
                         <p className="text-lg font-medium text-navy italic">
-                            "Queremos que te lleves de la Patagonia no solo fotos, sino la sensación de haber sido cuidado por amigos."
+                            "Queremos que te lleves de la Patagonia no solo fotos, sino la sensación de haber sido acompañado por amigos."
                         </p>
                     </div>
 

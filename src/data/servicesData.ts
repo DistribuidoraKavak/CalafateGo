@@ -15,6 +15,7 @@ export interface ServiceItem {
 }
 
 // ============== TRASLADOS DATA ==============
+// ============== TRASLADOS DATA ==============
 export const TRASLADOS_DATA: ServiceItem[] = [
     {
         id: 'trf-aeropuerto',
@@ -64,6 +65,28 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         ]
     },
     {
+        id: 'trf-chalten',
+        title: 'Traslado a El Chaltén',
+        price: 200,
+        shortDesc: 'Viaje a la Capital Nacional del Trekking (Ruta 40).',
+        fullDesc: 'Un viaje escénico por la mítica Ruta 40. Traslado privado exclusivo hacia El Chaltén (aprox 220km). Disfruta de las vistas del Lago Argentino, el Río La Leona y la primera vista imponente del Fitz Roy y el Cerro Torre, con la libertad de detenerte para tomar fotos cuando quieras.',
+        image: '/images/traslado-chalten.jpg',
+        category: 'traslados',
+        duration: '3-3.5 horas',
+        galleryKeywords: 'road trip patagonia mountains fitz roy road',
+        itinerary: [
+            { title: 'Salida de El Calafate', subtitle: 'Te buscamos por tu hotel a la hora pactada.' },
+            { title: 'Ruta 40 & Río La Leona', subtitle: 'Cruce del río y parada técnica histórica (opcional).' },
+            { title: 'Mirador de los Glaciares', subtitle: 'Primera vista panorámica del lago Viedma y glaciares.' },
+            { title: 'Llegada a El Chaltén', subtitle: 'Te dejamos en tu alojamiento al pie de la montaña.' }
+        ],
+        tips: [
+            'Recomendamos salir temprano para aprovechar el día en Chaltén.',
+            'Podemos hacer paradas fotográficas a pedido.',
+            'Si vas por el día, consulta por la opción de espera.'
+        ]
+    },
+    {
         id: 'exc-chalten-full',
         title: 'El Chaltén Full Day',
         price: 280,
@@ -78,6 +101,22 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             { title: 'Llegada a El Chaltén', subtitle: 'Tiempo libre para recorrer.' },
             { title: 'Senderismo / Almuerzo', subtitle: 'Disfruta de la montaña a tu aire.' },
             { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
+        ]
+    },
+    {
+        id: 'trf-puerto-bandera',
+        title: 'Puerto Bandera',
+        price: 90,
+        shortDesc: 'Conexión para navegaciones.',
+        fullDesc: 'Traslado privado hacia Puerto Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
+        image: '/images/navegacion-lago.jpg',
+        category: 'traslados',
+        duration: '45-60 min',
+        galleryKeywords: 'lake port boat glacier patagonia',
+        itinerary: [
+            { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },
+            { title: 'Trayecto al Puerto', subtitle: '47km de ruta asfaltada con vistas al lago.' },
+            { title: 'Llegada a Puerto Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
         ]
     },
     {
@@ -133,44 +172,6 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         itinerary: [
             { title: 'Encuentro en Terminal', subtitle: 'Te buscamos en la plataforma o hall central.' },
             { title: 'Traslado Rápido', subtitle: 'Conexión directa a tu hotel en minutos.' }
-        ]
-    },
-    {
-        id: 'trf-chalten',
-        title: 'Traslado a El Chaltén',
-        price: 200,
-        shortDesc: 'Viaje a la Capital Nacional del Trekking (Ruta 40).',
-        fullDesc: 'Un viaje escénico por la mítica Ruta 40. Traslado privado exclusivo hacia El Chaltén (aprox 220km). Disfruta de las vistas del Lago Argentino, el Río La Leona y la primera vista imponente del Fitz Roy y el Cerro Torre, con la libertad de detenerte para tomar fotos cuando quieras.',
-        image: '/images/traslado-chalten.jpg',
-        category: 'traslados',
-        duration: '3-3.5 horas',
-        galleryKeywords: 'road trip patagonia mountains fitz roy road',
-        itinerary: [
-            { title: 'Salida de El Calafate', subtitle: 'Te buscamos por tu hotel a la hora pactada.' },
-            { title: 'Ruta 40 & Río La Leona', subtitle: 'Cruce del río y parada técnica histórica (opcional).' },
-            { title: 'Mirador de los Glaciares', subtitle: 'Primera vista panorámica del lago Viedma y glaciares.' },
-            { title: 'Llegada a El Chaltén', subtitle: 'Te dejamos en tu alojamiento al pie de la montaña.' }
-        ],
-        tips: [
-            'Recomendamos salir temprano para aprovechar el día en Chaltén.',
-            'Podemos hacer paradas fotográficas a pedido.',
-            'Si vas por el día, consulta por la opción de espera.'
-        ]
-    },
-    {
-        id: 'trf-puerto-bandera',
-        title: 'Puerto Bandera',
-        price: 90,
-        shortDesc: 'Conexión para navegaciones.',
-        fullDesc: 'Traslado privado hacia Puerto Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
-        image: '/images/navegacion-lago.jpg',
-        category: 'traslados',
-        duration: '45-60 min',
-        galleryKeywords: 'lake port boat glacier patagonia',
-        itinerary: [
-            { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },
-            { title: 'Trayecto al Puerto', subtitle: '47km de ruta asfaltada con vistas al lago.' },
-            { title: 'Llegada a Puerto Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
         ]
     },
     {

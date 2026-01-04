@@ -82,7 +82,7 @@ const Home: React.FC = () => {
                                 </div>
                                 <h4 className="text-3xl font-bold text-white mb-3 font-display">Traslados Privados</h4>
                                 <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
-                                    Servicio puerta a puerta desde Aeropuerto FTE y hoteles. Vehículos de alta gama, climatizados y con choferes profesionales.
+                                    Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad, privacidad y flexibilidad, en vehículos de alta gama, climatizados y con choferes profesionales.
                                 </p>
                                 <span className="inline-flex items-center text-white font-bold border-b border-ice pb-1">
                                     Ver Tarifas <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />

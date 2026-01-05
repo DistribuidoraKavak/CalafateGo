@@ -108,15 +108,21 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         title: 'El Chaltén Full Day',
         price: 280,
         shortDesc: 'Visita por el día a la montaña.',
-        fullDesc: 'Ida y vuelta en el día a la Capital del Trekking. Ideal para quienes no pernoctan en Chaltén pero quieren conocer sus senderos. Te llevamos, te esperamos mientras haces caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutas de la gastronomía del pueblo, y te traemos de regreso.',
-        image: '/images/traslado-chalten.jpg',
+        fullDesc: 'Viví El Chaltén al máximo. Una experiencia diseñada para que disfrutes de la Capital Nacional del Trekking con total libertad y sin apuros. Es ideal tanto para quienes buscan caminatas cortas y accesibles, como para quienes desean desafíos más exigentes.\n\nTendrás el tiempo necesario para recorrer senderos emblemáticos como Laguna Capri, Mirador de los Cóndores o Chorrillo del Salto; o incluso para emprender trekkings icónicos como Laguna de los Tres o Cerro Torre.\n\nNosotros nos encargamos de la logística: te llevamos, te esperamos mientras explorás y disfrutas de la gastronomía local, y te traemos de regreso. Comodidad, flexibilidad y naturaleza pura.',
+        image: '/images/chalten-full-cover.jpg',
+        gallery: [
+            '/images/chalten-full-cover.jpg',
+            '/images/chalten-full-capri.jpg',
+            '/images/chalten-full-chorrillo.jpg',
+            '/images/chalten-full-condores.png'
+        ],
         category: 'traslados',
-        duration: 'Día completo (12-14 horas)',
+        duration: 'Día completo',
         galleryKeywords: 'mountain hiking trekking nature fitz roy',
         itinerary: [
             { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
-            { title: 'Llegada a El Chaltén', subtitle: 'Tiempo libre para recorrer.' },
-            { title: 'Senderismo / Almuerzo', subtitle: 'Disfruta de la montaña a tu aire.' },
+            { title: 'Llegada a El Chaltén', subtitle: 'Arribo a la base de los senderos.' },
+            { title: 'Tiempo Libre', subtitle: 'Recorre senderos autoguiados o disfruta de la gastronomía local.' },
             { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
         ]
     },

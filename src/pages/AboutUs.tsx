@@ -59,6 +59,7 @@ const AboutUs: React.FC = () => {
                                 src="/images/team-meeting.jpg"
                                 alt="Nuestro equipo planificando tu viaje"
                                 className="relative rounded-3xl shadow-2xl w-full object-cover transform transition duration-500 hover:scale-[1.01]"
+                                loading="lazy"
                             />
                         </div>
                     </div>

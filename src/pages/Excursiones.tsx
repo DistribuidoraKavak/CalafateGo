@@ -21,7 +21,7 @@ const ExcursionCard: React.FC<ExcursionData> = ({
 }) => (
     <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300">
         <div className="relative h-64 overflow-hidden">
-            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" loading="lazy" />
             <div className="absolute top-4 left-4">
                 <span className="bg-white/90 backdrop-blur-sm text-navy px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
                     {tag}

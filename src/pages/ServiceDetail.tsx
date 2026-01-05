@@ -126,19 +126,20 @@ const ServiceDetail: React.FC = () => {
                             src={galleryImages[0]}
                             className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[0]?.includes('glaciar-personas') ? 'object-bottom' : ''}`}
                             alt="Main view"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                     </div>
 
                     {/* Secondary Images */}
                     <div className="hidden md:block relative group overflow-hidden bg-slate-100">
-                        <img src={galleryImages[1]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[1]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 1" />
+                        <img src={galleryImages[1]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[1]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 1" loading="lazy" />
                     </div>
                     <div className="hidden md:block relative group overflow-hidden bg-slate-100 md:col-start-4">
-                        <img src={galleryImages[2]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[2]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 2" />
+                        <img src={galleryImages[2]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[2]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 2" loading="lazy" />
                     </div>
                     <div className="hidden md:block md:col-span-2 relative group overflow-hidden bg-slate-100">
-                        <img src={galleryImages[3]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[3]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 3" />
+                        <img src={galleryImages[3]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[3]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 3" loading="lazy" />
                         <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">
                             + Ver Galería
                         </div>

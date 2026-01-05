@@ -15,7 +15,7 @@ const TransferCard: React.FC<{
 }> = ({ title, route, price, desc, icon, image }) => (
     <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 overflow-hidden">
         <div className="h-48 overflow-hidden relative">
-            <img src={image} alt={title} className="w-full h-full object-cover" />
+            <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
             <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-xl text-ice shadow-sm">
                 {icon}
             </div>

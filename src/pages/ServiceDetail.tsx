@@ -66,11 +66,11 @@ const ServiceDetail: React.FC = () => {
                     src={service.image}
                     alt={service.title}
                     className={`absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700 
-                        ${service.id === 'exc-chalten-full' ? 'object-top' : ''}
+                        ${['exc-chalten-full', 'exc-torres-paine'].includes(service.id) ? 'object-top' : ''}
                         ${service.id === 'trf-chalten' ? 'object-[center_25%]' : ''}
                         ${service.id === 'trf-puerto-bandera' ? 'object-[center_70%]' : ''}
                         ${service.image.includes('glaciar-personas') ? 'object-bottom' : ''}
-                        ${!['exc-chalten-full', 'trf-chalten', 'trf-puerto-bandera'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
+                        ${!['exc-chalten-full', 'exc-torres-paine', 'trf-chalten', 'trf-puerto-bandera'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
                     `}
                 />
 

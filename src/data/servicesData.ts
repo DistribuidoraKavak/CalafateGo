@@ -176,10 +176,15 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 'Consultar',
         shortDesc: 'Excursión Full Day internacional.',
         fullDesc: 'Una experiencia internacional única que nos lleva a cruzar la frontera hacia Chile para recorrer el imponente Parque Nacional Torres del Paine, uno de los paisajes naturales más reconocidos del mundo.\n\nA lo largo de la jornada visitamos los principales sectores del parque, combinando recorridos panorámicos y paradas estratégicas en miradores naturales.\n\nDurante el trayecto se conocen lugares emblemáticos como Laguna Amarga, Lago Nordenskjöld, Salto Grande, Lago Pehoé y los imponentes Cuernos del Paine, con vistas abiertas a valles, ríos, lagos y formaciones montañosas únicas. El recorrido incluye caminatas cortas de baja dificultad y tiempo suficiente para disfrutar del entorno, tomar fotografías y conectar con la naturaleza.\n\nUna excursión ideal para quienes desean vivir Torres del Paine en profundidad en un solo día, disfrutando de sus paisajes más representativos en una experiencia intensa, completa e inolvidable.',
-        image: '/images/torres-paine.jpg',
+        image: '/images/torres-paine-cover.jpg',
+        gallery: [
+            '/images/torres-paine-cover.jpg',
+            '/images/torres-paine-lake-bridge.jpg',
+            '/images/torres-paine-sign.jpg',
+            '/images/torres-paine-guanacos.png'
+        ],
         category: 'traslados',
-        duration: 'Día completo (14-16 horas)',
-        galleryKeywords: 'torres del paine mountains chile guanacos lake',
+        galleryKeywords: 'mountains patagonia landscape lake nature',
         itinerary: [
             { title: 'Salida de Madrugada', subtitle: '5:30 - 6:00 AM requerida por la distancia.' },
             { title: 'Cruce de Frontera', subtitle: 'Trámites migratorios en Cancha Carrera / Cerro Castillo.' },

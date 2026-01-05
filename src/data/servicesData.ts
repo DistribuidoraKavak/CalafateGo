@@ -149,7 +149,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'exc-bandera-moreno',
-        title: 'Puerto Bandera + Glaciar Moreno',
+        title: 'Puerto Punta Bandera + Glaciar Moreno',
         price: 220,
         shortDesc: 'Dos imperdibles en un solo día.',
         fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',

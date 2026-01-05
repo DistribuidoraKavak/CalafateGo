@@ -121,8 +121,8 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         galleryKeywords: 'mountain hiking trekking nature fitz roy',
         itinerary: [
             { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
-            { title: 'Llegada a El Chaltén', subtitle: 'Tiempo libre para recorrer.' },
-            { title: 'Senderismo / Almuerzo', subtitle: 'Disfruta de la montaña a tu aire.' },
+            { title: 'Llegada a El Chaltén', subtitle: 'Arribo a la base de los senderos.' },
+            { title: 'Tiempo Libre', subtitle: 'Recorre senderos autoguiados o disfruta de la gastronomía local.' },
             { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
         ]
     },

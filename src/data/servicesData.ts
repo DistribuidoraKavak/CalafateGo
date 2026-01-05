@@ -24,11 +24,12 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 30,
         shortDesc: 'Recepción en Aeropuerto y traslado directo a tu hospedaje.',
         fullDesc: 'Olvídate del estrés de llegar a un lugar nuevo. Nuestro servicio comienza con la recepción personalizada en el Aeropuerto Internacional Comandante Armando Tola (FTE). Un chofer profesional te estará esperando con un cartel con tu nombre, listo para asistirte con el equipaje y llevarte directamente a tu hotel en El Calafate.\n\nDisfruta de un viaje cómodo en nuestras unidades modernas, con climatización y espacio de sobra para tu equipaje.',
-        image: '/images/aeropuerto-fachada.png',
+        image: '/images/aeropuerto-portada.png',
         gallery: [
+            '/images/aeropuerto-portada.png',
             '/images/aeropuerto-fachada.png',
-            '/images/aeropuerto-pareja.png',
-            '/images/aeropuerto-avion.png'
+            '/images/aeropuerto-vista-terminal.jpg',
+            '/images/aeropuerto-pareja.png'
         ],
         category: 'traslados',
         duration: '25-40 min',

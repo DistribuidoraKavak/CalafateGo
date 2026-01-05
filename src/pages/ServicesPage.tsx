@@ -181,7 +181,7 @@ const ServicesPage: React.FC = () => {
                 <div className="mt-20 text-center border-t border-slate-200 pt-10">
                     <p className="text-slate-400 mb-4 font-medium text-sm uppercase tracking-widest">Atención Personalizada</p>
                     <a
-                        href="https://wa.me/5219988044284"
+                        href="https://wa.me/5492966530661"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center text-navy font-bold hover:text-ice transition-colors gap-2 text-lg group"

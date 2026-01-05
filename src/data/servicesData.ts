@@ -109,7 +109,13 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 280,
         shortDesc: 'Visita por el día a la montaña.',
         fullDesc: 'Ida y vuelta en el día a la Capital del Trekking. Ideal para quienes no pernoctan en Chaltén pero quieren conocer sus senderos. Te llevamos, te esperamos mientras haces caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutas de la gastronomía del pueblo, y te traemos de regreso.',
-        image: '/images/traslado-chalten.jpg',
+        image: '/images/chalten-full-cover.jpg',
+        gallery: [
+            '/images/chalten-full-cover.jpg',
+            '/images/chalten-full-capri.jpg',
+            '/images/chalten-full-chorrillo.jpg',
+            '/images/chalten-full-condores.png'
+        ],
         category: 'traslados',
         duration: 'Día completo (12-14 horas)',
         galleryKeywords: 'mountain hiking trekking nature fitz roy',

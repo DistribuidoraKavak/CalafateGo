@@ -54,9 +54,9 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         image: '/images/glaciar-perito.jpg',
         gallery: [
             '/images/glaciar-perito.jpg',
-            '/images/glaciar-hielo-azul.jpg',
-            '/images/glaciar-panoramica.jpg',
-            '/images/glaciar-tempanos.png'
+            '/images/glaciar-pasarelas.jpg',
+            '/images/glaciar-restaurante.png',
+            '/images/glaciar-barco.png'
         ],
         category: 'traslados',
         duration: 'Día completo (6-8 horas)',

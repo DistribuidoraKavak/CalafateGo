@@ -32,7 +32,6 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             '/images/aeropuerto-avion.png'
         ],
         category: 'traslados',
-        duration: '25-40 min',
         galleryKeywords: 'luxury airport transfer suv luggage chauffeur',
         itinerary: [
             { title: 'Recepción en Aeropuerto', subtitle: 'Tu chofer te espera en el hall de llegadas con un cartel a tu nombre.' },

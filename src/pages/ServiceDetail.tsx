@@ -256,10 +256,12 @@ const ServiceDetail: React.FC = () => {
                                 </div>
 
                                 <div className="border border-slate-100 rounded-xl my-6 divide-y divide-slate-100 text-sm">
-                                    <div className="p-4 flex justify-between">
-                                        <span className="text-slate-500">Duración</span>
-                                        <span className="font-bold text-navy">{service.duration || 'Flexible'}</span>
-                                    </div>
+                                    {service.duration && (
+                                        <div className="p-4 flex justify-between">
+                                            <span className="text-slate-500">Duración</span>
+                                            <span className="font-bold text-navy">{service.duration}</span>
+                                        </div>
+                                    )}
                                     <div className="p-4 flex justify-between">
                                         <span className="text-slate-500">Tipo</span>
                                         <span className="font-bold text-navy">Privado</span>

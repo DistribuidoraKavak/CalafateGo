@@ -43,14 +43,19 @@ const ServiceDetail: React.FC = () => {
     };
 
     // --- Dynamic Gallery Images ---
-    // Generate derived images using Pollinations AI based on keywords
+    // --- Dynamic Gallery Images ---
+    // Use uploaded gallery images if available, otherwise generate with AI
     const keywords = service.galleryKeywords || (isTraslado ? 'car road trip' : 'nature landscape');
-    const galleryImages = [
-        service.image, // Main image
-        `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' close up detail elegant 4k photorealistic')}?width=800&height=600&nologo=true&seed=1`,
-        `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' wide angle scenery cinematic lighting 4k')}?width=800&height=600&nologo=true&seed=2`,
-        `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' tourists enjoying happy lifestyle 4k')}?width=800&height=600&nologo=true&seed=3`,
-    ];
+
+    // Priority: 1. service.gallery, 2. AI Generated Fallback
+    const galleryImages = service.gallery && service.gallery.length > 0
+        ? service.gallery
+        : [
+            service.image, // Main image
+            `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' close up detail elegant 4k photorealistic')}?width=800&height=600&nologo=true&seed=1`,
+            `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' wide angle scenery cinematic lighting 4k')}?width=800&height=600&nologo=true&seed=2`,
+            `https://image.pollinations.ai/prompt/${encodeURIComponent(keywords + ' tourists enjoying happy lifestyle 4k')}?width=800&height=600&nologo=true&seed=3`,
+        ];
 
     return (
         <div className="bg-white min-h-screen font-sans pb-24 lg:pb-0">

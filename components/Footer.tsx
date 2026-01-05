@@ -77,15 +77,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone size={20} className="text-ice mr-3 mt-1 flex-shrink-0" />
-                <span className="text-slate-400">+54 9 2902 12-3456</span>
+                <span className="text-slate-400">+54 9 2966 53-0661</span>
               </li>
               <li className="flex items-start">
                 <Mail size={20} className="text-ice mr-3 mt-1 flex-shrink-0" />
                 <span className="text-slate-400">reservas@calafatego.com</span>
-              </li>
-              <li className="flex items-start">
-                <MapPin size={20} className="text-ice mr-3 mt-1 flex-shrink-0" />
-                <span className="text-slate-400">Av. del Libertador 1234<br />El Calafate, Santa Cruz</span>
               </li>
             </ul>
           </div>

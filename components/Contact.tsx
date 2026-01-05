@@ -35,16 +35,6 @@ const Contact: React.FC = () => {
                   <p className="text-xl text-navy font-semibold">reservas@calafatego.com</p>
                 </div>
               </div>
-
-              <div className="flex items-center space-x-6">
-                <div className="p-4 bg-glacier/20 rounded-2xl text-ice">
-                  <MapPin size={28} />
-                </div>
-                <div>
-                  <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Oficina Central</p>
-                  <p className="text-xl text-navy font-semibold">Av. del Libertador 123, El Calafate</p>
-                </div>
-              </div>
             </div>
 
             <div className="mt-12 flex space-x-4">

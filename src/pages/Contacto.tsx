@@ -62,15 +62,7 @@ const Contacto: React.FC = () => {
                                         <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">reservas@calafatego.com</p>
                                     </div>
                                 </li>
-                                <li className="flex items-start gap-4">
-                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 text-ice">
-                                        <MapPin size={24} />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-slate-400 font-bold uppercase mb-1">Oficina Central</p>
-                                        <p className="text-lg font-semibold leading-snug">Av. del Libertador 1234<br />El Calafate, Santa Cruz</p>
-                                    </div>
-                                </li>
+
                             </ul>
 
                             <div className="mt-12">

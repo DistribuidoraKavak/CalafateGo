@@ -194,7 +194,7 @@ const ServiceDetail: React.FC = () => {
                                     { icon: Bus, text: 'Vehículo Moderno' },
                                     { icon: Calendar, text: 'Flexibilidad Horaria' },
                                     ...(isTraslado
-                                        ? [{ icon: CheckCircle2, text: 'Agua Mineral' }, { icon: Star, text: 'Chofer Guía' }]
+                                        ? [{ icon: Star, text: 'Chofer Profesional' }]
                                         : [{ icon: MapPin, text: 'Paradas Panorámicas' }, { icon: Camera, text: 'Tiempo para Fotos' }]
                                     )
                                 ].map((item, idx) => (

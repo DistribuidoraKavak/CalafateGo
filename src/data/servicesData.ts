@@ -128,18 +128,23 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'trf-puerto-bandera',
-        title: 'Puerto Bandera',
+        title: 'Puerto Punta Bandera',
         price: 90,
         shortDesc: 'Conexión para navegaciones.',
-        fullDesc: 'Traslado privado hacia Puerto Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
-        image: '/images/navegacion-lago.jpg',
+        fullDesc: 'Traslado privado hacia Puerto Punta Bandera (47 km), el puerto principal para las navegaciones entre los glaciares.\n\nDesde allí se realizan las navegaciones más destacadas del Parque Nacional Los Glaciares, como la Navegación Todo Glaciares (que recorre el brazo norte del Lago Argentino hacia los glaciares Upsala y Spegazzini) y la Experiencia Glaciares Gourmet, entre otras.\n\nLlegamos con la antelación necesaria para que realices el embarque con tranquilidad y disfrutes de una de las experiencias más completas para conocer los imponentes glaciares del sur argentino.',
+        image: '/images/puerto-bandera-cover.jpg',
+        gallery: [
+            '/images/puerto-bandera-cover.jpg',
+            '/images/puerto-bandera-aerea.jpg',
+            '/images/puerto-bandera-hielo.jpg',
+            '/images/puerto-bandera-cartel.jpg'
+        ],
         category: 'traslados',
-        duration: '45-60 min',
         galleryKeywords: 'lake port boat glacier patagonia',
         itinerary: [
             { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },
             { title: 'Trayecto al Puerto', subtitle: '47km de ruta asfaltada con vistas al lago.' },
-            { title: 'Llegada a Puerto Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
+            { title: 'Llegada a Puerto Punta Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
         ]
     },
     {
@@ -148,9 +153,14 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 220,
         shortDesc: 'Dos imperdibles en un solo día.',
         fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',
-        image: '/images/navegacion-lago.jpg',
+        image: '/images/puerto-bandera-hielo.jpg',
+        gallery: [
+            '/images/puerto-bandera-hielo.jpg',
+            '/images/puerto-bandera-cartel.jpg',
+            '/images/puerto-bandera-cover.jpg',
+            '/images/puerto-bandera-aerea.jpg'
+        ],
         category: 'traslados',
-        duration: 'Día completo (10-12 horas)',
         galleryKeywords: 'boat glacier lake navigation icebergs',
         itinerary: [
             { title: 'Pick-up Temprano', subtitle: 'Aprox 7:30 AM para llegar al puerto.' },

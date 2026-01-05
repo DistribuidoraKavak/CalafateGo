@@ -1,0 +1,23 @@
+{
+    "name": "CalafateGo",
+    "short_name": "CalafateGo",
+    "description": "Traslados Privados y Excursiones en El Calafate, Patagonia Argentina",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#002B5B",
+    "theme_color": "#002B5B",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "travel",
+        "transportation"
+    ],
+    "lang": "es-AR"
+}

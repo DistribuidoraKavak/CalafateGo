@@ -30,7 +30,7 @@ const TransferCard: React.FC<{
           <p className="text-2xl font-bold text-navy">{price}</p>
         </div>
         <button
-          onClick={() => window.open(`https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
+          onClick={() => window.open(`https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
           className="bg-navy text-white px-6 py-3 rounded-xl font-bold hover:bg-ice transition-colors flex items-center space-x-2 shadow-md"
         >
           <span>Reservar</span>

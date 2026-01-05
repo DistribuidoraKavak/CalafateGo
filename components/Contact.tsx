@@ -3,7 +3,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const whatsappUrl = "https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
+  const whatsappUrl = "https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
 
   return (
     <section id="contacto" className="py-24 bg-white">
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">WhatsApp 24/7</p>
-                  <p className="text-xl text-navy font-semibold">+54 9 2902 123456</p>
+                  <p className="text-xl text-navy font-semibold">+54 9 2966 53-0661</p>
                 </div>
               </div>
 
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">Email</p>
-                  <p className="text-xl text-navy font-semibold">reservas@calafatego.com.ar</p>
+                  <p className="text-xl text-navy font-semibold">reservas@calafatego.com</p>
                 </div>
               </div>
 
@@ -58,18 +58,18 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold text-navy mb-2">Nombre</label>
-                  <input 
-                    type="text" 
-                    className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all" 
-                    placeholder="Tu nombre" 
+                  <input
+                    type="text"
+                    className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all"
+                    placeholder="Tu nombre"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-navy mb-2">WhatsApp</label>
-                  <input 
-                    type="tel" 
-                    className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all" 
-                    placeholder="+54..." 
+                  <input
+                    type="tel"
+                    className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all"
+                    placeholder="+54..."
                   />
                 </div>
               </div>
@@ -84,13 +84,13 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <label className="block text-sm font-bold text-navy mb-2">Mensaje</label>
-                <textarea 
-                  rows={4} 
-                  className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all" 
+                <textarea
+                  rows={4}
+                  className="w-full px-5 py-3 rounded-xl border border-slate-300 bg-white text-gray-900 placeholder:text-slate-400 outline-none focus:border-ice focus:ring-1 focus:ring-ice transition-all"
                   placeholder="¿Cuándo llegas? ¿Cuántas personas son?"
                 ></textarea>
               </div>
-              <button 
+              <button
                 type="submit"
                 className="w-full py-4 gradient-ice text-white font-bold rounded-xl shadow-lg hover:brightness-110 transition-all text-lg"
               >

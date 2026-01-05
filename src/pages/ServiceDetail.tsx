@@ -178,27 +178,7 @@ const ServiceDetail: React.FC = () => {
                             </div>
                         )}
 
-                        {/* Enhanced Vehicle Card (Traslados Only) */}
-                        {isTraslado && (
-                            <div className="border border-slate-100 rounded-3xl p-2 bg-slate-50 flex flex-col md:flex-row gap-6 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
-                                <div className="md:w-1/3 h-48 md:h-auto bg-navy rounded-2xl flex items-center justify-center text-white relative overflow-hidden">
-                                    {/* Abstract vehicle visual */}
-                                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_1px)] bg-[length:10px_10px]"></div>
-                                    <Bus size={64} strokeWidth={1} className="relative z-10" />
-                                </div>
-                                <div className="p-4 md:py-6 md:pr-6 flex-1 flex flex-col justify-center">
-                                    <h4 className="text-lg font-bold text-navy mb-2">Unidad Premium: Vehículos Modernos y Confortables</h4>
-                                    <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                                        Viaja con el máximo confort. Asientos de cuero, climatización bizona y amplio espacio para equipaje.
-                                    </p>
-                                    <div className="flex gap-4 text-xs font-bold text-navy uppercase tracking-wider">
-                                        <span className="bg-white px-3 py-1 rounded-md shadow-sm border border-slate-100">4 Pax</span>
-                                        <span className="bg-white px-3 py-1 rounded-md shadow-sm border border-slate-100">Cuero</span>
-                                        <span className="bg-white px-3 py-1 rounded-md shadow-sm border border-slate-100">A/C</span>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+
 
                         {/* Grid "¿Qué incluye?" */}
                         <div className="border-t border-slate-100 pt-10">

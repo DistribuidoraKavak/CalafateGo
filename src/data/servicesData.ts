@@ -117,7 +117,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             '/images/chalten-full-condores.png'
         ],
         category: 'traslados',
-        duration: 'Día completo (12-14 horas)',
+        duration: 'Día completo',
         galleryKeywords: 'mountain hiking trekking nature fitz roy',
         itinerary: [
             { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },

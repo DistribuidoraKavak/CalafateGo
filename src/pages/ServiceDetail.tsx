@@ -65,7 +65,11 @@ const ServiceDetail: React.FC = () => {
                 <img
                     src={service.image}
                     alt={service.title}
-                    className={`absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700 ${['exc-chalten-full', 'trf-chalten'].includes(service.id) ? 'object-[center_25%]' : 'object-center'}`}
+                    className={`absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700 
+                        ${service.id === 'exc-chalten-full' ? 'object-top' : ''}
+                        ${service.id === 'trf-chalten' ? 'object-[center_25%]' : ''}
+                        ${!['exc-chalten-full', 'trf-chalten'].includes(service.id) ? 'object-center' : ''}
+                    `}
                 />
 
                 {/* Gradient Bleed Effect */}

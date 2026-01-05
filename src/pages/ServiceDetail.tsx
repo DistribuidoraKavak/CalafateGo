@@ -68,7 +68,8 @@ const ServiceDetail: React.FC = () => {
                     className={`absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700 
                         ${service.id === 'exc-chalten-full' ? 'object-top' : ''}
                         ${service.id === 'trf-chalten' ? 'object-[center_25%]' : ''}
-                        ${!['exc-chalten-full', 'trf-chalten'].includes(service.id) ? 'object-center' : ''}
+                        ${service.id === 'trf-puerto-bandera' ? 'object-[center_70%]' : ''}
+                        ${!['exc-chalten-full', 'trf-chalten', 'trf-puerto-bandera'].includes(service.id) ? 'object-center' : ''}
                     `}
                 />
 

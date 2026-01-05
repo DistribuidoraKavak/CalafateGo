@@ -108,7 +108,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         title: 'El Chaltén Full Day',
         price: 280,
         shortDesc: 'Visita por el día a la montaña.',
-        fullDesc: 'Ida y vuelta en el día a la Capital del Trekking. Ideal para quienes no pernoctan en Chaltén pero quieren conocer sus senderos. Te llevamos, te esperamos mientras haces caminatas cortas (Chorrillo del Salto, Mirador de los Cóndores) o disfrutas de la gastronomía del pueblo, y te traemos de regreso.',
+        fullDesc: 'Viví El Chaltén al máximo en una experiencia pensada para que disfrutes la Capital Nacional del Trekking con total libertad y sin apuros. Ideal tanto para quienes desean realizar caminatas cortas y accesibles como para quienes buscan desafíos más largos y exigentes. Contás con el tiempo necesario para recorrer senderos emblemáticos como Laguna Capri, Mirador de los Cóndores, Chorrillo del Salto, o emprender trekkings de mayor duración como Laguna de los Tres o Cerro Torre, disfrutando plenamente del entorno natural. Te llevamos, te esperamos mientras explorás los senderos y disfrutás de la gastronomía local, y luego te trasladamos de regreso, combinando comodidad, flexibilidad y una experiencia auténtica en El Chaltén.',
         image: '/images/chalten-full-cover.jpg',
         gallery: [
             '/images/chalten-full-cover.jpg',

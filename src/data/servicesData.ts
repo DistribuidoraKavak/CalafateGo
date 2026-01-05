@@ -175,7 +175,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         title: 'Torres del Paine (Chile)',
         price: 'Consultar',
         shortDesc: 'Excursión Full Day internacional.',
-        fullDesc: 'Una aventura internacional. Cruzamos la frontera para visitar el majestuoso Parque Nacional Torres del Paine en Chile. Recorremos los puntos panorámicos principales: Lago Nordenskjöld, Cuernos del Paine, Salto Grande y Laguna Amarga. Una jornada intensa pero inolvidable.',
+        fullDesc: 'Una experiencia internacional única que nos lleva a cruzar la frontera hacia Chile para recorrer el imponente Parque Nacional Torres del Paine, uno de los paisajes naturales más reconocidos del mundo.\n\nA lo largo de la jornada visitamos los principales sectores del parque, combinando recorridos panorámicos y paradas estratégicas en miradores naturales.\n\nDurante el trayecto se conocen lugares emblemáticos como Laguna Amarga, Lago Nordenskjöld, Salto Grande, Lago Pehoé y los imponentes Cuernos del Paine, con vistas abiertas a valles, ríos, lagos y formaciones montañosas únicas. El recorrido incluye caminatas cortas de baja dificultad y tiempo suficiente para disfrutar del entorno, tomar fotografías y conectar con la naturaleza.\n\nUna excursión ideal para quienes desean vivir Torres del Paine en profundidad en un solo día, disfrutando de sus paisajes más representativos en una experiencia intensa, completa e inolvidable.',
         image: '/images/torres-paine.jpg',
         category: 'traslados',
         duration: 'Día completo (14-16 horas)',

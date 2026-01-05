@@ -25,8 +25,8 @@ const Header: React.FC = () => {
   // Only 3 main links: Inicio, Traslados y Excursiones, Contacto
   const navLinks = [
     { name: 'Inicio', to: '/' },
-    { name: 'Quiénes Somos', to: '/nosotros' },
     { name: 'Traslados y Excursiones', to: '/servicios' },
+    { name: 'Quiénes Somos', to: '/nosotros' },
     { name: 'Contacto', to: '/contacto' },
   ];
 

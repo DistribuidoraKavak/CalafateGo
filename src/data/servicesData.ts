@@ -52,6 +52,12 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         shortDesc: 'Excursión día completo con espera flexible.',
         fullDesc: 'La excursión obligada. Te llevamos al Parque Nacional Los Glaciares (80km) para que vivas una de las maravillas naturales del mundo. A diferencia de los tours grupales, aquí TÚ decides cuánto tiempo quedarte en las pasarelas, cuándo comer y cuándo regresar. Sin apuros, a tu propio ritmo.',
         image: '/images/glaciar-perito.jpg',
+        gallery: [
+            '/images/glaciar-perito.jpg',
+            '/images/glaciar-hielo-azul.jpg',
+            '/images/glaciar-panoramica.jpg',
+            '/images/glaciar-tempanos.png'
+        ],
         category: 'traslados',
         duration: 'Día completo (6-8 horas)',
         galleryKeywords: 'glacier ice blue nature patagonia perito moreno',

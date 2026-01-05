@@ -82,9 +82,14 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 200,
         shortDesc: 'Viaje a la Capital Nacional del Trekking (Ruta 40).',
         fullDesc: 'Un viaje escénico por la mítica Ruta 40. Traslado privado exclusivo hacia El Chaltén (aprox 220km). Disfruta de las vistas del Lago Argentino, el Río La Leona y la primera vista imponente del Fitz Roy y el Cerro Torre, con la libertad de detenerte para tomar fotos cuando quieras.',
-        image: '/images/traslado-chalten.jpg',
+        image: '/images/chalten-ruta-fitzroy.jpg',
+        gallery: [
+            '/images/chalten-ruta-fitzroy.jpg',
+            '/images/chalten-cartel.jpg',
+            '/images/chalten-bus.jpg',
+            '/images/chalten-pueblo.png'
+        ],
         category: 'traslados',
-        duration: '3-3.5 horas',
         galleryKeywords: 'road trip patagonia mountains fitz roy road',
         itinerary: [
             { title: 'Salida de El Calafate', subtitle: 'Te buscamos por tu hotel a la hora pactada.' },

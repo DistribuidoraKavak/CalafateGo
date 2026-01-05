@@ -1,0 +1,15 @@
+# Robots.txt for CalafateGo
+# https://calafatego.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://calafatego.com/sitemap.xml
+
+# Disallow admin/private paths (if any)
+Disallow: /api/
+Disallow: /.env
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1

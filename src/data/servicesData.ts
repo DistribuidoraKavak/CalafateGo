@@ -42,7 +42,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         tips: [
             'Envíanos tu número de vuelo para monitorear posibles demoras.',
             'El precio es por tramo (Ida o Vuelta).',
-            'Capacidad máxima: 4 pasajeros con 1 maleta grande cada uno.'
+            'Capacidad máxima: 4 pasajeros con 1 maleta grande y una chica cada uno.'
         ]
     },
     {

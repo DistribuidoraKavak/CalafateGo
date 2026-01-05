@@ -153,9 +153,14 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 220,
         shortDesc: 'Dos imperdibles en un solo día.',
         fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',
-        image: '/images/navegacion-lago.jpg',
+        image: '/images/puerto-bandera-hielo.jpg',
+        gallery: [
+            '/images/puerto-bandera-hielo.jpg',
+            '/images/puerto-bandera-cartel.jpg',
+            '/images/puerto-bandera-cover.jpg',
+            '/images/puerto-bandera-aerea.jpg'
+        ],
         category: 'traslados',
-        duration: 'Día completo (10-12 horas)',
         galleryKeywords: 'boat glacier lake navigation icebergs',
         itinerary: [
             { title: 'Pick-up Temprano', subtitle: 'Aprox 7:30 AM para llegar al puerto.' },

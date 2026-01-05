@@ -132,9 +132,14 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 90,
         shortDesc: 'Conexión para navegaciones.',
         fullDesc: 'Traslado privado hacia Puerto Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
-        image: '/images/navegacion-lago.jpg',
+        image: '/images/puerto-bandera-cover.jpg',
+        gallery: [
+            '/images/puerto-bandera-cover.jpg',
+            '/images/puerto-bandera-aerea.jpg',
+            '/images/puerto-bandera-hielo.jpg',
+            '/images/puerto-bandera-cartel.jpg'
+        ],
         category: 'traslados',
-        duration: '45-60 min',
         galleryKeywords: 'lake port boat glacier patagonia',
         itinerary: [
             { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },

@@ -128,10 +128,10 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'trf-puerto-bandera',
-        title: 'Puerto Bandera',
+        title: 'Puerto Punta Bandera',
         price: 90,
         shortDesc: 'Conexión para navegaciones.',
-        fullDesc: 'Traslado privado hacia Puerto Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
+        fullDesc: 'Traslado privado hacia Puerto Punta Bandera (47km), el puerto principal para las navegaciones Todo Glaciares o Spegazzini. Llegamos con la antelación necesaria para que realices el embarque con tranquilidad.',
         image: '/images/puerto-bandera-cover.jpg',
         gallery: [
             '/images/puerto-bandera-cover.jpg',
@@ -144,7 +144,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         itinerary: [
             { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },
             { title: 'Trayecto al Puerto', subtitle: '47km de ruta asfaltada con vistas al lago.' },
-            { title: 'Llegada a Puerto Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
+            { title: 'Llegada a Puerto Punta Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
         ]
     },
     {

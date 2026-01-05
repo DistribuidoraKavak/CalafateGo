@@ -135,7 +135,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         image: '/images/puerto-bandera-cover.jpg',
         gallery: [
             '/images/puerto-bandera-cover.jpg',
-            '/images/puerto-bandera-aerea.jpg',
+            '/images/puerto-bandera-glaciar-personas.jpg',
             '/images/puerto-bandera-hielo.jpg',
             '/images/puerto-bandera-cartel.jpg'
         ],

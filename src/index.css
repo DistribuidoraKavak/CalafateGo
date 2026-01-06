@@ -22,3 +22,16 @@
     @apply font-display;
   }
 }
+
+/* Hide scrollbar for horizontal scroll galleries */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}

@@ -119,8 +119,8 @@ const ServiceDetail: React.FC = () => {
                     </div>
                 </div>
 
-                {/* ================= MOSAIC GALLERY (BENTO GRID) ================= */}
-                <section className="mb-16 grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl animate-in fade-in slide-in-from-bottom-12 duration-1000">
+                {/* ================= MOSAIC GALLERY - DESKTOP (BENTO GRID) ================= */}
+                <section className="mb-16 hidden md:grid md:grid-cols-4 grid-rows-2 gap-3 h-[500px] rounded-3xl overflow-hidden shadow-xl animate-in fade-in slide-in-from-bottom-12 duration-1000">
                     {/* Main Large Image */}
                     <div className="md:col-span-2 md:row-span-2 relative group overflow-hidden bg-slate-100">
                         <img
@@ -133,17 +133,41 @@ const ServiceDetail: React.FC = () => {
                     </div>
 
                     {/* Secondary Images */}
-                    <div className="hidden md:block relative group overflow-hidden bg-slate-100">
+                    <div className="relative group overflow-hidden bg-slate-100">
                         <img src={galleryImages[1]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[1]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 1" loading="lazy" />
                     </div>
-                    <div className="hidden md:block relative group overflow-hidden bg-slate-100 md:col-start-4">
+                    <div className="relative group overflow-hidden bg-slate-100 md:col-start-4">
                         <img src={galleryImages[2]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[2]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 2" loading="lazy" />
                     </div>
-                    <div className="hidden md:block md:col-span-2 relative group overflow-hidden bg-slate-100">
+                    <div className="md:col-span-2 relative group overflow-hidden bg-slate-100">
                         <img src={galleryImages[3]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[3]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 3" loading="lazy" />
                         <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">
                             + Ver Galería
                         </div>
+                    </div>
+                </section>
+
+                {/* ================= MOBILE GALLERY (Horizontal Scroll) ================= */}
+                <section className="mb-8 md:hidden">
+                    <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
+                        {galleryImages.map((img, index) => (
+                            <div
+                                key={index}
+                                className="flex-shrink-0 w-[80vw] h-[250px] rounded-2xl overflow-hidden shadow-lg snap-center bg-slate-100"
+                            >
+                                <img
+                                    src={img}
+                                    alt={`Gallery ${index + 1}`}
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex justify-center gap-2 mt-3">
+                        {galleryImages.map((_, index) => (
+                            <div key={index} className="w-2 h-2 rounded-full bg-slate-300"></div>
+                        ))}
                     </div>
                 </section>
 

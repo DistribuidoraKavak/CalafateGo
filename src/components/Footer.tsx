@@ -78,8 +78,8 @@ const Footer: React.FC = () => {
                             <li className="flex items-start">
                                 <Phone size={20} className="text-ice mr-3 mt-1 flex-shrink-0" />
                                 <span className="text-slate-400">
-                                    <a href="https://wa.me/5492966530661" target="_blank" rel="noopener noreferrer" className="hover:text-ice transition-colors">
-                                        +54 9 2966 53-0661
+                                    <a href="https://wa.me/5492966530638" target="_blank" rel="noopener noreferrer" className="hover:text-ice transition-colors">
+                                        +54 9 2966 53-0638
                                     </a>
                                 </span>
                             </li>

@@ -60,7 +60,7 @@ const ExcursionCard: React.FC<ExcursionData> = ({
             </div>
 
             <button
-                onClick={() => window.open(`https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20la%20excursion:%20${title}`, '_blank')}
+                onClick={() => window.open(`https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20la%20excursion:%20${title}`, '_blank')}
                 className="w-full bg-navy text-white py-4 rounded-xl font-bold hover:bg-ice transition-colors flex items-center justify-center gap-2"
             >
                 <span>Consultar Disponibilidad</span>
@@ -166,7 +166,7 @@ const Excursiones: React.FC = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Cuál es tu próxima aventura?</h2>
                     <p className="text-slate-300 mb-8 text-lg">Consultanos sin compromiso y armamos tu itinerario ideal</p>
                     <button
-                        onClick={() => window.open('https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quiero%20consultar%20por%20excursiones', '_blank')}
+                        onClick={() => window.open('https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quiero%20consultar%20por%20excursiones', '_blank')}
                         className="bg-ice text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-colors shadow-lg"
                     >
                         Consultar por WhatsApp

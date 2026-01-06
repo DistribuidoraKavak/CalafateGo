@@ -57,7 +57,7 @@ const NotFound: React.FC = () => {
                 <div className="mt-12 pt-8 border-t border-white/10">
                     <p className="text-slate-500 text-sm mb-3">¿Necesitás ayuda?</p>
                     <a
-                        href="https://wa.me/5492966530661?text=Hola%20CalafateGo,%20necesito%20ayuda"
+                        href="https://wa.me/5492966530638?text=Hola%20CalafateGo,%20necesito%20ayuda"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-ice hover:text-emerald-400 transition-colors font-medium"

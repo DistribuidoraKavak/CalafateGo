@@ -89,8 +89,8 @@ const Footer: React.FC = () => {
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
                     <p>&copy; {new Date().getFullYear()} CalafateGo. Todos los derechos reservados.</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white transition-colors">Política de Privacidad</a>
-                        <a href="#" className="hover:text-white transition-colors">Términos y Condiciones</a>
+                        <Link to="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
+                        <Link to="/terminos" className="hover:text-white transition-colors">Términos y Condiciones</Link>
                     </div>
                 </div>
             </div>

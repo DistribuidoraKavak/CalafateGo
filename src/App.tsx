@@ -10,6 +10,8 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Contacto = lazy(() => import('./pages/Contacto'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Terms = lazy(() => import('./pages/Terms'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -33,6 +35,8 @@ const App: React.FC = () => {
                         <Route path="/servicios" element={<ServicesPage />} />
                         <Route path="/experiencia/:id" element={<ServiceDetail />} />
                         <Route path="/contacto" element={<Contacto />} />
+                        <Route path="/privacidad" element={<PrivacyPolicy />} />
+                        <Route path="/terminos" element={<Terms />} />
                         {/* 404 Catch-all route */}
                         <Route path="*" element={<NotFound />} />
                     </Routes>

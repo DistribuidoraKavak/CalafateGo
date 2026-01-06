@@ -9,6 +9,7 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Contacto = lazy(() => import('./pages/Contacto'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -32,6 +33,8 @@ const App: React.FC = () => {
                         <Route path="/servicios" element={<ServicesPage />} />
                         <Route path="/experiencia/:id" element={<ServiceDetail />} />
                         <Route path="/contacto" element={<Contacto />} />
+                        {/* 404 Catch-all route */}
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>
             </main>

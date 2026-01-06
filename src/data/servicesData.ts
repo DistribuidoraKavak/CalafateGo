@@ -237,14 +237,19 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'trf-lagoroca',
-        title: 'Lago Roca / Nibepo Aike',
-        price: 180,
-        shortDesc: 'Zona sur del Parque Nacional.',
-        fullDesc: 'Traslado hacia el sector del Lago Roca o Estancia Nibepo Aike. Ideal para días de campo, almuerzos campestres o trekkings en la zona sur del Parque Nacional.',
-        image: '/images/patagonia-4x4.jpg',
+        title: 'Lago Roca / Estancia Nibepo Aike',
+        price: 90,
+        shortDesc: 'Día de campo y naturaleza virgen.',
+        fullDesc: 'Traslado privado hacia el sector del Lago Roca o Estancia Nibepo Aike, ubicado en la zona sur del Parque Nacional Los Glaciares, ideal para quienes buscan vivir un auténtico día de campo en plena Patagonia.\n\nEsta experiencia está pensada para disfrutar con calma: pasar la tarde al aire libre, compartir un picnic o almuerzo campestre, relajarse y contemplar paisajes únicos de lagos, estepa y montañas.\n\nDurante la jornada tendrás tiempo para recorrer la costa del Lago Roca, realizar caminatas cortas, observar flora y fauna autóctona y disfrutar del entorno natural en un ambiente tranquilo y poco transitado. Es una propuesta perfecta para desconectarse, descansar y vivir la Patagonia de una manera simple, natural y auténtica, sin exigencias físicas.',
+        image: '/images/lago-roca-cover.png',
+        gallery: [
+            '/images/lago-roca-cover.png',
+            '/images/lago-roca-horses.jpg',
+            '/images/lago-roca-sheep.png',
+            '/images/lago-roca-sign.png'
+        ],
         category: 'traslados',
-        duration: '1-1.5 horas (por tramo)',
-        galleryKeywords: 'lake forest patagonia estancia farm'
+        galleryKeywords: 'lake farm nature camping patagonia estancia farm'
     }
 ];
 

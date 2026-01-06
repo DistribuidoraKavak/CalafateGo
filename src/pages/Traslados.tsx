@@ -30,7 +30,7 @@ const TransferCard: React.FC<{
                     <p className="text-2xl font-bold text-navy">{price}</p>
                 </div>
                 <button
-                    onClick={() => window.open(`https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20el%20traslado:%20${title}`, '_blank')}
                     className="bg-navy text-white px-6 py-3 rounded-xl font-bold hover:bg-ice transition-colors flex items-center space-x-2 shadow-md"
                 >
                     <span>Reservar</span>
@@ -137,7 +137,7 @@ const Traslados: React.FC = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para reservar tu traslado?</h2>
                     <p className="text-slate-300 mb-8 text-lg">Contactanos ahora y recibí respuesta inmediata por WhatsApp</p>
                     <button
-                        onClick={() => window.open('https://wa.me/5492966530661?text=Hola%20CalafateGo,%20necesito%20un%20traslado', '_blank')}
+                        onClick={() => window.open('https://wa.me/5492966530638?text=Hola%20CalafateGo,%20necesito%20un%20traslado', '_blank')}
                         className="bg-ice text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-glacier transition-colors shadow-lg"
                     >
                         Reservar por WhatsApp

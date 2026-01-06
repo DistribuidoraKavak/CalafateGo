@@ -3,7 +3,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const whatsappUrl = "https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
+  const whatsappUrl = "https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
 
   return (
     <section id="contacto" className="py-24 bg-white">
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-500 font-bold uppercase tracking-wider">WhatsApp 24/7</p>
-                  <p className="text-xl text-navy font-semibold">+54 9 2966 53-0661</p>
+                  <p className="text-xl text-navy font-semibold">+54 9 2966 53-0638</p>
                 </div>
               </div>
 

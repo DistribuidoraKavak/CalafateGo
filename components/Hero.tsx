@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import heroGlaciar from '../src/assets/images/hero-glaciar.jpg';
 
 const Hero: React.FC = () => {
-  const whatsappUrl = "https://wa.me/5492966530661?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
+  const whatsappUrl = "https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado";
 
   const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();

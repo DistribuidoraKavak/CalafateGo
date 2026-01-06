@@ -38,7 +38,7 @@ const ServiceDetail: React.FC = () => {
 
     const handleWhatsAppClick = () => {
         const message = `Hola, quiero reservar: ${service.title}`;
-        const url = `https://wa.me/5492966530661?text=${encodeURIComponent(message)}`;
+        const url = `https://wa.me/5492966530638?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     };
 

@@ -17,7 +17,7 @@ const Contacto: React.FC = () => {
         e.preventDefault();
         // Construct WhatsApp message
         const text = `Hola, mi nombre es ${formData.name}. Email: ${formData.email}. Tel: ${formData.phone}. Mensaje: ${formData.message}`;
-        window.open(`https://wa.me/5492966530661?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/5492966530638?text=${encodeURIComponent(text)}`, '_blank');
     };
 
     return (
@@ -50,7 +50,7 @@ const Contacto: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-400 font-bold uppercase mb-1">Teléfono / WhatsApp</p>
-                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">+54 9 2966 53-0661</p>
+                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">+54 9 2966 53-0638</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-4">

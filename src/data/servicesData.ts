@@ -204,10 +204,15 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 330,
         shortDesc: 'Capital de Santa Cruz (Ida o Vuelta).',
         fullDesc: 'Traslado privado hacia Río Gallegos (300km). Opción ideal para conexiones aéreas, trámites o visitas a la capital. Un viaje largo realizado con total confort y seguridad.',
-        image: '/images/patagonia-4x4.jpg',
+        image: '/images/rio-gallegos-sign.jpg',
+        gallery: [
+            '/images/rio-gallegos-sign.jpg',
+            '/images/rio-gallegos-aerial.jpg',
+            '/images/rio-gallegos-penguins.png',
+            '/images/rio-gallegos-monument.jpg'
+        ],
         category: 'traslados',
-        duration: '4-4.5 horas',
-        galleryKeywords: 'highway patagonia travel car',
+        galleryKeywords: 'city coast monument penguins patagonia',
         itinerary: [
             { title: 'Salida Programada', subtitle: 'Horario a tu elección.' },
             { title: 'Ruta Provincial 5', subtitle: 'Cruce de la estepa patagónica.' },

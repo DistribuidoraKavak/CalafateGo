@@ -10,14 +10,8 @@ const Footer: React.FC = () => {
 
                     {/* Brand Column */}
                     <div>
-                        <Link to="/" className="inline-block mb-6">
-                            <div className="bg-white p-3 rounded-xl inline-block shadow-lg">
-                                <img
-                                    src="/images/logo-calafate-go.png"
-                                    alt="Calafate Go"
-                                    className="h-16 w-auto object-contain"
-                                />
-                            </div>
+                        <Link to="/" className="text-2xl font-bold font-display tracking-tight text-white mb-6 block">
+                            Calafate<span className="text-ice">Go</span>
                         </Link>
                         <p className="text-slate-400 leading-relaxed mb-6">
                             Servicios de transporte privado y turismo premium en El Calafate y Patagonia Argentina. Tu confianza es nuestro destino.

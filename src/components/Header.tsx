@@ -54,11 +54,9 @@ const Header: React.FC = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <Link to="/" className="flex items-center space-x-2">
-                    <img
-                        src="/images/logo-calafate-go.png"
-                        alt="Calafate Go"
-                        className={`h-12 w-auto object-contain transition-all duration-300 ${!headerBg ? 'bg-white/95 px-2 py-1 rounded-lg' : ''}`}
-                    />
+                    <div className={`text-2xl font-bold tracking-tighter ${headerBg ? 'text-navy' : 'text-white'}`}>
+                        Calafate<span className="text-ice">Go</span>
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}

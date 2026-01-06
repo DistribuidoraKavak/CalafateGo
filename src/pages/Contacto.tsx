@@ -68,9 +68,7 @@ const Contacto: React.FC = () => {
                             <div className="mt-12">
                                 <p className="text-sm text-slate-400 font-bold uppercase mb-4">Seguinos</p>
                                 <div className="flex gap-4">
-                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Instagram size={20} /></a>
-                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Facebook size={20} /></a>
-                                    <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Twitter size={20} /></a>
+                                    <a href="https://www.instagram.com/calafatego" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ice transition-colors"><Instagram size={20} /></a>
                                 </div>
                             </div>
                         </div>

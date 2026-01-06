@@ -17,14 +17,8 @@ const Footer: React.FC = () => {
                             Servicios de transporte privado y turismo premium en El Calafate y Patagonia Argentina. Tu confianza es nuestro destino.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
+                            <a href="https://www.instagram.com/calafatego" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
                                 <Instagram size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
-                                <Facebook size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
-                                <Twitter size={18} />
                             </a>
                         </div>
                     </div>

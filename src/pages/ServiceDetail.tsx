@@ -69,8 +69,8 @@ const ServiceDetail: React.FC = () => {
                         ${['exc-chalten-full', 'exc-torres-paine'].includes(service.id) ? 'object-top' : ''}
                         ${service.id === 'trf-chalten' ? 'object-[center_25%]' : ''}
                         ${service.id === 'trf-puerto-bandera' ? 'object-[center_70%]' : ''}
-                        ${service.image.includes('glaciar-personas') ? 'object-bottom' : ''}
-                        ${!['exc-chalten-full', 'exc-torres-paine', 'trf-chalten', 'trf-puerto-bandera'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
+                        ${['trf-rio-gallegos'].includes(service.id) || service.image.includes('glaciar-personas') ? 'object-bottom' : ''}
+                        ${!['exc-chalten-full', 'exc-torres-paine', 'trf-chalten', 'trf-puerto-bandera', 'trf-rio-gallegos'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
                     `}
                 />
 

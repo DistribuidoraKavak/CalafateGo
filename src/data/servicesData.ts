@@ -225,10 +225,15 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 80,
         shortDesc: 'Museo del Hielo Patagónico.',
         fullDesc: 'Te llevamos y traemos al moderno centro de interpretación Glaciarium. Conoce cómo se forman los glaciares de manera interactiva. Incluye tiempo de espera para que recorras el museo a tu ritmo.',
-        image: '/images/glaciarium.jpg',
+        image: '/images/glaciarium-exterior.jpg',
+        gallery: [
+            '/images/glaciarium-exterior.jpg',
+            '/images/glaciarium-bar.jpg',
+            '/images/glaciarium-igloo.jpg',
+            '/images/glaciarium-model.jpg'
+        ],
         category: 'traslados',
-        duration: '2-3 horas (totales)',
-        galleryKeywords: 'ice museum modern architecture patagonia',
+        galleryKeywords: 'museum ice science architecture education bar',
         itinerary: [
             { title: 'Traslado al Museo', subtitle: 'A solo 10 minutos del centro.' },
             { title: 'Tiempo Libre', subtitle: 'Espera de 1.5 a 2 horas mientras visitas.' },

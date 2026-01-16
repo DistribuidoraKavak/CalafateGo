@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, ShieldCheck, ArrowRight, Star, Quote } from 'lucide-react';
+import { Clock, MapPin, ShieldCheck, ArrowRight, Star, Quote, Camera } from 'lucide-react';
 
 const AboutUs: React.FC = () => {
     // Parallax effect logic or just scroll to top
@@ -74,7 +74,7 @@ const AboutUs: React.FC = () => {
                         <h2 className="text-4xl font-bold text-navy mt-2">¿Por Qué Elegirnos?</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Card 1: Puntualidad */}
                         <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
                             <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ice/10 transition-colors">
@@ -105,6 +105,17 @@ const AboutUs: React.FC = () => {
                             <h3 className="text-xl font-bold text-navy mb-3">Confort y Seguridad</h3>
                             <p className="text-slate-600">
                                 Nuestras unidades son modernas, habilitadas y están preparadas para el clima patagónico. Viajá seguro y relajado.
+                            </p>
+                        </div>
+
+                        {/* Card 4: Experiencias A Medida */}
+                        <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+                            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ice/10 transition-colors">
+                                <Camera className="w-8 h-8 text-ice" />
+                            </div>
+                            <h3 className="text-xl font-bold text-navy mb-3">Experiencias A Medida</h3>
+                            <p className="text-slate-600">
+                                Diseñamos cada trayecto a tu gusto. Disfruta de la libertad absoluta de detenerte en miradores, capturar la foto perfecta y marcar tu propio ritmo sin apuros.
                             </p>
                         </div>
                     </div>

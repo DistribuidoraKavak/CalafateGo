@@ -59,6 +59,23 @@ const ServicesPage: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'traslados' | 'excursiones'>('traslados');
     const [hoveredTab, setHoveredTab] = useState<'traslados' | 'excursiones' | null>(null);
 
+    // Scroll Reveal Logic
+    const [isInfoVisible, setIsInfoVisible] = useState(false);
+    const infoRef = React.useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsInfoVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        if (infoRef.current) observer.observe(infoRef.current);
+        return () => observer.disconnect();
+    }, [activeTab]);
+
     useEffect(() => {
         const tab = searchParams.get('tab');
         if (tab === 'excursiones') setActiveTab('excursiones');
@@ -152,12 +169,15 @@ const ServicesPage: React.FC = () => {
 
                 {/* Info Bar for Transfers (Option 1) */}
                 {activeTab === 'traslados' && (
-                    <div className="max-w-5xl mx-auto mb-20 animate-fade-in-up">
+                    <div ref={infoRef} className="max-w-5xl mx-auto mb-20 perspective-1000">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                             {/* Feature 1: Precio */}
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4">
+                            <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
+                                transition-all duration-700 ease-out transform
+                                ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
+                            >
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
                                     <Tag size={24} />
                                 </div>
                                 <h3 className="font-bold text-navy mb-1">Valor por Vehículo</h3>
@@ -167,19 +187,26 @@ const ServicesPage: React.FC = () => {
                             </div>
 
                             {/* Feature 2: Capacidad */}
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4">
+                            <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
+                                transition-all duration-700 delay-100 ease-out transform
+                                ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
+                            >
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
                                     <Users size={24} />
                                 </div>
                                 <h3 className="font-bold text-navy mb-1">Capacidad Estándar</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    Hasta <strong>6 personas</strong> por vehículo. <br /> (Max. 4 al Aeropuerto por equipaje)
+                                    Hasta <span className="font-bold text-navy">6 personas</span> por vehículo. <br />
+                                    (Max. 4 al Aeropuerto por equipaje)
                                 </p>
                             </div>
 
-                            {/* Feature 3: Grupos Grandes */}
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center transition-transform hover:-translate-y-1 duration-300">
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4">
+                            {/* Feature 3: Grupos */}
+                            <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
+                                transition-all duration-700 delay-200 ease-out transform
+                                ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
+                            >
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
                                     <MessageCircle size={24} />
                                 </div>
                                 <h3 className="font-bold text-navy mb-1">¿Grupos Numerosos?</h3>

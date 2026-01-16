@@ -48,7 +48,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     {
         id: 'exc-perito-moreno',
         title: 'Glaciar Perito Moreno',
-        price: 140,
+        price: 150,
         shortDesc: 'Excursión día completo con espera flexible.',
         fullDesc: 'La excursión obligada. Te llevamos al Parque Nacional Los Glaciares (80km) para que vivas una de las maravillas naturales del mundo. A diferencia de los tours grupales, aquí TÚ decides cuánto tiempo quedarte en las pasarelas, cuándo comer y cuándo regresar. Sin apuros, a tu propio ritmo.',
         image: '/images/glaciar-perito.jpg',
@@ -77,6 +77,29 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         ]
     },
     {
+        id: 'exc-chalten-full',
+        title: 'El Chaltén Full Day',
+        price: 290,
+        shortDesc: 'Visita por el día a la montaña.',
+        fullDesc: 'Viví El Chaltén al máximo. Una experiencia diseñada para que disfrutes de la Capital Nacional del Trekking con total libertad y sin apuros. Es ideal tanto para quienes buscan caminatas cortas y accesibles, como para quienes desean desafíos más exigentes.\n\nTendrás el tiempo necesario para recorrer senderos emblemáticos como Laguna Capri, Mirador de los Cóndores o Chorrillo del Salto; o incluso para emprender trekkings icónicos como Laguna de los Tres o Cerro Torre.\n\nNosotros nos encargamos de la logística: te llevamos, te esperamos mientras explorás y disfrutas de la gastronomía local, y te traemos de regreso. Comodidad, flexibilidad y naturaleza pura.',
+        image: '/images/chalten-full-cover.jpg',
+        gallery: [
+            '/images/chalten-full-cover.jpg',
+            '/images/chalten-full-capri.jpg',
+            '/images/chalten-full-chorrillo.jpg',
+            '/images/chalten-full-condores.png'
+        ],
+        category: 'traslados',
+        duration: 'Día completo',
+        galleryKeywords: 'mountain hiking trekking nature fitz roy',
+        itinerary: [
+            { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
+            { title: 'Llegada a El Chaltén', subtitle: 'Arribo a la base de los senderos.' },
+            { title: 'Tiempo Libre', subtitle: 'Recorre senderos autoguiados o disfruta de la gastronomía local.' },
+            { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
+        ]
+    },
+    {
         id: 'trf-chalten',
         title: 'Traslado a El Chaltén (Ida o Vuelta)',
         price: 200,
@@ -101,29 +124,6 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             'Recomendamos salir temprano para aprovechar el día en Chaltén.',
             'Podemos hacer paradas fotográficas a pedido.',
             'Si vas por el día, consulta por la opción de espera.'
-        ]
-    },
-    {
-        id: 'exc-chalten-full',
-        title: 'El Chaltén Full Day',
-        price: 280,
-        shortDesc: 'Visita por el día a la montaña.',
-        fullDesc: 'Viví El Chaltén al máximo. Una experiencia diseñada para que disfrutes de la Capital Nacional del Trekking con total libertad y sin apuros. Es ideal tanto para quienes buscan caminatas cortas y accesibles, como para quienes desean desafíos más exigentes.\n\nTendrás el tiempo necesario para recorrer senderos emblemáticos como Laguna Capri, Mirador de los Cóndores o Chorrillo del Salto; o incluso para emprender trekkings icónicos como Laguna de los Tres o Cerro Torre.\n\nNosotros nos encargamos de la logística: te llevamos, te esperamos mientras explorás y disfrutas de la gastronomía local, y te traemos de regreso. Comodidad, flexibilidad y naturaleza pura.',
-        image: '/images/chalten-full-cover.jpg',
-        gallery: [
-            '/images/chalten-full-cover.jpg',
-            '/images/chalten-full-capri.jpg',
-            '/images/chalten-full-chorrillo.jpg',
-            '/images/chalten-full-condores.png'
-        ],
-        category: 'traslados',
-        duration: 'Día completo',
-        galleryKeywords: 'mountain hiking trekking nature fitz roy',
-        itinerary: [
-            { title: 'Salida', subtitle: 'Temprano por la mañana (7:00 - 8:00 AM).' },
-            { title: 'Llegada a El Chaltén', subtitle: 'Arribo a la base de los senderos.' },
-            { title: 'Tiempo Libre', subtitle: 'Recorre senderos autoguiados o disfruta de la gastronomía local.' },
-            { title: 'Regreso Programado', subtitle: 'Encuentro para la vuelta a El Calafate.' }
         ]
     },
     {
@@ -171,6 +171,22 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         ]
     },
     {
+        id: 'trf-lagoroca',
+        title: 'Lago Roca / Estancia Nibepo Aike',
+        price: 200,
+        shortDesc: 'Día de campo y naturaleza virgen.',
+        fullDesc: 'Traslado privado hacia el sector del Lago Roca o Estancia Nibepo Aike, ubicado en la zona sur del Parque Nacional Los Glaciares, ideal para quienes buscan vivir un auténtico día de campo en plena Patagonia.\n\nEsta experiencia está pensada para disfrutar con calma: pasar la tarde al aire libre, compartir un picnic o almuerzo campestre, relajarse y contemplar paisajes únicos de lagos, estepa y montañas.\n\nDurante la jornada tendrás tiempo para recorrer la costa del Lago Roca, realizar caminatas cortas, observar flora y fauna autóctona y disfrutar del entorno natural en un ambiente tranquilo y poco transitado. Es una propuesta perfecta para desconectarse, descansar y vivir la Patagonia de una manera simple, natural y auténtica, sin exigencias físicas.',
+        image: '/images/lago-roca-cover.png',
+        gallery: [
+            '/images/lago-roca-cover.png',
+            '/images/lago-roca-horses.jpg',
+            '/images/lago-roca-sheep.png',
+            '/images/lago-roca-sign.png'
+        ],
+        category: 'traslados',
+        galleryKeywords: 'lake farm nature camping patagonia estancia farm'
+    },
+    {
         id: 'exc-torres-paine',
         title: 'Torres del Paine (Chile)',
         price: 'Consultar',
@@ -197,11 +213,10 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             'No se permite ingresar alimentos frescos (frutas/carnes) a Chile.'
         ]
     },
-
     {
         id: 'trf-rio-gallegos',
         title: 'Traslado a Río Gallegos',
-        price: 330,
+        price: 'Consultar',
         shortDesc: 'Capital de Santa Cruz (Ida o Vuelta).',
         fullDesc: 'Traslado privado hacia Río Gallegos (300km). Opción ideal para conexiones aéreas, trámites o visitas a la capital. Un viaje largo realizado con total confort y seguridad.',
         image: '/images/rio-gallegos-sign.jpg',
@@ -222,7 +237,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     {
         id: 'trf-glaciarium',
         title: 'Visita al Glaciarium',
-        price: 80,
+        price: 60,
         shortDesc: 'Museo del Hielo Patagónico.',
         fullDesc: 'Te llevamos y traemos al moderno centro de interpretación Glaciarium. Conoce cómo se forman los glaciares de manera interactiva. Incluye tiempo de espera para que recorras el museo a tu ritmo.',
         image: '/images/glaciarium-exterior.jpg',
@@ -239,22 +254,6 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             { title: 'Tiempo Libre', subtitle: 'Espera de 1.5 a 2 horas mientras visitas.' },
             { title: 'Regreso al Hotel', subtitle: 'Vuelta directa tras tu visita.' }
         ]
-    },
-    {
-        id: 'trf-lagoroca',
-        title: 'Lago Roca / Estancia Nibepo Aike',
-        price: 90,
-        shortDesc: 'Día de campo y naturaleza virgen.',
-        fullDesc: 'Traslado privado hacia el sector del Lago Roca o Estancia Nibepo Aike, ubicado en la zona sur del Parque Nacional Los Glaciares, ideal para quienes buscan vivir un auténtico día de campo en plena Patagonia.\n\nEsta experiencia está pensada para disfrutar con calma: pasar la tarde al aire libre, compartir un picnic o almuerzo campestre, relajarse y contemplar paisajes únicos de lagos, estepa y montañas.\n\nDurante la jornada tendrás tiempo para recorrer la costa del Lago Roca, realizar caminatas cortas, observar flora y fauna autóctona y disfrutar del entorno natural en un ambiente tranquilo y poco transitado. Es una propuesta perfecta para desconectarse, descansar y vivir la Patagonia de una manera simple, natural y auténtica, sin exigencias físicas.',
-        image: '/images/lago-roca-cover.png',
-        gallery: [
-            '/images/lago-roca-cover.png',
-            '/images/lago-roca-horses.jpg',
-            '/images/lago-roca-sheep.png',
-            '/images/lago-roca-sign.png'
-        ],
-        category: 'traslados',
-        galleryKeywords: 'lake farm nature camping patagonia estancia farm'
     }
 ];
 

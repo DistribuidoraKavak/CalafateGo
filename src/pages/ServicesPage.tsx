@@ -111,7 +111,7 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Text Content */}
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto -mt-10">
+                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16 md:mt-0">
                     <p className="text-ice font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-display">
                         Patagonia Argentina
                     </p>

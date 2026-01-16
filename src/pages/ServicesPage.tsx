@@ -101,27 +101,49 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* TABS */}
-                <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
-                    <div className="bg-white rounded-full shadow-2xl p-2 flex w-full max-w-lg ring-4 ring-slate-50/50 backdrop-blur-xl">
+                {/* TABS FLOTANTES REDISEÑADOS */}
+                <div className="absolute -bottom-10 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
+                    <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-2.5 flex w-full max-w-2xl transform transition-all hover:scale-[1.01]">
+
+                        {/* Botón Traslados */}
                         <button
                             onClick={() => handleTabChange('traslados')}
-                            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-lg ${activeTab === 'traslados'
-                                ? 'bg-navy text-white shadow-lg transform scale-105'
-                                : 'text-slate-400 hover:text-navy hover:bg-slate-100'
+                            className={`flex-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 py-6 px-4 rounded-2xl transition-all duration-300 relative overflow-hidden group ${activeTab === 'traslados'
+                                ? 'bg-navy text-white shadow-2xl shadow-navy/50 scale-[1.02]'
+                                : 'bg-white/80 text-slate-500 hover:bg-white hover:text-navy'
                                 }`}
                         >
-                            <Bus size={20} />
-                            <span>Traslados</span>
+                            <div className={`p-3 rounded-xl transition-colors ${activeTab === 'traslados' ? 'bg-white/10' : 'bg-slate-100 group-hover:bg-ice/10'}`}>
+                                <Bus size={28} className={activeTab === 'traslados' ? 'text-ice' : 'text-slate-400 group-hover:text-navy'} />
+                            </div>
+                            <div className="text-center md:text-left">
+                                <span className="block text-lg md:text-xl font-bold leading-tight">Traslados</span>
+                                <span className={`text-xs md:text-sm font-medium ${activeTab === 'traslados' ? 'text-slate-300' : 'text-slate-400'}`}>Privados y Ejecutivos</span>
+                            </div>
                         </button>
+
+                        <div className="w-4"></div> {/* Separador */}
+
+                        {/* Botón Excursiones */}
                         <button
                             onClick={() => handleTabChange('excursiones')}
-                            className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold transition-all duration-300 text-sm md:text-lg ${activeTab === 'excursiones'
-                                ? 'bg-navy text-white shadow-lg transform scale-105'
-                                : 'text-slate-400 hover:text-navy hover:bg-slate-100'
+                            className={`flex-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 py-6 px-4 rounded-2xl transition-all duration-300 relative overflow-hidden group ${activeTab === 'excursiones'
+                                ? 'bg-navy text-white shadow-2xl shadow-navy/50 scale-[1.02]'
+                                : 'bg-white/80 text-slate-500 hover:bg-white hover:text-navy'
                                 }`}
                         >
-                            <Mountain size={20} />
-                            <span>Excursiones</span>
+                            {/* Etiqueta "Recomendado" */}
+                            <div className="absolute top-2 right-2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm animate-pulse">
+                                Top
+                            </div>
+
+                            <div className={`p-3 rounded-xl transition-colors ${activeTab === 'excursiones' ? 'bg-white/10' : 'bg-slate-100 group-hover:bg-ice/10'}`}>
+                                <Mountain size={28} className={activeTab === 'excursiones' ? 'text-ice' : 'text-slate-400 group-hover:text-navy'} />
+                            </div>
+                            <div className="text-center md:text-left">
+                                <span className="block text-lg md:text-xl font-bold leading-tight">Excursiones</span>
+                                <span className={`text-xs md:text-sm font-medium ${activeTab === 'excursiones' ? 'text-slate-300' : 'text-slate-400'}`}>Aventura Premium</span>
+                            </div>
                         </button>
                     </div>
                 </div>

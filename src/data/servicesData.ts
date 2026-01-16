@@ -254,11 +254,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             { title: 'Tiempo Libre', subtitle: 'Espera de 1.5 a 2 horas mientras visitas.' },
             { title: 'Regreso al Hotel', subtitle: 'Vuelta directa tras tu visita.' }
         ]
-    }
-];
-
-// ============== EXCURSIONES DATA ==============
-export const EXCURSIONES_DATA: ServiceItem[] = [
+    },
     {
         id: 'exc-walichu',
         title: 'Cuevas del Walichu',
@@ -266,7 +262,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Historia y pinturas rupestres.',
         fullDesc: 'Un viaje al pasado a orillas del Lago Argentino. Visita las cuevas donde los primeros habitantes dejaron su huella hace miles de años. El sitio cuenta con audioguías y un sendero muy fácil de recorrer. Ideal para combinar con el día de llegada o salida.',
         image: '/images/cuevas-walichu.jpg',
-        category: 'excursiones',
+        category: 'traslados',
         duration: '2-3 horas',
         galleryKeywords: 'caves ancient art paintings archaeology lake',
         itinerary: [
@@ -282,13 +278,17 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Lo mejor de El Calafate.',
         fullDesc: 'Descubre los rincones de nuestra ciudad. Visitamos la Reserva Laguna Nimez para ver flamencos y aves, la costanera de Bahía Redonda y subimos a la parte alta para tener las mejores vistas panorámicas de El Calafate y el lago.',
         image: '/images/navegacion-lago.jpg',
-        category: 'excursiones',
+        category: 'traslados',
         duration: '2-3 horas',
         galleryKeywords: 'city birds lake flamingos sunset',
         itinerary: [
             { title: 'Centro Comercial', subtitle: 'Opcional: final en el centro o en tu hotel.' }
         ]
-    },
+    }
+];
+
+// ============== EXCURSIONES DATA ==============
+export const EXCURSIONES_DATA: ServiceItem[] = [
     {
         id: 'exc-minitrekking',
         title: 'Minitrekking (Caminata sobre Hielo)',
@@ -336,16 +336,6 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         ],
         category: 'excursiones',
         galleryKeywords: 'catamaran boat glaciares icebergs lake argentino'
-    },
-    {
-        id: 'exc-estancia-cristina',
-        title: 'Estancia Cristina Discovery',
-        price: 210,
-        shortDesc: 'Historia, navegación 4x4 y vistas del Upsala.',
-        fullDesc: 'Una excursión completa. Navegación hasta la histórica Estancia Cristina. Ascenso en vehículos 4x4 hasta el mirador del Glaciar Upsala y visita al museo de la estancia. Combinación perfecta de naturaleza e historia patagónica.',
-        image: '/images/estancia-cristina.jpg',
-        category: 'excursiones',
-        galleryKeywords: 'estancia farm 4x4 jeep mountains patagonia'
     },
     {
         id: 'exc-kayak',

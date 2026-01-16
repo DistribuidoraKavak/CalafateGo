@@ -109,11 +109,11 @@ const ServicesPage: React.FC = () => {
                         <div className="absolute -inset-1 bg-gradient-to-r from-ice to-blue-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
                         {/* Contenedor Blanco (Sobrio) */}
-                        <div className="relative bg-white rounded-full p-2 flex w-full shadow-2xl ring-1 ring-slate-100 isolate">
+                        <div className="relative bg-navy rounded-full p-2 flex w-full shadow-2xl ring-1 ring-white/20 isolate">
 
                             {/* BARRA AZUL DESLIZANTE (FONDO ANIMADO) */}
                             <div
-                                className={`absolute top-2 bottom-2 w-[calc(50%-8px)] rounded-full bg-navy shadow-lg transition-transform duration-300 ease-out -z-10 left-2
+                                className={`absolute top-2 bottom-2 w-[calc(50%-8px)] rounded-full bg-white shadow-lg transition-transform duration-300 ease-out -z-10 left-2
                                 ${(hoveredTab || activeTab) === 'excursiones' ? 'translate-x-[100%]' : 'translate-x-0'}
                                 `}
                                 style={{ width: 'calc(50% - 8px)' }}
@@ -125,9 +125,9 @@ const ServicesPage: React.FC = () => {
                                 onMouseEnter={() => setHoveredTab('traslados')}
                                 onMouseLeave={() => setHoveredTab(null)}
                                 className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
-                                    ${(hoveredTab || activeTab) === 'traslados' ? 'text-white' : 'text-slate-400 hover:text-slate-600'}`}
+                                    ${(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-400 hover:text-white'}`}
                             >
-                                <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-ice' : 'text-current'} />
+                                <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-500 group-hover:text-slate-300'} />
                                 <span>Traslados</span>
                             </button>
 
@@ -137,9 +137,9 @@ const ServicesPage: React.FC = () => {
                                 onMouseEnter={() => setHoveredTab('excursiones')}
                                 onMouseLeave={() => setHoveredTab(null)}
                                 className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
-                                    ${(hoveredTab || activeTab) === 'excursiones' ? 'text-white' : 'text-slate-400 hover:text-slate-600'}`}
+                                    ${(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-400 hover:text-white'}`}
                             >
-                                <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-ice' : 'text-current'} />
+                                <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-500 group-hover:text-slate-300'} />
                                 <span>Excursiones</span>
                             </button>
                         </div>

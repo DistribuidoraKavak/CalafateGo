@@ -47,7 +47,7 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* ======= SERVICES PREVIEW (Grid & Hover Effects) ======= */}
+            {/* ======= SERVICES PREVIEW (Animated Grid) ======= */}
             <section className="py-24 bg-slate-50 relative z-10">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in-up">
@@ -60,68 +60,39 @@ const Home: React.FC = () => {
 
                     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-                        {/* Card 1: Traslados */}
-                        <Link to="/servicios?tab=traslados" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-100">
-                            {/* Background Image Placeholder */}
-                            {/* Background Image */}
-                            {/* Background Image */}
-                            <div className="absolute inset-0">
-                                <img
-                                    src="/images/chalten-ruta-fitzroy.jpg"
-                                    alt="Traslados Privados"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                            </div>
+                        {/* Card 1: Traslados - Animated Gallery */}
+                        <ServiceCard
+                            to="/servicios?tab=traslados"
+                            title="Traslados Privados"
+                            icon={<Bus size={28} />}
+                            description="Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad hacia el Glaciar, Chaltén o Torres del Paine."
+                            cta="Ver Tarifas"
+                            images={[
+                                '/images/glaciar-pasarelas.jpg',      // Moreno alterna
+                                '/images/chalten-full-capri.jpg',     // Chalten alterna
+                                '/images/torres-paine-lake-bridge.jpg' // Torres alterna
+                            ]}
+                        />
 
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-
-                            {/* Content */}
-                            <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
-                                <div className="w-14 h-14 bg-ice/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg shadow-ice/30 group-hover:scale-110 transition-transform duration-500">
-                                    <Bus size={28} />
-                                </div>
-                                <h4 className="text-3xl font-bold text-white mb-3 font-display">Traslados Privados</h4>
-                                <p className="text-slate-200 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden text-sm md:text-base">
-                                    Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad, privacidad y flexibilidad, en vehículos de alta gama.
-                                </p>
-                                <span className="inline-flex items-center text-white font-bold border-b-2 border-ice pb-1 hover:text-ice transition-colors">
-                                    Ver Tarifas <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
-                                </span>
-                            </div>
-                        </Link>
-
-                        {/* Card 2: Excursiones */}
-                        <Link to="/servicios?tab=excursiones" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-200 border border-slate-100/10">
-                            {/* Background Image */}
-                            <div className="absolute inset-0">
-                                <img
-                                    src="/images/glaciar-perito.jpg"
-                                    alt="Excursiones Premium"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                            </div>
-
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-
-                            <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
-                                <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-navy shadow-lg group-hover:scale-110 transition-transform duration-500">
-                                    <Mountain size={28} />
-                                </div>
-                                <h4 className="text-3xl font-bold text-white mb-3 font-display">Excursiones Premium</h4>
-                                <p className="text-slate-200 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden text-sm md:text-base">
-                                    Navegaciones, trekking sobre el Glaciar y actividades tradicionales. Trabajamos con los mejores prestadores habilitados de la Patagonia.
-                                </p>
-                                <span className="inline-flex items-center text-white font-bold border-b-2 border-white pb-1 hover:text-ice transition-colors">
-                                    Ver Experiencias <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
-                                </span>
-                            </div>
-                        </Link>
+                        {/* Card 2: Excursiones - Animated Gallery */}
+                        <ServiceCard
+                            to="/servicios?tab=excursiones"
+                            title="Excursiones Premium"
+                            icon={<Mountain size={28} />}
+                            description="Navegaciones, trekking sobre el Glaciar y experiencias 4x4. Viví la aventura patagónica con los mejores prestadores."
+                            cta="Ver Experiencias"
+                            delay={200}
+                            images={[
+                                '/images/excursion-home-trekking.jpg', // Trekking hielo
+                                '/images/excursion-home-boat.png',     // Barco glaciar
+                                '/images/excursion-home-safari.png'    // Safari 4x4
+                            ]}
+                        />
                     </div>
                 </div>
             </section>
 
-            {/* ======= CONCIERGE SECTION (Moved to Bottom) ======= */}
+            {/* ======= CONCIERGE SECTION ======= */}
             <section className="bg-navy py-24 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/3"></div>
                 <div className="container mx-auto px-6 relative z-10">
@@ -187,7 +158,72 @@ const Home: React.FC = () => {
     );
 };
 
-// Helper component for Mountain icon
+// --- Helper Components ---
+
+// Animated Carousel Card Component
+interface ServiceCardProps {
+    to: string;
+    title: string;
+    icon: React.ReactNode;
+    description: string;
+    cta: string;
+    images: string[];
+    delay?: number;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ to, title, icon, description, cta, images, delay = 0 }) => {
+    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+    // Auto-cycle images every 4 seconds
+    React.useEffect(() => {
+        if (!images || images.length <= 1) return;
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % images.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [images]);
+
+    return (
+        <Link
+            to={to}
+            className={`group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up border border-slate-100/10`}
+            style={{ animationDelay: `${delay}ms` }}
+        >
+            {/* Animated Background Images */}
+            {images.map((img, index) => (
+                <div
+                    key={img}
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                >
+                    <img
+                        src={img}
+                        alt=""
+                        className="w-full h-full object-cover transition-transform duration-[4000ms] ease-linear group-hover:scale-105"
+                        style={{ transform: index === currentImageIndex ? 'scale(1.05)' : 'scale(1)' }}
+                    />
+                </div>
+            ))}
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+
+            {/* Content */}
+            <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
+                <div className={`w-14 h-14 ${to.includes('traslados') ? 'bg-ice/90' : 'bg-white/90'} backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-navy shadow-lg shadow-ice/30 group-hover:scale-110 transition-transform duration-500`}>
+                    {icon}
+                </div>
+                <h4 className="text-3xl font-bold text-white mb-3 font-display">{title}</h4>
+                <p className="text-slate-200 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden text-sm md:text-base">
+                    {description}
+                </p>
+                <span className={`inline-flex items-center text-white font-bold border-b-2 ${to.includes('traslados') ? 'border-ice' : 'border-white'} pb-1 hover:text-ice transition-colors`}>
+                    {cta} <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                </span>
+            </div>
+        </Link>
+    );
+};
+
 const Mountain = ({ size = 24, className = "" }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

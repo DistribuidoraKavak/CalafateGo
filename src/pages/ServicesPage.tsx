@@ -57,6 +57,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
 const ServicesPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [activeTab, setActiveTab] = useState<'traslados' | 'excursiones'>('traslados');
+    const [hoveredTab, setHoveredTab] = useState<'traslados' | 'excursiones' | null>(null);
 
     useEffect(() => {
         const tab = searchParams.get('tab');
@@ -108,28 +109,37 @@ const ServicesPage: React.FC = () => {
                         <div className="absolute -inset-1 bg-gradient-to-r from-ice to-blue-400 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
                         {/* Contenedor Blanco (Sobrio) */}
-                        <div className="relative bg-white rounded-full p-2 flex w-full shadow-2xl ring-1 ring-slate-100">
+                        <div className="relative bg-white rounded-full p-2 flex w-full shadow-2xl ring-1 ring-slate-100 isolate">
+
+                            {/* BARRA AZUL DESLIZANTE (FONDO ANIMADO) */}
+                            <div
+                                className={`absolute top-2 bottom-2 w-[calc(50%-8px)] rounded-full bg-navy shadow-lg transition-all duration-300 ease-out -z-10
+                                ${(hoveredTab || activeTab) === 'excursiones' ? 'translate-x-[100%] left-[calc(50%+4px)]' : 'translate-x-0 left-2'}
+                                `}
+                                style={{ width: 'calc(50% - 8px)' }}
+                            ></div>
+
                             {/* Botón Traslados */}
                             <button
                                 onClick={() => handleTabChange('traslados')}
-                                className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 ${activeTab === 'traslados'
-                                    ? 'bg-navy text-white shadow-lg transform scale-[1.02]'
-                                    : 'text-slate-400 hover:text-navy hover:bg-slate-50'
-                                    }`}
+                                onMouseEnter={() => setHoveredTab('traslados')}
+                                onMouseLeave={() => setHoveredTab(null)}
+                                className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
+                                    ${(hoveredTab || activeTab) === 'traslados' ? 'text-white' : 'text-slate-400 hover:text-slate-600'}`}
                             >
-                                <Bus size={20} />
+                                <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-ice' : 'text-current'} />
                                 <span>Traslados</span>
                             </button>
 
                             {/* Botón Excursiones */}
                             <button
                                 onClick={() => handleTabChange('excursiones')}
-                                className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 ${activeTab === 'excursiones'
-                                    ? 'bg-navy text-white shadow-lg transform scale-[1.02]'
-                                    : 'text-slate-400 hover:text-navy hover:bg-slate-50'
-                                    }`}
+                                onMouseEnter={() => setHoveredTab('excursiones')}
+                                onMouseLeave={() => setHoveredTab(null)}
+                                className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
+                                    ${(hoveredTab || activeTab) === 'excursiones' ? 'text-white' : 'text-slate-400 hover:text-slate-600'}`}
                             >
-                                <Mountain size={20} />
+                                <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-ice' : 'text-current'} />
                                 <span>Excursiones</span>
                             </button>
                         </div>

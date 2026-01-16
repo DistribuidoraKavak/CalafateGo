@@ -41,9 +41,9 @@ const Header: React.FC = () => {
         return location.pathname === path;
     };
 
-    // On homepage, use transparent header; on other pages, always use solid
-    const isHomePage = location.pathname === '/';
-    const headerBg = !isHomePage || isScrolled;
+    // On homepage and services page, use transparent header; on other pages, always use solid
+    const isTransparentPage = location.pathname === '/' || location.pathname === '/servicios';
+    const headerBg = !isTransparentPage || isScrolled;
 
     return (
         <header

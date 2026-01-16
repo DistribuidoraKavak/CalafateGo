@@ -179,13 +179,14 @@ const ServicesPage: React.FC = () => {
 
                             {/* Feature 1: Precio */}
                             <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
-                                transition-all duration-700 ease-out transform
+                                group hover:shadow-xl hover:border-blue-200 hover:-translate-y-2
+                                transition-all duration-500 ease-out transform
                                 ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
                             >
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-100">
                                     <Tag size={24} />
                                 </div>
-                                <h3 className="font-bold text-navy mb-1">Valor por Vehículo</h3>
+                                <h3 className="font-bold text-navy mb-1 group-hover:text-blue-600 transition-colors">Valor por Vehículo</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
                                     La tarifa es total por el servicio, <br /> no por pasajero.
                                 </p>
@@ -193,28 +194,30 @@ const ServicesPage: React.FC = () => {
 
                             {/* Feature 2: Capacidad */}
                             <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
-                                transition-all duration-700 delay-100 ease-out transform
+                                group hover:shadow-xl hover:border-blue-200 hover:-translate-y-2
+                                transition-all duration-500 delay-100 ease-out transform
                                 ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
                             >
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-100">
                                     <Users size={24} />
                                 </div>
-                                <h3 className="font-bold text-navy mb-1">Capacidad Estándar</h3>
+                                <h3 className="font-bold text-navy mb-1 group-hover:text-blue-600 transition-colors">Capacidad Estándar</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    Hasta <span className="font-bold text-navy">6 personas</span> por vehículo. <br />
+                                    Hasta <span className="font-bold text-navy group-hover:text-blue-700 transition-colors">6 personas</span> por vehículo. <br />
                                     (Max. 4 al Aeropuerto por equipaje)
                                 </p>
                             </div>
 
                             {/* Feature 3: Grupos */}
                             <div className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center 
-                                transition-all duration-700 delay-200 ease-out transform
+                                group hover:shadow-xl hover:border-blue-200 hover:-translate-y-2
+                                transition-all duration-500 delay-200 ease-out transform
                                 ${isInfoVisible ? 'opacity-100 translate-y-0 rotate-x-0' : 'opacity-0 translate-y-12 rotate-x-12'}`}
                             >
-                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem]">
+                                <div className="w-12 h-12 bg-blue-50 text-ice rounded-full flex items-center justify-center mb-4 min-w-[3rem] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-100">
                                     <MessageCircle size={24} />
                                 </div>
-                                <h3 className="font-bold text-navy mb-1">¿Grupos Numerosos?</h3>
+                                <h3 className="font-bold text-navy mb-1 group-hover:text-blue-600 transition-colors">¿Grupos Numerosos?</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
                                     Para más pasajeros, solicitá <br /> una cotización a medida.
                                 </p>

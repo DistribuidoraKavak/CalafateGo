@@ -296,6 +296,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'La experiencia más buscada. Camina sobre el Glaciar Perito Moreno.',
         fullDesc: 'Una aventura inigualable. Inicia con una navegación cruzando el Brazo Rico. Luego, guías de montaña te ayudarán a colocarte los crampones para iniciar una caminata de 1:30 hs sobre la superficie del glaciar, viendo grietas azules, sumideros y lagunas. Incluye visita a pasarelas. Dificultad: Media. Edad: 10 a 65 años.',
         image: '/images/minitrekking.jpg',
+        gallery: [
+            '/images/minitrekking.jpg',
+            '/images/minitrekking-2.jpg',
+            '/images/minitrekking-3.jpg',
+            '/images/minitrekking-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'minitrekking glacier hiking crampons ice patagonia'
     },
@@ -306,6 +312,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Para los amantes del trekking. 4 horas en el corazón del glaciar.',
         fullDesc: 'La versión extrema del Minitrekking. Una caminata intensa de 4 horas explorando el centro del glaciar, donde verás formaciones de hielo increíbles y cuevas azules. Exigencia física alta. Edad: 18 a 50 años. Incluye navegación y pasarelas.',
         image: '/images/big-ice.jpg',
+        gallery: [
+            '/images/big-ice.jpg',
+            '/images/big-ice-2.jpg',
+            '/images/big-ice-3.jpg',
+            '/images/big-ice-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'ice cave blue glacier climbing adventure'
     },
@@ -316,6 +328,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Navegación a los glaciares Upsala y Spegazzini.',
         fullDesc: 'Recorre el brazo Norte del Lago Argentino. Visita la barrera de témpanos, el Glaciar Upsala (el más grande) y el impactante Glaciar Spegazzini (el más alto, con paredes de 135m). Barcos modernos con excelente vista.',
         image: '/images/todo-glaciares.jpg',
+        gallery: [
+            '/images/todo-glaciares.jpg',
+            '/images/todo-glaciares-2.jpg',
+            '/images/todo-glaciares-3.jpg',
+            '/images/todo-glaciares-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'catamaran boat glaciares icebergs lake argentino'
     },
@@ -336,6 +354,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Rema frente a la pared del glaciar.',
         fullDesc: 'Una perspectiva única al ras del agua. Navega en kayak frente a las paredes de 70 metros del Perito Moreno con guías expertos. No requiere experiencia previa. Incluye ropa técnica seca.',
         image: '/images/kayak-glaciar.jpg',
+        gallery: [
+            '/images/kayak-glaciar.jpg',
+            '/images/kayak-glaciar-2.jpg',
+            '/images/kayak-glaciar-3.jpg',
+            '/images/kayak-glaciar-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'kayak water glacier adventure perito moreno'
     },
@@ -346,6 +370,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'Navegación y caminata hasta tocar la pared de hielo.',
         fullDesc: 'La alternativa perfecta al Minitrekking para quienes quieren vivir el hielo de cerca sin exigencia física técnica. Navegación de 20 minutos por el Brazo Rico y una caminata guiada de 1:30 hs por un bosque de lengas hasta llegar a la pared lateral del Glaciar Perito Moreno. ¡Podrás tocar el hielo y ver sus intensos colores azules! Incluye brindis y visita a las pasarelas. Apto para todas las edades (6 a 70 años).',
         image: '/images/safari-azul.jpg',
+        gallery: [
+            '/images/safari-azul.jpg',
+            '/images/safari-azul-2.jpg',
+            '/images/safari-azul-3.jpg',
+            '/images/safari-azul-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'people touching glacier ice wall forest'
     },
@@ -356,6 +386,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         shortDesc: 'La navegación más exclusiva del Lago Argentino.',
         fullDesc: 'Una experiencia de lujo a bordo del crucero María Turquesa. Navega hacia los glaciares Upsala, Seco, Heim y Spegazzini con el máximo confort. Incluye almuerzo gourmet a bordo, cubiertas panorámicas y descenso en Puesto de Las Vacas para una caminata corta. Ideal para quienes buscan confort y gastronomía de primer nivel.',
         image: '/images/glaciares-gourmet.jpg',
+        gallery: [
+            '/images/glaciares-gourmet.jpg',
+            '/images/glaciares-gourmet-2.jpg',
+            '/images/glaciares-gourmet-3.jpg',
+            '/images/glaciares-gourmet-4.jpg'
+        ],
         category: 'excursiones',
         galleryKeywords: 'luxury cruise food wine glacier view'
     }

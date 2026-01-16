@@ -178,12 +178,12 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ to, title, icon, description, cta, images, delay = 0 }) => {
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
 
-    // Auto-cycle images every 4 seconds
+    // Auto-cycle images every 3 seconds
     React.useEffect(() => {
         if (!images || images.length <= 1) return;
         const interval = setInterval(() => {
             setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        }, 4000);
+        }, 3000);
         return () => clearInterval(interval);
     }, [images]);
 
@@ -202,7 +202,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ to, title, icon, description,
                     <img
                         src={img}
                         alt=""
-                        className="w-full h-full object-cover transition-transform duration-[4000ms] ease-linear group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-[3000ms] ease-linear group-hover:scale-105"
                         style={{ transform: index === currentImageIndex ? 'scale(1.05)' : 'scale(1)' }}
                     />
                 </div>

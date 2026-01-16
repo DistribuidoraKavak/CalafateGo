@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, FileText } from 'lucide-react';
 
 const Terms: React.FC = () => {
     return (
         <div className="min-h-screen bg-slate-50 pt-24 pb-16">
+            <Helmet>
+                <title>Términos y Condiciones | CalafateGo</title>
+            </Helmet>
             <div className="max-w-4xl mx-auto px-6">
                 {/* Back Button */}
                 <Link to="/" className="inline-flex items-center gap-2 text-slate-500 hover:text-navy mb-8 transition-colors">

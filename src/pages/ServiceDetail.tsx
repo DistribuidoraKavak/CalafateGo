@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
     ArrowLeft, Clock, CheckCircle2, Bus, MapPin,
     MessageCircle, Star, ShieldCheck, Users, Calendar,
@@ -59,6 +60,10 @@ const ServiceDetail: React.FC = () => {
 
     return (
         <div className="bg-white min-h-screen font-sans pb-24 lg:pb-0">
+            <Helmet>
+                <title>{service.title} | CalafateGo</title>
+                <meta name="description" content={service.shortDesc} />
+            </Helmet>
 
             {/* ================= HERO CINEMÁTICO ================= */}
             <header className="relative h-[60vh] w-full overflow-hidden">

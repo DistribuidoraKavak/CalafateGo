@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Send, Instagram, Facebook, Twitter } from 'lucide-react';
 
 const Contacto: React.FC = () => {
@@ -22,6 +23,10 @@ const Contacto: React.FC = () => {
 
     return (
         <div className="bg-slate-50 min-h-screen pt-32 pb-20">
+            <Helmet>
+                <title>Contacto | CalafateGo</title>
+                <meta name="description" content="Contáctanos para reservar tu traslado o excursión en El Calafate. WhatsApp, email y formulario de contacto." />
+            </Helmet>
             <div className="container mx-auto px-6">
 
                 {/* Header Text */}

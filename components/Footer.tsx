@@ -17,14 +17,11 @@ const Footer: React.FC = () => {
               Servicios de transporte privado y turismo premium en El Calafate y Patagonia Argentina. Tu confianza es nuestro destino.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
+              <a href="https://www.facebook.com/profile.php?id=61583540464048" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
-                <Twitter size={18} />
+              <a href="https://www.instagram.com/calafatego" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-ice hover:text-white transition-all">
+                <Instagram size={18} />
               </a>
             </div>
           </div>
@@ -52,6 +49,12 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/nosotros" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
+                  <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  Quiénes Somos
+                </Link>
+              </li>
+              <li>
                 <Link to="/contacto" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
                   <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                   Contacto
@@ -64,10 +67,30 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold font-display mb-6 text-white border-b border-slate-800 pb-2 inline-block">Destinos Populares</h4>
             <ul className="space-y-4">
-              <li><span className="text-slate-400 hover:text-white transition-colors cursor-default">Glaciar Perito Moreno</span></li>
-              <li><span className="text-slate-400 hover:text-white transition-colors cursor-default">El Chaltén Full Day</span></li>
-              <li><span className="text-slate-400 hover:text-white transition-colors cursor-default">Aeropuerto FTE</span></li>
-              <li><span className="text-slate-400 hover:text-white transition-colors cursor-default">Puerto Natales (Chile)</span></li>
+              <li>
+                <Link to="/experiencia/exc-perito-moreno" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
+                  <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  Glaciar Perito Moreno
+                </Link>
+              </li>
+              <li>
+                <Link to="/experiencia/exc-chalten-full" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
+                  <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  El Chaltén Full Day
+                </Link>
+              </li>
+              <li>
+                <Link to="/experiencia/trf-aeropuerto" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
+                  <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  Aeropuerto FTE
+                </Link>
+              </li>
+              <li>
+                <Link to="/experiencia/exc-torres-paine" className="text-slate-400 hover:text-ice transition-colors flex items-center group">
+                  <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  Torres del Paine (Chile)
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -81,7 +104,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <Mail size={20} className="text-ice mr-3 mt-1 flex-shrink-0" />
-                <span className="text-slate-400">reservas@calafatego.com</span>
+                <a href="mailto:reservas@calafatego.com" className="text-slate-400 hover:text-ice transition-colors">reservas@calafatego.com</a>
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 // Lazy load pages for better performance (code splitting)
 const Home = lazy(() => import('./pages/Home'));
@@ -43,6 +44,7 @@ const App: React.FC = () => {
                 </Suspense>
             </main>
             <Footer />
+            <WhatsAppButton />
         </div>
     );
 };

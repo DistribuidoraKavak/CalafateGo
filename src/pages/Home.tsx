@@ -65,27 +65,31 @@ const Home: React.FC = () => {
                             to="/servicios?tab=traslados"
                             title="Traslados Privados"
                             icon={<Bus size={28} />}
-                            description="Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad hacia el Glaciar, Chaltén o Torres del Paine."
+                            description="Tu vehículo, tus horarios. Servicio exclusivo solo para vos y tu grupo. Sin esperas ni compartir con desconocidos, con la flexibilidad total para disfrutar la ruta a tu ritmo."
                             cta="Ver Tarifas"
                             images={[
-                                '/images/glaciar-pasarelas.jpg',      // Moreno alterna
-                                '/images/chalten-full-capri.jpg',     // Chalten alterna
-                                '/images/torres-paine-lake-bridge.jpg' // Torres alterna
+                                '/images/glaciar-pasarelas.jpg',      // Moreno
+                                '/images/chalten-ruta-fitzroy.jpg',   // Ruta Chalten
+                                '/images/torres-paine-lake-bridge.jpg', // Torres
+                                '/images/aeropuerto-vista-terminal.jpg', // Aeropuerto / Bienvenida
+                                '/images/lago-roca-cover.png'          // Lago Roca / Estepa
                             ]}
                         />
 
                         {/* Card 2: Excursiones - Animated Gallery */}
                         <ServiceCard
                             to="/servicios?tab=excursiones"
-                            title="Excursiones Premium"
+                            title="Excursiones"
                             icon={<Mountain size={28} />}
-                            description="Navegaciones, trekking sobre el Glaciar y experiencias 4x4. Viví la aventura patagónica con los mejores prestadores."
+                            description="Actividades regulares en grupo compartido. Únete a otros viajeros para vivir las mejores experiencias guiadas: navegaciones, caminatas sobre hielo y aventuras 4x4."
                             cta="Ver Experiencias"
                             delay={200}
                             images={[
                                 '/images/excursion-home-trekking.jpg', // Trekking hielo
-                                '/images/excursion-home-boat.png',     // Barco glaciar
-                                '/images/excursion-home-safari.png'    // Safari 4x4
+                                '/images/excursion-home-boat.png',     // Barco
+                                '/images/excursion-home-safari.png',    // Safari 4x4
+                                '/images/glaciar-barco.png',            // Navegación grupal
+                                '/images/chalten-full-condores.png'     // Trekking grupal
                             ]}
                         />
                     </div>

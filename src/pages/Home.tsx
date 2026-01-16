@@ -64,54 +64,55 @@ const Home: React.FC = () => {
                         <Link to="/servicios?tab=traslados" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-100">
                             {/* Background Image Placeholder */}
                             {/* Background Image */}
+                            {/* Background Image */}
                             <div className="absolute inset-0">
                                 <img
-                                    src="/images/transfers-collage.jpg"
+                                    src="/images/chalten-ruta-fitzroy.jpg"
                                     alt="Traslados Privados"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                             </div>
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
-                                <div className="w-14 h-14 bg-ice rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg shadow-ice/30 group-hover:scale-110 transition-transform duration-500">
+                                <div className="w-14 h-14 bg-ice/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg shadow-ice/30 group-hover:scale-110 transition-transform duration-500">
                                     <Bus size={28} />
                                 </div>
                                 <h4 className="text-3xl font-bold text-white mb-3 font-display">Traslados Privados</h4>
-                                <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
-                                    Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad, privacidad y flexibilidad, en vehículos de alta gama, climatizados y con choferes profesionales.
+                                <p className="text-slate-200 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden text-sm md:text-base">
+                                    Servicio de traslados privados, adaptados a tus tiempos y necesidades. Viajá con total comodidad, privacidad y flexibilidad, en vehículos de alta gama.
                                 </p>
-                                <span className="inline-flex items-center text-white font-bold border-b border-ice pb-1">
+                                <span className="inline-flex items-center text-white font-bold border-b-2 border-ice pb-1 hover:text-ice transition-colors">
                                     Ver Tarifas <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
                                 </span>
                             </div>
                         </Link>
 
                         {/* Card 2: Excursiones */}
-                        <Link to="/servicios?tab=excursiones" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-200">
+                        <Link to="/servicios?tab=excursiones" className="group relative h-[500px] overflow-hidden rounded-3xl shadow-2xl animate-fade-in-up delay-200 border border-slate-100/10">
                             {/* Background Image */}
                             <div className="absolute inset-0">
                                 <img
-                                    src="/images/excursions-collage.jpg"
+                                    src="/images/glaciar-perito.jpg"
                                     alt="Excursiones Premium"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                             </div>
 
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
                             <div className="absolute bottom-0 left-0 p-10 w-full transform transition-all duration-500 group-hover:translate-y-[-10px]">
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-navy shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                <div className="w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 text-navy shadow-lg group-hover:scale-110 transition-transform duration-500">
                                     <Mountain size={28} />
                                 </div>
                                 <h4 className="text-3xl font-bold text-white mb-3 font-display">Excursiones Premium</h4>
-                                <p className="text-slate-300 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden">
-                                    Navegaciones, trekking sobre el Glaciar, experiencias 4 x 4 y actividades tradicionales de la región. Trabajamos con prestadores habilitados para que puedas conocer lo mejor de la Patagonia.
+                                <p className="text-slate-200 mb-6 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto overflow-hidden text-sm md:text-base">
+                                    Navegaciones, trekking sobre el Glaciar y actividades tradicionales. Trabajamos con los mejores prestadores habilitados de la Patagonia.
                                 </p>
-                                <span className="inline-flex items-center text-white font-bold border-b border-white pb-1">
+                                <span className="inline-flex items-center text-white font-bold border-b-2 border-white pb-1 hover:text-ice transition-colors">
                                     Ver Experiencias <ArrowRight size={18} className="ml-2 group-hover:translate-x-2 transition-transform" />
                                 </span>
                             </div>

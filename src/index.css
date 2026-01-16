@@ -139,6 +139,6 @@ img {
   transition: opacity 0.3s ease;
 }
 
-img[loading] {
+/* img[loading] {
   opacity: 0;
-}
+} REMOVED: caused images to disappear */

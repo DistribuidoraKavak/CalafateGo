@@ -113,8 +113,8 @@ const ServicesPage: React.FC = () => {
 
                             {/* BARRA AZUL DESLIZANTE (FONDO ANIMADO) */}
                             <div
-                                className={`absolute top-2 bottom-2 w-[calc(50%-8px)] rounded-full bg-navy shadow-lg transition-all duration-300 ease-out -z-10
-                                ${(hoveredTab || activeTab) === 'excursiones' ? 'translate-x-[100%] left-[calc(50%+4px)]' : 'translate-x-0 left-2'}
+                                className={`absolute top-2 bottom-2 w-[calc(50%-8px)] rounded-full bg-navy shadow-lg transition-transform duration-300 ease-out -z-10 left-2
+                                ${(hoveredTab || activeTab) === 'excursiones' ? 'translate-x-[100%]' : 'translate-x-0'}
                                 `}
                                 style={{ width: 'calc(50% - 8px)' }}
                             ></div>

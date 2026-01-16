@@ -50,7 +50,7 @@ const Contacto: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-400 font-bold uppercase mb-1">Teléfono / WhatsApp</p>
-                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">+54 9 2966 53-0638</p>
+                                        <a href="https://wa.me/5492966530638" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors inline-block text-white">+54 9 2966 53-0638</a>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-4">

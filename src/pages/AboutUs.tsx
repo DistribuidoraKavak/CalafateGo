@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Clock, MapPin, ShieldCheck, ArrowRight, Star, Quote, Camera } from 'lucide-react';
 
 const AboutUs: React.FC = () => {
@@ -10,6 +11,10 @@ const AboutUs: React.FC = () => {
 
     return (
         <div className="bg-white">
+            <Helmet>
+                <title>Quiénes Somos | CalafateGo</title>
+                <meta name="description" content="Conoce a CalafateGo, tu operador local de confianza para traslados y excursiones en El Calafate, Patagonia Argentina." />
+            </Helmet>
             {/* 1. Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 {/* Background Image with Parallax-like fixed attachment or absolute */}

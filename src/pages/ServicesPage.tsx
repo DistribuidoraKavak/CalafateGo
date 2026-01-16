@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Bus, Mountain, ExternalLink, ArrowRight, Tag, Users, MessageCircle } from 'lucide-react';
 import { TRASLADOS_DATA, EXCURSIONES_DATA, ServiceItem } from '../data/servicesData';
 
@@ -74,6 +75,10 @@ const ServicesPage: React.FC = () => {
 
     return (
         <div className="bg-slate-50 min-h-screen pb-20 font-sans">
+            <Helmet>
+                <title>Traslados y Excursiones | CalafateGo</title>
+                <meta name="description" content="Explora nuestra oferta de traslados privados y excursiones premium en El Calafate. Glaciar Perito Moreno, El Chaltén, navegaciones y más." />
+            </Helmet>
 
             {/* ======= HEADER ======= */}
             <header className="relative h-[60vh] flex items-center justify-center pointer-events-none">

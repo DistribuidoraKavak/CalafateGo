@@ -3,49 +3,49 @@
   <!-- Páginas principales -->
   <url>
     <loc>https://calafatego.com/</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://calafatego.com/nosotros</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://calafatego.com/servicios</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://calafatego.com/servicios?tab=traslados</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://calafatego.com/servicios?tab=excursiones</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://calafatego.com/contacto</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://calafatego.com/privacidad</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://calafatego.com/terminos</loc>
-    <lastmod>2026-01-06</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -53,43 +53,43 @@
   <!-- Servicios de Traslados -->
   <url>
     <loc>https://calafatego.com/experiencia/trf-aeropuerto</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-perito-moreno</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/trf-chalten</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-chalten-full</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/trf-puerto-bandera</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-bandera-moreno</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-torres-paine</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -97,31 +97,43 @@
   <!-- Excursiones -->
   <url>
     <loc>https://calafatego.com/experiencia/exc-walichu</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-minitrekking</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-big-ice</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-todo-glaciares</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://calafatego.com/experiencia/exc-kayak</loc>
-    <lastmod>2026-01-05</lastmod>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calafatego.com/experiencia/exc-safari-azul</loc>
+    <lastmod>2026-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://calafatego.com/experiencia/exc-glaciares-gourmet</loc>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

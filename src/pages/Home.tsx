@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Bus, MapPin, Calendar, ShieldCheck, Star } from 'lucide-react';
 import TravelAssistant from '../../components/TravelAssistant';
 
 const Home: React.FC = () => {
     return (
         <div className="font-sans antialiased text-slate-900 bg-white">
+            <Helmet>
+                <title>CalafateGo | Traslados Privados y Excursiones en El Calafate</title>
+                <meta name="description" content="Servicio premium de traslados y excursiones en El Calafate, Patagonia Argentina. Glaciar Perito Moreno, El Chaltén, Torres del Paine." />
+            </Helmet>
             {/* ======= HERO SECTION (Restored Parallax) ======= */}
             <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
                 {/* 1. Background Image with Parallax (Desktop) & Scroll (Mobile) */}

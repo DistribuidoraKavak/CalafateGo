@@ -91,14 +91,14 @@ const ServicesPage: React.FC = () => {
     const currentData = activeTab === 'traslados' ? TRASLADOS_DATA : EXCURSIONES_DATA;
 
     return (
-        <div className="bg-slate-50 min-h-screen pb-20 font-sans">
+        <div className="bg-slate-50 min-h-screen pb-20 font-sans pt-24 md:pt-28">
             <Helmet>
                 <title>Traslados y Excursiones | CalafateGo</title>
                 <meta name="description" content="Explora nuestra oferta de traslados privados y excursiones premium en El Calafate. Glaciar Perito Moreno, El Chaltén, navegaciones y más." />
             </Helmet>
 
             {/* ======= HEADER ======= */}
-            <header className="relative h-[60vh] flex items-center justify-center pointer-events-none">
+            <header className="relative h-[60vh] flex items-center justify-center pointer-events-none overflow-hidden rounded-b-[2.5rem] shadow-2xl">
 
                 {/* Background Image */}
                 <div className="absolute inset-0 overflow-hidden">

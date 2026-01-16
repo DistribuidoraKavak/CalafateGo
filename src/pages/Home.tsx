@@ -17,44 +17,44 @@ const Home: React.FC = () => {
                 <meta property="og:description" content="Servicio premium de traslados y excursiones en El Calafate, Patagonia Argentina." />
                 <meta property="og:url" content="https://calafatego.com/" />
             </Helmet>
-            {/* ======= HERO SECTION (Restored Parallax) ======= */}
+            {/* ======= HERO SECTION (Improved Parallax & Wave) ======= */}
             <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
-                {/* 1. Background Image with Parallax (Desktop) & Scroll (Mobile) */}
+                {/* 1. Background Image with Parallax */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed z-0 transition-transform duration-1000 scale-105 hover:scale-100"
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed z-0 transform scale-110"
                     style={{ backgroundImage: `url('/images/glaciar-perito.jpg')` }}
                 ></div>
 
-                {/* 2. Overlay Oscuro */}
-                <div className="absolute inset-0 bg-black/50 z-10"></div>
+                {/* 2. Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-slate-900/90 z-10"></div>
 
-                {/* 3. Contenido */}
-                <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center">
-                    <p className="text-white/90 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base drop-shadow-md font-display animate-fade-in-up">
+                {/* 3. Contenido Principal */}
+                <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center text-balanced">
+                    <p className="text-ice font-bold tracking-[0.4em] uppercase mb-6 text-sm md:text-base drop-shadow-md font-display animate-fade-in-up">
                         Patagonia Argentina · El Calafate
                     </p>
-                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-none drop-shadow-lg font-display tracking-wide animate-fade-in-up delay-100">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-none drop-shadow-2xl font-display tracking-wide animate-fade-in-up delay-100">
                         Tu Experiencia <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-200 to-white">en la Patagonia</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-ice to-white animate-pulse">en la Patagonia</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-slate-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-sans animate-fade-in-up delay-200">
+                    <p className="text-xl md:text-2xl text-slate-200 mb-12 font-light max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-sans animate-fade-in-up delay-200 text-relaxed">
                         Descubre la tierra de los glaciares con la comodidad y exclusividad que mereces.
                     </p>
 
                     <Link
                         to="/servicios"
-                        className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-navy transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-white/20 backdrop-blur-sm animate-fade-in-up delay-300"
+                        className="btn-premium inline-flex items-center space-x-3 bg-white text-navy px-10 py-5 rounded-full font-bold text-lg hover:bg-ice hover:text-white transition-all transform hover:-translate-y-1 shadow-[0_0_40px_rgba(255,255,255,0.3)] animate-fade-in-up delay-300"
                     >
                         <span>Explorar Experiencias</span>
                         <ArrowRight size={20} />
                     </Link>
                 </div>
 
-                {/* Scroll Down Indicator */}
-                <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-                    <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-                        <div className="w-1 h-2 bg-white rounded-full mt-2"></div>
-                    </div>
+                {/* 4. Bottom Wave Divider */}
+                <div className="absolute bottom-0 left-0 right-0 z-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto text-slate-50 fill-current">
+                        <path fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
                 </div>
             </section>
 
@@ -105,11 +105,20 @@ const Home: React.FC = () => {
                         />
                     </div>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto text-navy fill-current">
+                        <path fillOpacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,202.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
             </section>
 
             {/* ======= CONCIERGE SECTION ======= */}
-            <section className="bg-navy py-24 relative overflow-hidden reveal">
+            <section className="bg-navy pt-32 pb-48 relative overflow-hidden reveal">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/3"></div>
+                {/* Top Slope Divider */}
+                <div className="absolute top-0 left-0 right-0 z-20">
+                    {/* No top wave here as it connects from previous wave */}
+                </div>
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
 
@@ -157,15 +166,21 @@ const Home: React.FC = () => {
             </section>
 
             {/* ======= CTA FOOTER ======= */}
-            <section className="py-24 bg-white relative overflow-hidden text-center reveal">
-                <div className="container mx-auto px-6 animate-fade-in-up">
+            <section className="pt-32 pb-24 bg-white relative overflow-hidden text-center reveal">
+                {/* Top Slope Divider */}
+                <div className="absolute top-0 left-0 right-0 transform -translate-y-1 rotate-180 z-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto text-navy fill-current">
+                        <path fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+                </div>
+                <div className="container mx-auto px-6 animate-fade-in-up relative z-30">
                     <h2 className="text-4xl md:text-5xl font-bold text-navy mb-8 font-display">¿Listo para comenzar?</h2>
                     <Link
                         to="/contacto"
-                        className="inline-flex items-center space-x-3 bg-navy text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                        className="btn-premium inline-flex items-center space-x-3 bg-navy text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-2"
                     >
                         <span>Contactar Especialista</span>
-                        <ArrowRight size={20} />
+                        <ArrowRight size={24} />
                     </Link>
                 </div>
             </section>

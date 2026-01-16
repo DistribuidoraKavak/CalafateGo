@@ -125,9 +125,9 @@ const ServicesPage: React.FC = () => {
                                 onMouseEnter={() => setHoveredTab('traslados')}
                                 onMouseLeave={() => setHoveredTab(null)}
                                 className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
-                                    ${(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-400 hover:text-white'}`}
+                                    ${(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-white'}`}
                             >
-                                <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-500 group-hover:text-slate-300'} />
+                                <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-300 group-hover:text-white'} />
                                 <span>Traslados</span>
                             </button>
 
@@ -137,9 +137,9 @@ const ServicesPage: React.FC = () => {
                                 onMouseEnter={() => setHoveredTab('excursiones')}
                                 onMouseLeave={() => setHoveredTab(null)}
                                 className={`flex-1 flex items-center justify-center gap-2 py-4 rounded-full font-bold text-base md:text-lg transition-colors duration-300 z-10 bg-transparent
-                                    ${(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-400 hover:text-white'}`}
+                                    ${(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-white'}`}
                             >
-                                <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-500 group-hover:text-slate-300'} />
+                                <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-300 group-hover:text-white'} />
                                 <span>Excursiones</span>
                             </button>
                         </div>

@@ -59,7 +59,7 @@ const Contacto: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="text-sm text-slate-400 font-bold uppercase mb-1">Email Corporativo</p>
-                                        <p className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors">reservas@calafatego.com</p>
+                                        <a href="mailto:reservas@calafatego.com" className="text-lg font-semibold cursor-pointer hover:text-ice transition-colors inline-block text-white">reservas@calafatego.com</a>
                                     </div>
                                 </li>
 

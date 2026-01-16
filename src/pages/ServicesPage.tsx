@@ -17,7 +17,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ data }) => {
     return (
         <Link
             to={`/experiencia/${data.id}`}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden flex flex-col h-full transition-all duration-500 transform hover:scale-[1.02] border border-slate-100 group"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-[0_20px_50px_rgba(0,43,91,0.15)] hover:-translate-y-2 overflow-hidden flex flex-col h-full transition-all duration-500 transform border border-slate-100 group"
         >
             {/* Image Container */}
             <div className="relative h-64 w-full overflow-hidden bg-slate-200">

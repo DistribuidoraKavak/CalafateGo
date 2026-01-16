@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Bus, MapPin, Calendar, ShieldCheck, Star } from 'lucide-react';
 import TravelAssistant from '../../components/TravelAssistant';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Home: React.FC = () => {
+    useScrollReveal();
+
     return (
         <div className="font-sans antialiased text-slate-900 bg-white">
             <Helmet>
@@ -56,7 +59,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* ======= SERVICES PREVIEW (Animated Grid) ======= */}
-            <section className="py-24 bg-slate-50 relative z-10">
+            <section className="py-24 bg-slate-50 relative z-10 reveal">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in-up">
                         <h2 className="text-navy font-bold tracking-widest uppercase text-sm mb-3">Nuestra Propuesta</h2>
@@ -105,7 +108,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* ======= CONCIERGE SECTION ======= */}
-            <section className="bg-navy py-24 relative overflow-hidden">
+            <section className="bg-navy py-24 relative overflow-hidden reveal">
                 <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-800/20 blur-3xl rounded-full translate-x-1/3"></div>
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -154,7 +157,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* ======= CTA FOOTER ======= */}
-            <section className="py-24 bg-white relative overflow-hidden text-center">
+            <section className="py-24 bg-white relative overflow-hidden text-center reveal">
                 <div className="container mx-auto px-6 animate-fade-in-up">
                     <h2 className="text-4xl md:text-5xl font-bold text-navy mb-8 font-display">¿Listo para comenzar?</h2>
                     <Link

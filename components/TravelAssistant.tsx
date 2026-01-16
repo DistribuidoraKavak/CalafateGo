@@ -58,7 +58,7 @@ const TravelAssistant: React.FC = () => {
     ];
 
     return (
-        <div className="w-full max-w-2xl mx-auto">
+        <div className="w-full max-w-2xl mx-auto pulse-glow">
             {/* Glassmorphism Card */}
             <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 border border-white/50">
 

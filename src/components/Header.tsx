@@ -53,11 +53,11 @@ const Header: React.FC = () => {
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link to="/" className="flex items-center space-x-1 group">
+                <Link to="/" className="flex items-center group">
                     <img
                         src="/images/calafate-logo-icon.png"
                         alt="CalafateGo Logo"
-                        className={`h-20 w-auto transition-all duration-500 group-hover:rotate-[20deg] group-hover:scale-110 drop-shadow-md ${!headerBg ? 'brightness-125 saturate-150 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' : ''}`}
+                        className={`h-20 w-auto -mr-3 transition-all duration-500 group-hover:rotate-[20deg] group-hover:scale-110 drop-shadow-md ${!headerBg ? 'brightness-125 saturate-150 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' : ''}`}
                     />
                     <div className={`text-2xl font-bold tracking-tighter ${headerBg ? 'text-navy' : 'text-white'}`}>
                         Calafate<span className="text-ice">Go</span>

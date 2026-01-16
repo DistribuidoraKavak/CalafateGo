@@ -128,7 +128,7 @@ const ServicesPage: React.FC = () => {
                                     ${(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-white'}`}
                             >
                                 <Bus size={20} className={(hoveredTab || activeTab) === 'traslados' ? 'text-navy' : 'text-slate-300 group-hover:text-white'} />
-                                <span>Traslados</span>
+                                <span className="animate-fade-in-up" style={{ animationDelay: '100ms', animationFillMode: 'both' }}>Traslados</span>
                             </button>
 
                             {/* Botón Excursiones */}
@@ -140,7 +140,7 @@ const ServicesPage: React.FC = () => {
                                     ${(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-white'}`}
                             >
                                 <Mountain size={20} className={(hoveredTab || activeTab) === 'excursiones' ? 'text-navy' : 'text-slate-300 group-hover:text-white'} />
-                                <span>Excursiones</span>
+                                <span className="animate-fade-in-up" style={{ animationDelay: '300ms', animationFillMode: 'both' }}>Excursiones</span>
                             </button>
                         </div>
                     </div>

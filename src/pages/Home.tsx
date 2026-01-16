@@ -10,6 +10,9 @@ const Home: React.FC = () => {
             <Helmet>
                 <title>CalafateGo | Traslados Privados y Excursiones en El Calafate</title>
                 <meta name="description" content="Servicio premium de traslados y excursiones en El Calafate, Patagonia Argentina. Glaciar Perito Moreno, El Chaltén, Torres del Paine." />
+                <meta property="og:title" content="CalafateGo | Traslados Privados y Excursiones en El Calafate" />
+                <meta property="og:description" content="Servicio premium de traslados y excursiones en El Calafate, Patagonia Argentina." />
+                <meta property="og:url" content="https://calafatego.com/" />
             </Helmet>
             {/* ======= HERO SECTION (Restored Parallax) ======= */}
             <section className="relative w-full h-[100dvh] flex items-center justify-center overflow-hidden">
@@ -206,7 +209,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ to, title, icon, description,
                 >
                     <img
                         src={img}
-                        alt=""
+                        alt={title}
                         className="w-full h-full object-cover transition-transform duration-[3000ms] ease-linear group-hover:scale-105"
                         style={{ transform: index === currentImageIndex ? 'scale(1.05)' : 'scale(1)' }}
                     />

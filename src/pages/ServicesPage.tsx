@@ -95,6 +95,9 @@ const ServicesPage: React.FC = () => {
             <Helmet>
                 <title>Traslados y Excursiones | CalafateGo</title>
                 <meta name="description" content="Explora nuestra oferta de traslados privados y excursiones premium en El Calafate. Glaciar Perito Moreno, El Chaltén, navegaciones y más." />
+                <meta property="og:title" content="Traslados y Excursiones | CalafateGo" />
+                <meta property="og:description" content="Explora nuestra oferta de traslados privados y excursiones premium en El Calafate." />
+                <meta property="og:url" content="https://calafatego.com/servicios" />
             </Helmet>
 
             {/* ======= HEADER ======= */}

@@ -14,6 +14,9 @@ const AboutUs: React.FC = () => {
             <Helmet>
                 <title>Quiénes Somos | CalafateGo</title>
                 <meta name="description" content="Conoce a CalafateGo, tu operador local de confianza para traslados y excursiones en El Calafate, Patagonia Argentina." />
+                <meta property="og:title" content="Quiénes Somos | CalafateGo" />
+                <meta property="og:description" content="Conoce a CalafateGo, tu operador local de confianza para traslados y excursiones en El Calafate." />
+                <meta property="og:url" content="https://calafatego.com/nosotros" />
             </Helmet>
             {/* 1. Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">

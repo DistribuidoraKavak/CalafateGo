@@ -26,6 +26,9 @@ const Contacto: React.FC = () => {
             <Helmet>
                 <title>Contacto | CalafateGo</title>
                 <meta name="description" content="Contáctanos para reservar tu traslado o excursión en El Calafate. WhatsApp, email y formulario de contacto." />
+                <meta property="og:title" content="Contacto | CalafateGo" />
+                <meta property="og:description" content="Contáctanos para reservar tu traslado o excursión en El Calafate." />
+                <meta property="og:url" content="https://calafatego.com/contacto" />
             </Helmet>
             <div className="container mx-auto px-6">
 

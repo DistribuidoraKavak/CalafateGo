@@ -63,6 +63,9 @@ const ServiceDetail: React.FC = () => {
             <Helmet>
                 <title>{service.title} | CalafateGo</title>
                 <meta name="description" content={service.shortDesc} />
+                <meta property="og:title" content={`${service.title} | CalafateGo`} />
+                <meta property="og:description" content={service.shortDesc} />
+                <meta property="og:url" content={`https://calafatego.com/experiencia/${service.id}`} />
             </Helmet>
 
             {/* ================= HERO CINEMÁTICO ================= */}

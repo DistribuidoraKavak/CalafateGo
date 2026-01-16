@@ -101,50 +101,46 @@ const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* TABS */}
-                {/* TABS FLOTANTES REDISEÑADOS */}
-                <div className="absolute -bottom-10 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
-                    <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-2.5 flex w-full max-w-2xl transform transition-all hover:scale-[1.01]">
+                {/* TABS COMPACTOS "ELECTRIC PILL" - ALTA VISIBILIDAD */}
+                <div className="absolute -bottom-8 left-0 w-full flex justify-center z-30 px-4 pointer-events-auto">
+                    {/* Contenedor con Anillo de Luz Pulsante */}
+                    <div className="relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-ice to-blue-400 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
-                        {/* Botón Traslados */}
-                        <button
-                            onClick={() => handleTabChange('traslados')}
-                            className={`flex-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 py-6 px-4 rounded-2xl transition-all duration-300 relative overflow-hidden group ${activeTab === 'traslados'
-                                ? 'bg-navy text-white shadow-2xl shadow-navy/50 scale-[1.02]'
-                                : 'bg-white/80 text-slate-500 hover:bg-white hover:text-navy'
-                                }`}
-                        >
-                            <div className={`p-3 rounded-xl transition-colors ${activeTab === 'traslados' ? 'bg-white/10' : 'bg-slate-100 group-hover:bg-ice/10'}`}>
-                                <Bus size={28} className={activeTab === 'traslados' ? 'text-ice' : 'text-slate-400 group-hover:text-navy'} />
-                            </div>
-                            <div className="text-center md:text-left">
-                                <span className="block text-lg md:text-xl font-bold leading-tight">Traslados</span>
-                                <span className={`text-xs md:text-sm font-medium ${activeTab === 'traslados' ? 'text-slate-300' : 'text-slate-400'}`}>Privados y Ejecutivos</span>
-                            </div>
-                        </button>
+                        <div className="relative bg-navy/95 backdrop-blur-xl border border-white/10 rounded-full p-2 flex w-full max-w-md shadow-2xl">
+                            {/* Botón Traslados */}
+                            <button
+                                onClick={() => handleTabChange('traslados')}
+                                className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${activeTab === 'traslados'
+                                    ? 'bg-ice text-navy shadow-[0_0_20px_rgba(45,212,191,0.5)] transform scale-[1.02]'
+                                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                <Bus size={18} className={activeTab === 'traslados' ? 'animate-bounce' : ''} />
+                                <span>Traslados</span>
+                            </button>
 
-                        <div className="w-4"></div> {/* Separador */}
-
-                        {/* Botón Excursiones */}
-                        <button
-                            onClick={() => handleTabChange('excursiones')}
-                            className={`flex-1 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 py-6 px-4 rounded-2xl transition-all duration-300 relative overflow-hidden group ${activeTab === 'excursiones'
-                                ? 'bg-navy text-white shadow-2xl shadow-navy/50 scale-[1.02]'
-                                : 'bg-white/80 text-slate-500 hover:bg-white hover:text-navy'
-                                }`}
-                        >
-                            {/* Etiqueta "Recomendado" */}
-                            <div className="absolute top-2 right-2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm animate-pulse">
-                                Top
-                            </div>
-
-                            <div className={`p-3 rounded-xl transition-colors ${activeTab === 'excursiones' ? 'bg-white/10' : 'bg-slate-100 group-hover:bg-ice/10'}`}>
-                                <Mountain size={28} className={activeTab === 'excursiones' ? 'text-ice' : 'text-slate-400 group-hover:text-navy'} />
-                            </div>
-                            <div className="text-center md:text-left">
-                                <span className="block text-lg md:text-xl font-bold leading-tight">Excursiones</span>
-                                <span className={`text-xs md:text-sm font-medium ${activeTab === 'excursiones' ? 'text-slate-300' : 'text-slate-400'}`}>Aventura Premium</span>
-                            </div>
-                        </button>
+                            {/* Botón Excursiones */}
+                            <button
+                                onClick={() => handleTabChange('excursiones')}
+                                className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-full font-bold text-sm md:text-base transition-all duration-300 ${activeTab === 'excursiones'
+                                    ? 'bg-ice text-navy shadow-[0_0_20px_rgba(45,212,191,0.5)] transform scale-[1.02]'
+                                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                <Mountain size={18} className={activeTab === 'excursiones' ? 'animate-bounce' : ''} />
+                                <span className="relative">
+                                    Excursiones
+                                    {/* Punto de notificación si está inactivo para llamar la atención */}
+                                    {activeTab !== 'excursiones' && (
+                                        <span className="absolute -top-1 -right-2 flex h-2.5 w-2.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                                        </span>
+                                    )}
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </header>

@@ -31,7 +31,7 @@ const Header: React.FC = () => {
     ];
 
     const handleWhatsApp = () => {
-        window.open('https://wa.me/5492902123456?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado', '_blank');
+        window.open('https://wa.me/5492966530638?text=Hola%20CalafateGo,%20quisiera%20consultar%20por%20un%20traslado', '_blank');
     };
 
     const isActive = (path: string) => {

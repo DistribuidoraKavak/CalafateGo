@@ -511,9 +511,9 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         image: '/images/cerro-frias-forest.png',
         gallery: [
             '/images/cerro-frias-forest.png',
+            '/images/cerro-frias-cover.jpg',
             '/images/cerro-frias-truck.jpg',
-            '/images/cerro-frias-sunset.jpg',
-            '/images/cerro-frias-cover.jpg'
+            '/images/cerro-frias-sunset.jpg'
         ],
         category: 'excursiones',
         galleryKeywords: '4x4 mountain panoramic view patagonia estancia',

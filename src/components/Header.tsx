@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                     <img
                         src="/images/calafate-logo-icon.png"
                         alt="CalafateGo Logo"
-                        className={`h-[60px] w-auto mr-1 transition-all duration-500 group-hover:rotate-[20deg] group-hover:scale-110 drop-shadow-md ${!headerBg ? 'brightness-125 saturate-150 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' : ''}`}
+                        className={`h-[60px] w-auto -mr-2 transition-all duration-500 group-hover:rotate-[20deg] group-hover:scale-110 drop-shadow-md ${!headerBg ? 'brightness-125 saturate-150 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]' : ''}`}
                     />
                     <div className={`text-2xl font-bold tracking-tighter ${headerBg ? 'text-navy' : 'text-white'}`}>
                         Calafate<span className="text-ice">Go</span>

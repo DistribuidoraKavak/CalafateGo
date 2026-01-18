@@ -336,7 +336,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         title: 'Big Ice (Trekking Profundo)',
         price: 'Consultar',
         shortDesc: 'Para los amantes del trekking. 4 horas en el corazón del glaciar.',
-        fullDesc: 'La versión extrema del Minitrekking. Una caminata intensa de 4 horas explorando el centro del glaciar, donde verás formaciones de hielo increíbles y cuevas azules. Exigencia física alta. Edad: 18 a 50 años. Incluye navegación y pasarelas.',
+        fullDesc: 'La excursión comienza con la búsqueda de los pasajeros en El Calafate. En nuestros confortables buses, camino al Parque Nacional Los Glaciares, los guías de turismo les brindarán información sobre el lugar, el glaciar y la excursión.\n\nUna vez en el Puerto “Bajo de las Sombras” (Ruta 11, a 70 km de El Calafate) se embarca para cruzar el Lago Rico, llegando a la costa opuesta luego de aproximadamente 10 minutos de navegación frente a la imponente pared sur del Glaciar Perito Moreno.\n\nAl desembarcar en la Bahía Puma, a solo 500mts del Glaciar, serán recibidos por nuestros expertos guías de montaña. A partir de aquí, comenzaremos el recorrido con una caminata de una hora aproximadamente por la costa del lago y luego por la morena al lado del hielo (terreno de rocas y tierra inestable).\n\nAl llegar al borde del glaciar, con las sorprendentes tonalidades azules del hielo, se organizarán subgrupos de un máximo de 20 personas cada uno y se les colocarán los crampones y cascos provistos por la empresa a pocos metros de la hermosa Cascada de las Cotorras. Esta excursión es altamente personalizada (un guía cada 10 pasajeros máximo). Una vez sobre el glaciar, recibirán una charla de seguridad y exploraremos juntos durante una hora aprox. este paraíso helado, declarado Patrimonio de la Humanidad (1981).\n\nEl circuito sobre el glaciar es de dificultad media/alta, la superficie del hielo es irregular pero firme y segura. El ritmo de marcha es constante y se recorren 5.5 km aprox. en terreno de rocas, tierra y hielo con crampones (El mini normal es 3.5km de recorrido). El tiempo de caminata total es de 4 horas aproximadamente.\n\nDurante la caminata se podrá apreciar las formaciones típicas y cambiantes de un glaciar como profundas grietas, sumideros azules, enormes seracs y lagunas turquesas. Siempre acompañados del sonido único de los crampones clavándose en el hielo.\n\nAl finalizar la caminata sobre el hielo, se visitará la base del salto de agua, desde donde caminaremos de regreso por la morena lateral hasta llegar nuevamente a la Bahía Puma. Una vez allí, embarcaremos de regreso hacia el Puerto Bajo de las Sombras, siempre mirando la pared de hielo por si nos sorprende con un estruendoso desprendimiento.\n\nLa duración de la excursión con el traslado desde El Calafate, es de 10 horas aproximadamente e incluye la visita de alrededor de 1 hora a las pasarelas del Glaciar Perito Moreno, ubicadas a 7 km de nuestro Puerto. Allí podrán disfrutar de la espectacular vista panorámica del glaciar y recorrer alguno de los senderos autoguiados. En caso de no optar por nuestro transporte con visita a pasarelas e ir por sus propios medios, esta excursión dura 5 h aprox., saliendo desde el Puerto y regresando al mismo punto de partida.\n\nEsta excursión se realiza en un ambiente natural por lo cual las condiciones climáticas y características del glaciar y sus alrededores cambian diariamente.\n\nSin embargo, no se suspende, mientras que las condiciones de seguridad lo permitan.\n\nLas salidas durante el mes de mayo, están sujetas a las condiciones climáticas y del terreno. ¡Los esperamos!',
         image: '/images/big-ice.jpg',
         gallery: [
             '/images/big-ice.jpg',
@@ -345,7 +345,24 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/big-ice-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'ice cave blue glacier climbing adventure'
+        galleryKeywords: 'big ice glacier trekking extreme adventure',
+        activityDetails: {
+            duration: '10hs aprox. (No organizar otros planes)',
+            season: '15 de Agosto al 30 de Abril',
+            languages: 'Español e Inglés',
+            optional: 'Traslado con guía y visita a pasarelas (1h)',
+            difficulty: 'Media/Alta',
+            requirements: [
+                'Edad: 18 a 55 años (Sin excepción)',
+                'No apto para personas sedentarias',
+                'Capacidad para caminar 3hs constantes'
+            ],
+            notIncluded: [
+                'Entrada al Parque Nacional',
+                'Comida y bebida',
+                'Ropa personal (frío/lluvia)'
+            ]
+        }
     },
     {
         id: 'exc-todo-glaciares',

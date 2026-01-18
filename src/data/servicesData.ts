@@ -482,7 +482,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/glaciares-gourmet.jpg',
             '/images/glaciares-gourmet-inside.jpg',
             '/images/glaciares-gourmet-3.jpg',
-            '/images/glaciares-gourmet-4.jpg'
+            '/images/glaciares-gourmet-land.jpg'
         ],
         category: 'excursiones',
         galleryKeywords: 'luxury cruise food wine glacier view',

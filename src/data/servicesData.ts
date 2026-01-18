@@ -569,6 +569,39 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
                 'Indumentaria adecuada para condiciones climáticas'
             ]
         }
+    },
+    {
+        id: 'exc-balcones-calafate',
+        title: 'Balcones de Calafate',
+        price: 'Consultar',
+        shortDesc: 'La vista más alta e imponente de El Calafate.',
+        fullDesc: 'Perfecta para el primer o último día de tu estadía, esta aventura te llevará al Cerro Huyliche, alcanzando los 1.050 metros sobre el nivel del mar, donde disfrutarás de la panorámica más espectacular de la ciudad y el Lago Argentino.\n\nLa travesía comienza con el recogido en tu hotel. La primera parada es un mirador natural que regala una vista única y privilegiada de El Calafate y el extenso cuerpo central del lago. Continuando el ascenso, llegamos al famoso Laberinto de Piedras, formaciones rocosas que invitan a explorar y fotografiar.\n\nDesde allí, iniciamos el descenso por la ladera norte hasta alcanzar la Piedra de los Sombreros, otro punto icónico del recorrido. Finalmente, regresamos hacia la ciudad descendiendo sin perder de vista el imponente Lago Argentino en todo su esplendor.\n\nDisponible en dos turnos (mañana o tarde), con snack incluido según el horario elegido. Recomendamos llevar lentes de sol, protector solar, gorro, ropa cómoda y calzado apropiado para caminatas.',
+        image: '/images/balcones-cover.jpg',
+        gallery: [
+            '/images/balcones-cover.jpg',
+            '/images/balcones-cliff.jpg',
+            '/images/balcones-ice.jpg',
+            '/images/balcones-refuge.jpg'
+        ],
+        category: 'excursiones',
+        galleryKeywords: 'panoramic view city lake mountain 4x4 calafate',
+        activityDetails: {
+            duration: '3.5 horas',
+            season: 'Septiembre a Marzo',
+            languages: 'Español e Inglés',
+            difficulty: 'Baja',
+            included: [
+                'Traslados desde/hacia hotel',
+                'Recorrido en 4x4',
+                'Snack (almuerzo o merienda según turno)',
+                'Guía y coordinador permanente',
+                'Asistencia médica de emergencia'
+            ],
+            requirements: [
+                'Apto para movilidad reducida',
+                'Se recomienda calzado cómodo para caminatas'
+            ]
+        }
     }
 ];
 

@@ -534,6 +534,41 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
                 'Adaptación de menú para vegetarianos y celíacos disponible'
             ]
         }
+    },
+    {
+        id: 'exc-nativo-experience',
+        title: 'Nativo Experience',
+        price: 'Consultar',
+        shortDesc: 'Historia, cuevas milenarias y gastronomía bajo las estrellas.',
+        fullDesc: 'Una experiencia perfecta para quienes llegan o se despiden de El Calafate al mediodía. A bordo de vehículos 4x4, recorreremos la costa del Lago Argentino dentro de la Reserva Natural Estancia 25 de Mayo, descubriendo los secretos que guarda esta tierra.\n\nEl recorrido es un verdadero viaje en el tiempo: conoceremos las historias de las primeras expediciones y los pioneros que se aventuraron hacia lo desconocido. Visitaremos las míticas Cuevas de Walichu y el Mirador del Lago Argentino, donde antiguas culturas dejaron sus huellas plasmadas en la roca hace miles de años.\n\nNos adentraremos en estas cuevas ancestrales para contemplar el arte rupestre y comprender su significado. En este entorno único, disfrutaremos de un almuerzo o cena según el horario elegido, reviviendo la experiencia de los primeros exploradores en un escenario natural incomparable.\n\nSi elegís el turno nocturno, te espera un cielo estrellado de una intensidad difícil de olvidar. Te aseguramos que la experiencia será extraordinaria.',
+        image: '/images/nativo-stars.jpg',
+        gallery: [
+            '/images/nativo-stars.jpg',
+            '/images/nativo-cave.jpg',
+            '/images/nativo-4x4.jpg',
+            '/images/nativo-sunset.jpg'
+        ],
+        category: 'excursiones',
+        galleryKeywords: 'cave stars night 4x4 lake sunset patagonia',
+        activityDetails: {
+            duration: '3 horas',
+            season: 'Todo el año',
+            languages: 'Español e Inglés',
+            difficulty: 'Baja',
+            included: [
+                'Traslados desde/hacia hotel',
+                'Recorrido en 4x4',
+                'Almuerzo o Cena (según turno)',
+                'Guía y coordinador permanente',
+                'Asistencia médica de emergencia'
+            ],
+            requirements: [
+                'Apto para movilidad reducida'
+            ],
+            notIncluded: [
+                'Indumentaria adecuada para condiciones climáticas'
+            ]
+        }
     }
 ];
 

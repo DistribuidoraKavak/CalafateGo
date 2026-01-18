@@ -298,7 +298,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         image: '/images/minitrekking-cover-new.jpg',
         gallery: [
             '/images/minitrekking-cover-new.jpg',
-            '/images/minitrekking-2.jpg',
+            '/images/minitrekking-2-new.jpg',
             '/images/minitrekking-3-new.jpg',
             '/images/minitrekking-4.jpg'
         ],

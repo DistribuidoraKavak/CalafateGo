@@ -134,8 +134,8 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         fullDesc: 'Traslado privado hacia Puerto Punta Bandera (47 km), el puerto principal para las navegaciones entre los glaciares.\n\nDesde allí se realizan las navegaciones más destacadas del Parque Nacional Los Glaciares, como la Navegación Todo Glaciares (que recorre el brazo norte del Lago Argentino hacia los glaciares Upsala y Spegazzini) y la Experiencia Glaciares Gourmet, entre otras.\n\nLlegamos con la antelación necesaria para que realices el embarque con tranquilidad y disfrutes de una de las experiencias más completas para conocer los imponentes glaciares del sur argentino.',
         image: '/images/puerto-bandera-aerea.jpg',
         gallery: [
-            '/images/puerto-bandera-cover.jpg',
             '/images/puerto-bandera-aerea.jpg',
+            '/images/puerto-bandera-cover.jpg',
             '/images/puerto-bandera-hielo-new.jpg',
             '/images/puerto-bandera-cartel-new.jpg'
         ],

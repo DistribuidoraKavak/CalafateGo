@@ -411,19 +411,22 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         category: 'excursiones',
         galleryKeywords: 'kayak river santa cruz darwin adventure',
         activityDetails: {
-            duration: '9:00 AM a 3:30 PM',
-            season: 'Octubre a Abril',
+            duration: '5 horas',
+            season: 'Todo el año',
             languages: 'Español e Inglés',
+            difficulty: 'Media',
             included: [
-                'Inicio en su hotel de El Calafate',
-                'Almuerzo en estancia',
-                'Guía durante toda la excursión',
-                'Kayaks dobles y equipo técnico completo (Traje seco, botas, etc)',
+                'Traslados Desde/Hacia Hotel',
+                'Almuerzo',
+                'Coordinador permanente y guías locales',
+                'Asistencia médica de emergencia',
+                'Kayaks dobles y equipo técnico completo',
                 'Cancelación gratis hasta 24 horas antes'
             ],
             requirements: [
                 'Edad mínima 16 años',
                 'No apto para embarazadas',
+                'No apto para movilidad reducida',
                 'No se aceptan personas con sobrepeso',
                 'Sujeto a cupo mínimo de pasajeros'
             ]

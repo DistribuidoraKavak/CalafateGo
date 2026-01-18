@@ -476,7 +476,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         title: 'Glaciares Gourmet (Crucero María Turquesa)',
         price: 'Consultar',
         shortDesc: 'La navegación más exclusiva del Lago Argentino.',
-        fullDesc: 'Una experiencia de lujo a bordo del crucero María Turquesa. Navega hacia los glaciares Upsala, Seco, Heim y Spegazzini con el máximo confort. Incluye almuerzo gourmet a bordo, cubiertas panorámicas y descenso en Puesto de Las Vacas para una caminata corta. Ideal para quienes buscan confort y gastronomía de primer nivel.',
+        fullDesc: 'Una experiencia entre hielo, historia y paisajes\n\nNavegá entre témpanos gigantes, caminá en bosques patagónicos y brindá frente a los glaciares más imponentes del Parque Nacional. La experiencia comienza a las 9:00 AM en el puerto privado La Soledad, ubicado a 47 km de El Calafate. Desde allí zarparemos hacia el Canal Norte del Lago Argentino, mientras enormes témpanos de hielo nos acompañan en la travesía.\n\nDurante la navegación por el Canal Upsala, podrás observar el Glaciar Upsala, uno de los más grandes del Hielo Patagónico Sur, a unos 15 km de distancia. Luego, el recorrido continúa por el Canal Spegazzini, hogar de glaciares colgantes como el Seco, Heim Sur y Peineta, hasta desembarcar en Puesto de las Vacas.\n\nAllí realizaremos una caminata de 30 minutos por un encantador bosque andino patagónico y sus playas, acompañados por nuestro guía. De regreso en la embarcación, será el momento ideal para disfrutar el almuerzo: podés traer tu propia comida o seleccionar la opción con vianda.\n\nContinuaremos navegando hasta encontrarnos con el imponente Glaciar Spegazzini, el más alto del Parque Nacional. Tendremos tiempo para sacar fotos, contemplar el paisaje y simplemente dejarnos maravillar por este entorno único.\n\nPara cerrar esta jornada inolvidable, nos dirigiremos al Glaciar Perito Moreno. Quienes hayan contratado la opción con pasarelas, podrán desembarcar y disfrutar de una hora y media libre recorriendo sus balcones panorámicos. Finalmente, regresaremos al puerto La Soledad alrededor de las 17:00 hs, después de un día repleto de naturaleza, sabores y postales patagónicas que quedarán en la memoria.\n\nIdeal para quienes buscan combinar naturaleza imponente con momentos de calma y confort.',
         image: '/images/glaciares-gourmet.jpg',
         gallery: [
             '/images/glaciares-gourmet.jpg',
@@ -485,7 +485,22 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/glaciares-gourmet-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'luxury cruise food wine glacier view'
+        galleryKeywords: 'luxury cruise food wine glacier view',
+        activityDetails: {
+            duration: '9:00 a 17:00 (Aprox. 8hs)',
+            season: 'Todo el año',
+            languages: 'Español e Inglés',
+            included: [
+                'Navegación frente al Glaciar Upsala, Spegazzini y Perito Moreno',
+                'Desembarque en Bahía de las Vacas',
+                'Guía durante toda la navegación',
+                'Cancelación gratis hasta 24 horas antes del inicio del tour'
+            ],
+            notIncluded: [
+                'Ticket de acceso al Parque Nacional',
+                'Almuerzo (Opcional)'
+            ]
+        }
     }
 ];
 

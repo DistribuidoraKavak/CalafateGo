@@ -480,7 +480,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         image: '/images/glaciares-gourmet.jpg',
         gallery: [
             '/images/glaciares-gourmet.jpg',
-            '/images/glaciares-gourmet-2.jpg',
+            '/images/glaciares-gourmet-inside.jpg',
             '/images/glaciares-gourmet-3.jpg',
             '/images/glaciares-gourmet-4.jpg'
         ],

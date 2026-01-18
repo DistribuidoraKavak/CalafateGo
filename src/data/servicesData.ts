@@ -401,9 +401,9 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         price: 'Consultar',
         shortDesc: 'Aventura en kayak por el histórico Río Santa Cruz.',
         fullDesc: 'Viví la historia y la naturaleza en primera persona remando por el mítico Río Santa Cruz, siguiendo la ruta que realizó Charles Darwin. Una experiencia que combina aventura, paisajes esteparios y un almuerzo patagónico en una estancia histórica.\n\nLa jornada comienza con el pick-up por tu hotel para trasladarnos hacia la orilla del río. Allí, nuestros guías expertos te proveerán de todo el equipo técnico necesario (trajes secos Gore-Tex, chalecos, botas) y brindarán una charla de seguridad y técnica de remo.\n\nNavegaremos en kayaks dobles a favor de la corriente, disfrutando de la inmensidad de la estepa y las aguas color turquesa del río glaciar. Al finalizar la remada, compartiremos un delicioso almuerzo en una estancia típica, completando un día inolvidable de conexión con la Patagonia más auténtica.',
-        image: '/images/kayak-glaciar.jpg',
+        image: '/images/darwin-kayak-cover.jpg',
         gallery: [
-            '/images/kayak-glaciar.jpg',
+            '/images/darwin-kayak-cover.jpg',
             '/images/kayak-glaciar-2.jpg',
             '/images/kayak-glaciar-3.jpg',
             '/images/kayak-glaciar-4.jpg'

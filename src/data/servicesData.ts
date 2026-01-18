@@ -441,8 +441,8 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         image: '/images/safari-azul-kids.jpg',
         gallery: [
             '/images/safari-azul-kids.jpg',
-            '/images/safari-azul-cave.jpg',
             '/images/safari-azul-3.jpg',
+            '/images/safari-azul-cave.jpg',
             '/images/safari-azul-4.jpg'
         ],
         category: 'excursiones',

@@ -397,10 +397,10 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
     },
     {
         id: 'exc-kayak',
-        title: 'Kayak en el Perito Moreno',
+        title: 'Darwin Experience (Kayak)',
         price: 'Consultar',
-        shortDesc: 'Rema frente a la pared del glaciar.',
-        fullDesc: 'Una perspectiva única al ras del agua. Navega en kayak frente a las paredes de 70 metros del Perito Moreno con guías expertos. No requiere experiencia previa. Incluye ropa técnica seca.',
+        shortDesc: 'Aventura en kayak por el histórico Río Santa Cruz.',
+        fullDesc: 'Viví la historia y la naturaleza en primera persona remando por el mítico Río Santa Cruz, siguiendo la ruta que realizó Charles Darwin. Una experiencia que combina aventura, paisajes esteparios y un almuerzo patagónico en una estancia histórica.\n\nLa jornada comienza con el pick-up por tu hotel para trasladarnos hacia la orilla del río. Allí, nuestros guías expertos te proveerán de todo el equipo técnico necesario (trajes secos Gore-Tex, chalecos, botas) y brindarán una charla de seguridad y técnica de remo.\n\nNavegaremos en kayaks dobles a favor de la corriente, disfrutando de la inmensidad de la estepa y las aguas color turquesa del río glaciar. Al finalizar la remada, compartiremos un delicioso almuerzo en una estancia típica, completando un día inolvidable de conexión con la Patagonia más auténtica.',
         image: '/images/kayak-glaciar.jpg',
         gallery: [
             '/images/kayak-glaciar.jpg',
@@ -409,7 +409,25 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/kayak-glaciar-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'kayak water glacier adventure perito moreno'
+        galleryKeywords: 'kayak river santa cruz darwin adventure',
+        activityDetails: {
+            duration: '9:00 AM a 3:30 PM',
+            season: 'Octubre a Abril',
+            languages: 'Español e Inglés',
+            included: [
+                'Inicio en su hotel de El Calafate',
+                'Almuerzo en estancia',
+                'Guía durante toda la excursión',
+                'Kayaks dobles y equipo técnico completo (Traje seco, botas, etc)',
+                'Cancelación gratis hasta 24 horas antes'
+            ],
+            requirements: [
+                'Edad mínima 16 años',
+                'No apto para embarazadas',
+                'No se aceptan personas con sobrepeso',
+                'Sujeto a cupo mínimo de pasajeros'
+            ]
+        }
     },
     {
         id: 'exc-safari-azul',

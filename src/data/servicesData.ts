@@ -406,7 +406,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/darwin-kayak-cover.jpg',
             '/images/kayak-glaciar-2.jpg',
             '/images/kayak-glaciar-3.jpg',
-            '/images/kayak-glaciar-4.jpg'
+            '/images/darwin-kayak-river.jpg'
         ],
         category: 'excursiones',
         galleryKeywords: 'kayak river santa cruz darwin adventure',

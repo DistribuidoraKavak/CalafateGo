@@ -76,7 +76,7 @@ const ServiceDetail: React.FC = () => {
                     className={`absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700 
                         ${['exc-chalten-full', 'exc-torres-paine', 'trf-lagoroca'].includes(service.id) ? 'object-top' : ''}
                         ${service.id === 'trf-chalten' ? 'object-[center_25%]' : ''}
-                        ${service.id === 'trf-puerto-bandera' ? 'object-[center_70%]' : ''}
+                        ${service.id === 'trf-puerto-bandera' ? 'object-bottom' : ''}
                         ${['trf-rio-gallegos'].includes(service.id) ? 'object-[center_75%]' : ''}
                         ${service.image.includes('glaciar-personas') ? 'object-bottom' : ''}
                         ${!['exc-chalten-full', 'exc-torres-paine', 'trf-lagoroca', 'trf-chalten', 'trf-puerto-bandera', 'trf-rio-gallegos'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}

@@ -7,13 +7,14 @@ import { Helmet } from 'react-helmet-async';
 import {
     ArrowLeft, Clock, CheckCircle2, Bus, MapPin,
     MessageCircle, Star, ShieldCheck, Users, Calendar,
-    Camera, Info, ChevronDown, Check, ArrowRight
+    Camera, Info, ChevronDown, ChevronUp, Check, ArrowRight
 } from 'lucide-react';
 import { getServiceById } from '../data/servicesData';
 
 const ServiceDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
+    const [isExpanded, setIsExpanded] = React.useState(false);
 
     // Synchronous data fetch
     const service = id ? getServiceById(id) : undefined;
@@ -188,9 +189,28 @@ const ServiceDetail: React.FC = () => {
                         {/* Descripción Grande */}
                         <div className="prose prose-lg text-slate-600 leading-relaxed">
                             <h3 className="text-2xl font-bold text-navy font-display mb-4">Sobre esta experiencia</h3>
-                            <p className="whitespace-pre-line text-lg">
-                                {service.fullDesc}
-                            </p>
+                            <div className="relative">
+                                <p className={`whitespace-pre-line text-lg transition-all duration-500 ${!isExpanded && service.fullDesc.length > 500 ? 'max-h-[300px] overflow-hidden mask-linear-fade' : ''}`}>
+                                    {service.fullDesc}
+                                </p>
+                                {service.fullDesc.length > 500 && !isExpanded && (
+                                    <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                                )}
+                            </div>
+
+                            {service.fullDesc.length > 500 && (
+                                <button
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    className="text-emerald-600 font-bold hover:text-emerald-700 mt-4 flex items-center gap-2 transition-colors group"
+                                >
+                                    {isExpanded ? 'Leer menos' : 'Leer más'}
+                                    {isExpanded ? (
+                                        <ChevronUp size={18} className="group-hover:-translate-y-1 transition-transform" />
+                                    ) : (
+                                        <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
+                                    )}
+                                </button>
+                            )}
                         </div>
 
                         {/* VISUAL ITINERARY (TIMELINE) */}

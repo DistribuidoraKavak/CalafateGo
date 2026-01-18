@@ -508,12 +508,12 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         price: 'Consultar',
         shortDesc: 'Aventura off-road con vistas panorámicas únicas.',
         fullDesc: 'Ubicado a tan solo 25 kilómetros de El Calafate, en el corazón de la Estancia Alice sobre la Ruta Provincial 11 rumbo al Glaciar Perito Moreno, el Cerro Frías ofrece una experiencia diferente para quienes buscan adrenalina y paisajes extraordinarios.\n\nEsta travesía en vehículos 4x4 te llevará a ascender por senderos de montaña hasta alcanzar dos miradores espectaculares: uno a 450 metros y otro a 1.030 metros sobre el nivel del mar, incluyendo el famoso Balcón del Parque Nacional. Durante el recorrido atravesarás la estepa patagónica y te adentrarás en un bosque nativo de lengas, pudiendo observar la flora y fauna característica de la región.\n\nAl llegar a la base del cerro, según el turno elegido, podrás disfrutar de un almuerzo campestre, un snack de media tarde o una cena típica patagónica con vistas inolvidables. El regreso se realiza por la ladera del cerro, completando una jornada cargada de emociones y la energía vibrante del sur patagónico.\n\nIdeal para quienes desean vivir la Patagonia desde las alturas, sin necesidad de realizar esfuerzo físico y con la posibilidad de disfrutar de gastronomía regional en un entorno natural único.',
-        image: '/images/cerro-frias-cover.jpg',
+        image: '/images/cerro-frias-forest.png',
         gallery: [
-            '/images/cerro-frias-cover.jpg',
+            '/images/cerro-frias-forest.png',
             '/images/cerro-frias-truck.jpg',
             '/images/cerro-frias-sunset.jpg',
-            '/images/cerro-frias-forest.png'
+            '/images/cerro-frias-cover.jpg'
         ],
         category: 'excursiones',
         galleryKeywords: '4x4 mountain panoramic view patagonia estancia',

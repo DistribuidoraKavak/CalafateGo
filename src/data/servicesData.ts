@@ -295,9 +295,9 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         price: 'Consultar',
         shortDesc: 'La experiencia más buscada. Camina sobre el Glaciar Perito Moreno.',
         fullDesc: 'Una aventura inigualable. Inicia con una navegación cruzando el Brazo Rico. Luego, guías de montaña te ayudarán a colocarte los crampones para iniciar una caminata de 1:30 hs sobre la superficie del glaciar, viendo grietas azules, sumideros y lagunas. Incluye visita a pasarelas. Dificultad: Media. Edad: 10 a 65 años.',
-        image: '/images/minitrekking.jpg',
+        image: '/images/minitrekking-cover-new.jpg',
         gallery: [
-            '/images/minitrekking.jpg',
+            '/images/minitrekking-cover-new.jpg',
             '/images/minitrekking-2.jpg',
             '/images/minitrekking-3.jpg',
             '/images/minitrekking-4.jpg'

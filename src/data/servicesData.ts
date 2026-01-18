@@ -437,7 +437,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
         title: 'Safari Azul (Tocá el Glaciar)',
         price: 'Consultar',
         shortDesc: 'Navegación y caminata hasta tocar la pared de hielo.',
-        fullDesc: 'La alternativa perfecta al Minitrekking para quienes quieren vivir el hielo de cerca sin exigencia física técnica. Navegación de 20 minutos por el Brazo Rico y una caminata guiada de 1:30 hs por un bosque de lengas hasta llegar a la pared lateral del Glaciar Perito Moreno. ¡Podrás tocar el hielo y ver sus intensos colores azules! Incluye brindis y visita a las pasarelas. Apto para todas las edades (6 a 70 años).',
+        fullDesc: 'El Safari Azul está pensado para aquellos que, además de navegar frente al Glaciar Perito Moreno, sueñan con acercarse al hielo glaciar!\n\nLa excursión comienza en El Calafate cuando el bus parte con destino al Parque Nacional Los Glaciares. Una vez en el Puerto Bajo de las Sombras, a solo 7 km de las pasarelas, tomaremos un barco para cruzar el Lago Rico y, luego de navegar 20 minutos, desembarcaremos en la costa opuesta.\n\nPoco a poco caminaremos por 30 minutos siempre con vista a la pared sur del Glaciar por si nos sorprende algún estruendoso desprendimiento. Una vez al lado del hielo será tiempo de una experiencia inolvidable… ¡Podremos disfrutar plenamente de sus intensos y variados azules, blancos y sus caprichosas formas.\n\nTendremos tiempo para tomar muchas fotos y luego regresaremos al lugar de embarque siempre acompañados por un guía experimentado. La caminata total es de 1.30 hs aproximadamente por un terreno natural de arena y piedras con alguna pendientes y escaleras. El recorrido, de un kilometro y medio, será por la costa del lago y por un frondoso bosque con vista al Glaciar.\n\nFinalmente tomaremos el barco para apreciar desde el agua y, a pocos metros de distancia, toda la cara sur del glaciar y poder ver cada detalle de la marmolada pared helada.\n\nUna vez en el puerto, en caso de haber contratado el servicio de transfer con Hielo y Aventura, tomaremos el bus hacia las pasarelas donde tendremos 2 horas para disfrutar la increíble vista panorámica. En caso de haberse trasladado por sus propios medios, podrá optar libremente por el tiempo de visita en las pasarelas. Además, podrán aprovechar este tiempo para consumir la vianda que deberán traer desde El Calafate.\n\nLlegaremos a El Calafate luego de recorrer la estepa patagónica, con el alma cargada de la energía natural de este glaciar único. ¡Estamos ansiosos por ser sus anfitriones!\n\nEl Safari Azul se realiza en un ambiente natural por lo cual las condiciones climáticas y características del glaciar y sus alrededores cambian diariamente. Sin embargo, la excursión no se suspende, mientras que las condiciones de seguridad lo permitan. ¡Los esperamos!',
         image: '/images/safari-azul.jpg',
         gallery: [
             '/images/safari-azul.jpg',
@@ -446,7 +446,30 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/safari-azul-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'people touching glacier ice wall forest'
+        galleryKeywords: 'people touching glacier ice wall forest',
+        activityDetails: {
+            duration: '9hs (Con traslados) / 3hs (Sin traslados)',
+            season: 'Todo el año',
+            languages: 'Español e Inglés',
+            difficulty: 'Baja',
+            optional: 'Traslado con guía y visita a pasarelas (2h)',
+            included: [
+                'Navegación por el Brazo Rico (20 min por tramo)',
+                'Caminata guiada hasta la pared del glaciar',
+                'Guía local y Coordinador permanente',
+                'Asistencia médica de emergencia'
+            ],
+            requirements: [
+                'Edad: 6 a 70 años (Sin excepción)',
+                'No apto para movilidad reducida',
+                'Capacidad para caminar en terreno irregular (piedras/arena)'
+            ],
+            notIncluded: [
+                'Entrada al Parque Nacional',
+                'Comida y bebida',
+                'Ropa personal (frío/lluvia)'
+            ]
+        }
     },
     {
         id: 'exc-glaciares-gourmet',

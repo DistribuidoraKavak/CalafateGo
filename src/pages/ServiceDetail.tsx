@@ -7,7 +7,8 @@ import { Helmet } from 'react-helmet-async';
 import {
     ArrowLeft, Clock, CheckCircle2, Bus, MapPin,
     MessageCircle, Star, ShieldCheck, Users, Calendar,
-    Camera, Info, ChevronDown, ChevronUp, Check, ArrowRight
+    Camera, Info, ChevronDown, ChevronUp, Check, ArrowRight,
+    CalendarRange, Languages, Ban, AlertCircle, PlusCircle
 } from 'lucide-react';
 import { getServiceById } from '../data/servicesData';
 
@@ -240,28 +241,105 @@ const ServiceDetail: React.FC = () => {
 
 
 
-                        {/* Grid "¿Qué incluye?" */}
+                        {/* Grid "¿Qué incluye?" O "Características" */}
                         <div className="border-t border-slate-100 pt-10">
-                            <h3 className="text-xl font-bold text-navy font-display mb-8">Lo que incluye</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
-                                {[
-                                    { icon: Users, text: 'Servicio Privado Exclusivo' },
-                                    { icon: ShieldCheck, text: 'Seguro de Pasajeros' },
-                                    { icon: Bus, text: 'Vehículo Moderno' },
-                                    { icon: Calendar, text: 'Flexibilidad Horaria' },
-                                    ...(isTraslado
-                                        ? [{ icon: Star, text: 'Chofer Profesional' }]
-                                        : [{ icon: MapPin, text: 'Paradas Panorámicas' }, { icon: Camera, text: 'Tiempo para Fotos' }]
-                                    )
-                                ].map((item, idx) => (
-                                    <div key={idx} className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-navy shrink-0">
-                                            <item.icon size={24} strokeWidth={1.5} />
+                            {service.activityDetails ? (
+                                <>
+                                    <h3 className="text-xl font-bold text-navy font-display mb-6">Características de la actividad</h3>
+
+                                    {/* Info Grid */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                        <div className="bg-slate-50 p-4 rounded-xl flex items-start gap-3">
+                                            <Clock className="text-emerald-500 shrink-0 mt-1" size={20} />
+                                            <div>
+                                                <span className="block font-bold text-navy text-sm">Duración</span>
+                                                <span className="text-slate-600 text-sm">{service.activityDetails.duration}</span>
+                                            </div>
                                         </div>
-                                        <span className="text-slate-700 font-medium">{item.text}</span>
+                                        <div className="bg-slate-50 p-4 rounded-xl flex items-start gap-3">
+                                            <CalendarRange className="text-emerald-500 shrink-0 mt-1" size={20} />
+                                            <div>
+                                                <span className="block font-bold text-navy text-sm">Temporada</span>
+                                                <span className="text-slate-600 text-sm">{service.activityDetails.season}</span>
+                                            </div>
+                                        </div>
+                                        <div className="bg-slate-50 p-4 rounded-xl flex items-start gap-3">
+                                            <Languages className="text-emerald-500 shrink-0 mt-1" size={20} />
+                                            <div>
+                                                <span className="block font-bold text-navy text-sm">Idiomas</span>
+                                                <span className="text-slate-600 text-sm">{service.activityDetails.languages}</span>
+                                            </div>
+                                        </div>
+                                        {service.activityDetails.optional && (
+                                            <div className="bg-slate-50 p-4 rounded-xl flex items-start gap-3">
+                                                <PlusCircle className="text-emerald-500 shrink-0 mt-1" size={20} />
+                                                <div>
+                                                    <span className="block font-bold text-navy text-sm">Opcional</span>
+                                                    <span className="text-slate-600 text-sm">{service.activityDetails.optional}</span>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
-                                ))}
-                            </div>
+
+                                    {/* Requisitos (Age & Physical) */}
+                                    {service.activityDetails.requirements && (
+                                        <div className="mb-6 bg-amber-50 border border-amber-100 rounded-xl p-5">
+                                            <h4 className="font-bold text-navy mb-3 flex items-center gap-2">
+                                                <AlertCircle size={18} className="text-amber-500" />
+                                                Requisitos Importantes
+                                            </h4>
+                                            <ul className="space-y-2">
+                                                {service.activityDetails.requirements.map((req, idx) => (
+                                                    <li key={idx} className="text-sm text-slate-700 flex items-start gap-2">
+                                                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mt-1.5 shrink-0"></span>
+                                                        {req}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+
+                                    {/* No Incluye */}
+                                    {service.activityDetails.notIncluded && (
+                                        <div className="bg-slate-50 border border-slate-100 rounded-xl p-5">
+                                            <h4 className="font-bold text-navy mb-3 flex items-center gap-2">
+                                                <Ban size={18} className="text-rose-400" />
+                                                No incluye
+                                            </h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {service.activityDetails.notIncluded.map((item, idx) => (
+                                                    <span key={idx} className="bg-white border border-slate-200 px-3 py-1 rounded-full text-xs text-slate-600">
+                                                        {item}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                    <h3 className="text-xl font-bold text-navy font-display mb-8">Lo que incluye</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
+                                        {[
+                                            { icon: Users, text: 'Servicio Privado Exclusivo' },
+                                            { icon: ShieldCheck, text: 'Seguro de Pasajeros' },
+                                            { icon: Bus, text: 'Vehículo Moderno' },
+                                            { icon: Calendar, text: 'Flexibilidad Horaria' },
+                                            ...(isTraslado
+                                                ? [{ icon: Star, text: 'Chofer Profesional' }]
+                                                : [{ icon: MapPin, text: 'Paradas Panorámicas' }, { icon: Camera, text: 'Tiempo para Fotos' }]
+                                            )
+                                        ].map((item, idx) => (
+                                            <div key={idx} className="flex items-center gap-4">
+                                                <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-navy shrink-0">
+                                                    <item.icon size={24} strokeWidth={1.5} />
+                                                </div>
+                                                <span className="text-slate-700 font-medium">{item.text}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </>
+                            )}
                         </div>
 
                         {/* "WHAT TO KNOW" Tips Section */}

@@ -13,6 +13,14 @@ export interface ServiceItem {
     tips?: string[];
     galleryKeywords?: string;
     gallery?: string[]; // Array of image paths for the detail page
+    activityDetails?: {
+        duration?: string;
+        season?: string;
+        languages?: string;
+        optional?: string;
+        requirements?: string[];
+        notIncluded?: string[];
+    };
 }
 
 // ============== TRASLADOS DATA ==============
@@ -303,7 +311,23 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/minitrekking-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'minitrekking glacier hiking crampons ice patagonia'
+        galleryKeywords: 'minitrekking glacier hiking crampons ice patagonia',
+        activityDetails: {
+            duration: '10hs aprox. (No organizar otros planes)',
+            season: '15 de Agosto al 30 de Abril',
+            languages: 'Español e Inglés',
+            optional: 'Traslado con guía y visita a pasarelas (1h)',
+            requirements: [
+                'Edad: 18 a 55 años (Sin excepción)',
+                'No apto para personas sedentarias',
+                'Capacidad para caminar 3hs constantes'
+            ],
+            notIncluded: [
+                'Entrada al Parque Nacional',
+                'Comida y bebida',
+                'Ropa personal (frío/lluvia)'
+            ]
+        }
     },
     {
         id: 'exc-big-ice',

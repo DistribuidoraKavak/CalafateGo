@@ -136,8 +136,8 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         gallery: [
             '/images/puerto-bandera-cover.jpg',
             '/images/puerto-bandera-aerea.jpg',
-            '/images/puerto-bandera-hielo.jpg',
-            '/images/puerto-bandera-cartel.jpg'
+            '/images/puerto-bandera-hielo-new.jpg',
+            '/images/puerto-bandera-cartel-new.jpg'
         ],
         category: 'traslados',
         galleryKeywords: 'lake port boat glacier patagonia',
@@ -153,10 +153,10 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 220,
         shortDesc: 'Dos imperdibles en un solo día.',
         fullDesc: 'El "Combo Perfecto". Comenzamos temprano llevándote a Puerto Bandera para la navegación (Todo Glaciares o Spegazzini). Al regresar del barco, en lugar de volver al pueblo, te llevamos directo a las pasarelas del Perito Moreno. Optimizamos tu día al máximo para que veas todo sin perder tiempo en traslados innecesarios.',
-        image: '/images/puerto-bandera-hielo.jpg',
+        image: '/images/puerto-bandera-hielo-new.jpg',
         gallery: [
-            '/images/puerto-bandera-hielo.jpg',
-            '/images/puerto-bandera-cartel.jpg',
+            '/images/puerto-bandera-hielo-new.jpg',
+            '/images/puerto-bandera-cartel-new.jpg',
             '/images/puerto-bandera-cover.jpg',
             '/images/puerto-bandera-glaciar-personas.jpg'
         ],

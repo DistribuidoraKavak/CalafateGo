@@ -376,7 +376,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/todo-glaciares.jpg',
             '/images/todo-glaciares-2.jpg',
             '/images/todo-glaciares-3.jpg',
-            '/images/todo-glaciares-4.jpg'
+            '/images/todo-glaciares-deck.jpg'
         ],
         category: 'excursiones',
         galleryKeywords: 'catamaran boat glaciares icebergs lake argentino',

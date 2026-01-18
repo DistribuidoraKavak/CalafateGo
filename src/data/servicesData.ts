@@ -20,6 +20,7 @@ export interface ServiceItem {
         optional?: string;
         requirements?: string[];
         notIncluded?: string[];
+        difficulty?: string;
     };
 }
 
@@ -317,6 +318,7 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             season: '15 de Agosto al 30 de Abril',
             languages: 'Español e Inglés',
             optional: 'Traslado con guía y visita a pasarelas (1h)',
+            difficulty: 'Media/Alta',
             requirements: [
                 'Edad: 18 a 55 años (Sin excepción)',
                 'No apto para personas sedentarias',

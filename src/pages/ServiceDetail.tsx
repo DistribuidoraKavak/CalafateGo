@@ -377,13 +377,29 @@ const ServiceDetail: React.FC = () => {
                                     {service.duration && (
                                         <div className="p-4 flex justify-between">
                                             <span className="text-slate-500">Duración</span>
-                                            <span className="font-bold text-navy">{service.duration}</span>
+                                            <span className="font-bold text-navy">{service.activityDetails?.duration?.split('.')[0] || service.duration}</span>
                                         </div>
                                     )}
-                                    <div className="p-4 flex justify-between">
-                                        <span className="text-slate-500">Tipo</span>
-                                        <span className="font-bold text-navy">Privado</span>
-                                    </div>
+
+                                    {isTraslado ? (
+                                        <div className="p-4 flex justify-between">
+                                            <span className="text-slate-500">Tipo</span>
+                                            <span className="font-bold text-navy">Privado</span>
+                                        </div>
+                                    ) : (
+                                        <>
+                                            {service.activityDetails?.difficulty && (
+                                                <div className="p-4 flex justify-between">
+                                                    <span className="text-slate-500">Dificultad</span>
+                                                    <span className="font-bold text-navy px-2 py-0.5 bg-slate-100 rounded-lg">{service.activityDetails.difficulty}</span>
+                                                </div>
+                                            )}
+                                            <div className="p-4 flex justify-between">
+                                                <span className="text-slate-500">Modalidad</span>
+                                                <span className="font-bold text-navy">Excursión Regular</span>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
 
                                 <button
@@ -391,7 +407,7 @@ const ServiceDetail: React.FC = () => {
                                     className="w-full bg-navy hover:bg-slate-800 text-white font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-3 transition-all hover:-translate-y-1 shadow-lg hover:shadow-xl"
                                 >
                                     <MessageCircle size={22} />
-                                    Reservar Ahora
+                                    {typeof service.price === 'number' ? 'Reservar Ahora' : 'Consultar Disponibilidad'}
                                 </button>
 
                                 {/* Guarantees */}
@@ -402,11 +418,11 @@ const ServiceDetail: React.FC = () => {
                                     </div>
                                     <div className="flex items-center gap-2 text-xs text-slate-500">
                                         <Star size={14} className="text-amber-500" />
-                                        <span>Choferes Pro</span>
+                                        <span>{isTraslado ? 'Choferes Pro' : 'Guías Expertos'}</span>
                                     </div>
                                     <div className="flex items-center gap-2 text-xs text-slate-500">
                                         <Check size={14} className="text-blue-500" />
-                                        <span>Sin Comisiones</span>
+                                        <span>{isTraslado ? 'Sin Comisiones' : 'Atención Directa'}</span>
                                     </div>
                                 </div>
                             </div>

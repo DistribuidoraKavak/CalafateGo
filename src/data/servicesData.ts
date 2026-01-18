@@ -19,6 +19,7 @@ export interface ServiceItem {
         languages?: string;
         optional?: string;
         requirements?: string[];
+        included?: string[];
         notIncluded?: string[];
         difficulty?: string;
     };
@@ -378,7 +379,21 @@ export const EXCURSIONES_DATA: ServiceItem[] = [
             '/images/todo-glaciares-4.jpg'
         ],
         category: 'excursiones',
-        galleryKeywords: 'catamaran boat glaciares icebergs lake argentino'
+        galleryKeywords: 'catamaran boat glaciares icebergs lake argentino',
+        activityDetails: {
+            duration: 'Día Completo (Aprox. 8hs)',
+            season: 'Todo el año',
+            languages: 'Español e Inglés',
+            included: [
+                'Navegación frente al Glaciar Upsala y Spegazzini',
+                'Desembarque en Bahía de los Glaciares',
+                'Guía durante toda la navegación',
+                'Cancelación gratis hasta 24 horas antes del inicio del tour'
+            ],
+            notIncluded: [
+                'Ticket de acceso al Parque Nacional'
+            ]
+        }
     },
     {
         id: 'exc-kayak',

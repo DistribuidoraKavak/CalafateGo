@@ -281,6 +281,24 @@ const ServiceDetail: React.FC = () => {
                                         )}
                                     </div>
 
+                                    {/* Qué Incluye (Custom List) */}
+                                    {service.activityDetails.included && (
+                                        <div className="mb-6 bg-emerald-50/50 border border-emerald-100 rounded-xl p-5">
+                                            <h4 className="font-bold text-navy mb-3 flex items-center gap-2">
+                                                <CheckCircle2 size={18} className="text-emerald-600" />
+                                                Qué incluye
+                                            </h4>
+                                            <ul className="space-y-2">
+                                                {service.activityDetails.included.map((item, idx) => (
+                                                    <li key={idx} className="text-sm text-slate-700 flex items-start gap-2">
+                                                        <Check size={16} className="text-emerald-500 mt-0.5 shrink-0" />
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+
                                     {/* Requisitos (Age & Physical) */}
                                     {service.activityDetails.requirements && (
                                         <div className="mb-6 bg-amber-50 border border-amber-100 rounded-xl p-5">

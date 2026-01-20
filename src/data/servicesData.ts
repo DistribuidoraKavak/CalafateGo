@@ -294,7 +294,13 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 90,
         shortDesc: 'Lo mejor de El Calafate.',
         fullDesc: 'Descubre los rincones de nuestra ciudad. Visitamos la Reserva Laguna Nimez para ver flamencos y aves, la costanera de Bahía Redonda y subimos a la parte alta para tener las mejores vistas panorámicas de El Calafate y el lago.',
-        image: '/images/navegacion-lago.jpg',
+        image: '/images/city-tour-truck.png',
+        gallery: [
+            '/images/city-tour-truck.png',
+            '/images/city-tour-sign.jpg',
+            '/images/city-tour-flamingos.png',
+            '/images/city-tour-road.png'
+        ],
         category: 'traslados',
         duration: '2-3 horas',
         galleryKeywords: 'city birds lake flamingos sunset',

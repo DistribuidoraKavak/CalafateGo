@@ -271,7 +271,13 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         price: 90,
         shortDesc: 'Historia y pinturas rupestres.',
         fullDesc: 'Un viaje al pasado a orillas del Lago Argentino. Visita las cuevas donde los primeros habitantes dejaron su huella hace miles de años. El sitio cuenta con audioguías y un sendero muy fácil de recorrer. Ideal para combinar con el día de llegada o salida.',
-        image: '/images/cuevas-walichu.jpg',
+        image: '/images/walichu-landscape.png',
+        gallery: [
+            '/images/walichu-landscape.png',
+            '/images/walichu-rupestre.jpg',
+            '/images/walichu-cave.png',
+            '/images/walichu-guide.jpg'
+        ],
         category: 'traslados',
         duration: '2-3 horas',
         galleryKeywords: 'caves ancient art paintings archaeology lake',

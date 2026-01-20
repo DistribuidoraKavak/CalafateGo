@@ -299,7 +299,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             '/images/city-tour-truck.png',
             '/images/city-tour-sign.jpg',
             '/images/city-tour-flamingos.png',
-            '/images/city-tour-road.png'
+            '/images/city-tour-sunset.png'
         ],
         category: 'traslados',
         duration: '2-3 horas',

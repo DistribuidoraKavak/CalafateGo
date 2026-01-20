@@ -83,9 +83,8 @@ const ServiceDetail: React.FC = () => {
                         ${service.id === 'exc-safari-azul' ? 'object-[center_20%]' : ''}
                         ${service.id === 'exc-glaciares-gourmet' ? 'object-[center_75%]' : ''}
                         ${service.id === 'exc-cerro-frias' ? 'object-bottom' : ''}
-                        ${service.id === 'exc-city-tour' ? 'object-bottom' : ''}
                         ${service.image.includes('glaciar-personas') ? 'object-bottom' : ''}
-                        ${!['exc-chalten-full', 'exc-torres-paine', 'trf-lagoroca', 'trf-chalten', 'trf-puerto-bandera', 'trf-rio-gallegos', 'exc-safari-azul', 'exc-glaciares-gourmet', 'exc-cerro-frias', 'exc-city-tour'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
+                        ${!['exc-chalten-full', 'exc-torres-paine', 'trf-lagoroca', 'trf-chalten', 'trf-puerto-bandera', 'trf-rio-gallegos', 'exc-safari-azul', 'exc-glaciares-gourmet', 'exc-cerro-frias'].includes(service.id) && !service.image.includes('glaciar-personas') ? 'object-center' : ''}
                     `}
                 />
 
@@ -154,7 +153,7 @@ const ServiceDetail: React.FC = () => {
                         <img src={galleryImages[2]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${galleryImages[2]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 2" loading="lazy" />
                     </div>
                     <div className="md:col-span-2 relative group overflow-hidden bg-slate-100">
-                        <img src={galleryImages[3]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[3]?.includes('glaciar-personas') ? 'object-bottom' : ''}`} alt="Detail 3" loading="lazy" />
+                        <img src={galleryImages[3]} className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${galleryImages[3]?.includes('glaciar-personas') || galleryImages[3]?.includes('city-tour-sunset') ? 'object-bottom' : ''}`} alt="Detail 3" loading="lazy" />
                         <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm">
                             + Ver Galería
                         </div>

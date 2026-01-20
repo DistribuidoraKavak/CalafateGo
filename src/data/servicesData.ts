@@ -267,10 +267,10 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     },
     {
         id: 'exc-walichu',
-        title: 'Cuevas del Walichu',
-        price: 90,
-        shortDesc: 'Historia y pinturas rupestres.',
-        fullDesc: 'Un viaje al pasado a orillas del Lago Argentino. Visita las cuevas donde los primeros habitantes dejaron su huella hace miles de años. El sitio cuenta con audioguías y un sendero muy fácil de recorrer. Ideal para combinar con el día de llegada o salida.',
+        title: 'Traslado Cuevas del Walichu',
+        price: 60,
+        shortDesc: 'Traslado ida y vuelta a las Cuevas del Walichu.',
+        fullDesc: 'Te llevamos y buscamos de las famosas Cuevas del Walichu, ubicadas a orillas del Lago Argentino a solo 15 minutos del centro de El Calafate. Este servicio incluye únicamente el traslado ida y vuelta desde tu hotel.\n\nUna vez en el lugar, podrás adquirir tu entrada y realizar la visita guiada por tu cuenta. El sitio cuenta con audioguías disponibles y un sendero muy fácil de recorrer donde podrás apreciar arte rupestre de miles de años de antigüedad.\n\nIdeal para combinar con el día de llegada o salida. Te esperamos en el estacionamiento del sitio a la hora acordada para el regreso.',
         image: '/images/walichu-landscape.png',
         gallery: [
             '/images/walichu-landscape.png',
@@ -279,13 +279,20 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             '/images/walichu-guide.jpg'
         ],
         category: 'traslados',
-        duration: '2-3 horas',
+        duration: '2-3 horas (tiempo libre en el sitio)',
         galleryKeywords: 'caves ancient art paintings archaeology lake',
         itinerary: [
-            { title: 'Traslado al Sitio', subtitle: 'A 15 minutos del centro.' },
-            { title: 'Visita Guiada', subtitle: 'Recorrido por las cuevas y costa del lago.' },
-            { title: 'Regreso', subtitle: 'Vuelta al hotel.' }
-        ]
+            { title: 'Pick up en Hotel', subtitle: 'Te buscamos en tu alojamiento.' },
+            { title: 'Traslado al Sitio', subtitle: 'A 15 minutos del centro de El Calafate.' },
+            { title: 'Tiempo Libre', subtitle: 'Adquirí tu entrada y recorré las cuevas por tu cuenta.' },
+            { title: 'Regreso', subtitle: 'Te esperamos para llevarte de vuelta al hotel.' }
+        ],
+        activityDetails: {
+            notIncluded: [
+                'Entrada al sitio',
+                'Visita guiada'
+            ]
+        }
     },
     {
         id: 'exc-city-tour',

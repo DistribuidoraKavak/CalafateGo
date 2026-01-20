@@ -293,7 +293,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         title: 'City Tour Panorámico',
         price: 90,
         shortDesc: 'Recorrido personalizado por lo mejor de El Calafate.',
-        fullDesc: 'Descubrí los rincones más encantadores de El Calafate a bordo de una camioneta privada de alto confort. Este paseo panorámico te llevará a recorrer la costa del Lago Argentino, donde podrás avistar flamencos y diversas aves en su hábitat natural.\n\nVisitaremos la costanera de Bahía Redonda, con parada en el icónico cartel de El Calafate para las fotos obligadas. Luego ascenderemos a la parte alta de la ciudad para disfrutar de una vista panorámica privilegiada del pueblo, el lago y las montañas que lo rodean.\n\nEl recorrido incluye también un paseo por el centro comercial y cualquier punto cercano que desees conocer. Al ser un servicio completamente personalizado, vos elegís dónde parar, cuánto tiempo quedarte y qué lugares fotografiar.\n\nUna forma cómoda y climatizada de conocer lo mejor del pueblo en pocas horas, ideal para el día de llegada o partida.',
+        fullDesc: 'Descubrí los rincones más encantadores de El Calafate a bordo de una camioneta privada de alto confort. Este paseo panorámico te llevará a recorrer la costa del Lago Argentino, donde podrás contemplar la famosa Isla Solitaria y las aguas turquesas que caracterizan a este icónico lago patagónico.\n\nVisitaremos la costanera de Bahía Redonda y la Reserva Laguna Nimez, donde se pueden avistar flamencos y diversas aves en su hábitat natural. Por supuesto, haremos parada en el icónico cartel de El Calafate para las fotos obligadas. Luego ascenderemos a la parte alta de la ciudad para disfrutar de una vista panorámica privilegiada del pueblo, el lago y las montañas que lo rodean.\n\nEl recorrido incluye también un paseo por el centro comercial y cualquier punto cercano que desees conocer. Al ser un servicio completamente personalizado, vos elegís dónde parar, cuánto tiempo quedarte y qué lugares fotografiar.\n\nUna forma cómoda y climatizada de conocer lo mejor del pueblo en pocas horas, ideal para el día de llegada o partida.',
         image: '/images/city-tour-truck.png',
         gallery: [
             '/images/city-tour-truck.png',
@@ -306,7 +306,8 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         galleryKeywords: 'city birds lake flamingos sunset',
         itinerary: [
             { title: 'Pick up en Hotel', subtitle: 'Te buscamos en tu alojamiento.' },
-            { title: 'Costa del Lago Argentino', subtitle: 'Avistaje de flamencos y aves.' },
+            { title: 'Costa del Lago Argentino', subtitle: 'Vistas a la Isla Solitaria y el lago.' },
+            { title: 'Laguna Nimez / Bahía Redonda', subtitle: 'Avistaje de flamencos y aves.' },
             { title: 'Cartel de El Calafate', subtitle: 'Parada para las fotos icónicas.' },
             { title: 'Mirador Panorámico', subtitle: 'Las mejores vistas de la ciudad y el lago.' },
             { title: 'Centro Comercial', subtitle: 'Paseo opcional por la zona céntrica.' },

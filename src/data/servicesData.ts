@@ -139,9 +139,9 @@ export const TRASLADOS_DATA: ServiceItem[] = [
     {
         id: 'trf-puerto-bandera',
         title: 'Puerto Punta Bandera',
-        price: 90,
-        shortDesc: 'Conexión para navegaciones.',
-        fullDesc: 'Traslado privado hacia Puerto Punta Bandera (47 km), el puerto principal para las navegaciones entre los glaciares.\n\nDesde allí se realizan las navegaciones más destacadas del Parque Nacional Los Glaciares, como la Navegación Todo Glaciares (que recorre el brazo norte del Lago Argentino hacia los glaciares Upsala y Spegazzini) y la Experiencia Glaciares Gourmet, entre otras.\n\nLlegamos con la antelación necesaria para que realices el embarque con tranquilidad y disfrutes de una de las experiencias más completas para conocer los imponentes glaciares del sur argentino.',
+        price: 'Desde USD 130',
+        shortDesc: 'Traslado ida y vuelta para navegaciones.',
+        fullDesc: 'Traslado privado ida y vuelta hacia Puerto Punta Bandera (47 km), el puerto principal para las navegaciones entre los glaciares.\n\nTe buscamos en tu hotel y te llevamos al puerto con la antelación necesaria para que realices el embarque con tranquilidad. Una vez finalizada tu excursión de navegación, te estaremos esperando para llevarte de regreso a tu alojamiento.\n\nDesde Puerto Punta Bandera se realizan las navegaciones más destacadas del Parque Nacional Los Glaciares, como la Navegación Todo Glaciares (que recorre el brazo norte del Lago Argentino hacia los glaciares Upsala y Spegazzini) y la Experiencia Glaciares Gourmet, entre otras.\n\nDisfruta de una de las experiencias más completas para conocer los imponentes glaciares del sur argentino, sin preocuparte por el traslado.',
         image: '/images/puerto-bandera-aerea.jpg',
         gallery: [
             '/images/puerto-bandera-aerea.jpg',
@@ -152,9 +152,10 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         category: 'traslados',
         galleryKeywords: 'lake port boat glacier patagonia',
         itinerary: [
-            { title: 'Pick-up en Hotel', subtitle: 'Coordinado 1 hora antes del embarque.' },
+            { title: 'Pick-up en Hotel', subtitle: 'Coordinado según horario de embarque.' },
             { title: 'Trayecto al Puerto', subtitle: '47km de ruta asfaltada con vistas al lago.' },
-            { title: 'Llegada a Puerto Punta Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' }
+            { title: 'Llegada a Puerto Punta Bandera', subtitle: 'Asistencia para ubicar tu embarcación.' },
+            { title: 'Espera y Regreso', subtitle: 'Al finalizar tu navegación, te llevamos de vuelta al hotel.' }
         ]
     },
     {

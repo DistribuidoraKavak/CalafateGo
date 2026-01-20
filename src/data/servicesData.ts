@@ -286,13 +286,7 @@ export const TRASLADOS_DATA: ServiceItem[] = [
             { title: 'Traslado al Sitio', subtitle: 'A 15 minutos del centro de El Calafate.' },
             { title: 'Tiempo Libre', subtitle: 'Adquirí tu entrada y recorré las cuevas por tu cuenta.' },
             { title: 'Regreso', subtitle: 'Te esperamos para llevarte de vuelta al hotel.' }
-        ],
-        activityDetails: {
-            notIncluded: [
-                'Entrada al sitio',
-                'Visita guiada'
-            ]
-        }
+        ]
     },
     {
         id: 'exc-city-tour',

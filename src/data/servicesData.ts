@@ -292,8 +292,8 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         id: 'exc-city-tour',
         title: 'City Tour Panorámico',
         price: 90,
-        shortDesc: 'Lo mejor de El Calafate.',
-        fullDesc: 'Descubre los rincones de nuestra ciudad. Visitamos la Reserva Laguna Nimez para ver flamencos y aves, la costanera de Bahía Redonda y subimos a la parte alta para tener las mejores vistas panorámicas de El Calafate y el lago.',
+        shortDesc: 'Recorrido personalizado por lo mejor de El Calafate.',
+        fullDesc: 'Descubrí los rincones más encantadores de El Calafate a bordo de una camioneta privada de alto confort. Este paseo panorámico te llevará a recorrer la costa del Lago Argentino, donde podrás avistar flamencos y diversas aves en su hábitat natural.\n\nVisitaremos la costanera de Bahía Redonda, con parada en el icónico cartel de El Calafate para las fotos obligadas. Luego ascenderemos a la parte alta de la ciudad para disfrutar de una vista panorámica privilegiada del pueblo, el lago y las montañas que lo rodean.\n\nEl recorrido incluye también un paseo por el centro comercial y cualquier punto cercano que desees conocer. Al ser un servicio completamente personalizado, vos elegís dónde parar, cuánto tiempo quedarte y qué lugares fotografiar.\n\nUna forma cómoda y climatizada de conocer lo mejor del pueblo en pocas horas, ideal para el día de llegada o partida.',
         image: '/images/city-tour-truck.png',
         gallery: [
             '/images/city-tour-truck.png',
@@ -305,7 +305,12 @@ export const TRASLADOS_DATA: ServiceItem[] = [
         duration: '2-3 horas',
         galleryKeywords: 'city birds lake flamingos sunset',
         itinerary: [
-            { title: 'Centro Comercial', subtitle: 'Opcional: final en el centro o en tu hotel.' }
+            { title: 'Pick up en Hotel', subtitle: 'Te buscamos en tu alojamiento.' },
+            { title: 'Costa del Lago Argentino', subtitle: 'Avistaje de flamencos y aves.' },
+            { title: 'Cartel de El Calafate', subtitle: 'Parada para las fotos icónicas.' },
+            { title: 'Mirador Panorámico', subtitle: 'Las mejores vistas de la ciudad y el lago.' },
+            { title: 'Centro Comercial', subtitle: 'Paseo opcional por la zona céntrica.' },
+            { title: 'Regreso', subtitle: 'Te dejamos en tu hotel o donde prefieras.' }
         ]
     }
 ];
